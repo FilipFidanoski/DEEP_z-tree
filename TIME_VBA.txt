@@ -1,0 +1,27 @@
+Sub DeleteSpecifcColumn()
+
+
+'adjusted from Stack Overflow
+
+
+Dim xFNum, xFFNum, xCount As Integer
+Dim xStr As String
+Dim xArrName As Variant
+Dim MR, xRg As Range
+
+On Error Resume Next
+
+Set MR = Range("A5:RS5")
+
+xArrName = Array(“subjects”, “Period”, “Subject”, “Group”, “Profit”, “TotalProfit”, “Participate”, “n”, “DEEP_INSTRUCTIONS”, “PICTURE_DEEP”, “TimeNEXTDEEPTIMEINSTRUCTIONSOK”, “TimeOKDEEPTIMEINSTRUCTIONSOK”, “TimePreviousScreenDEEPTIMEINSTRUCTIONSOK”, “TimePICTUREDEEPTIMEINSTRUCTIONSOK”, “TimeOKDEEPCOMPREHENSIONTIMEOK”, “TimeFINISHDEEPCOMPREHENSIONTIMEOK”,  _ 
+“TimeConfirmChoiceDEEPTRIALTIMEOK”, “TimeChooseTheLEFTOptionDEEPTRIALTIMEOK”, “TimeChooseTheRIGHTOptionDEEPTRIALTIMEOK”, “char3”, “char4”, “code3”, “code4”, “path1”, “i”, “TimeConfirmChoiceDEEPMAINTIMEOK”, “TimeFINISHDEEPMAINTIMEOK”, “TimeChooseTheLEFTOptionDEEPMAINTIMEOK”, “TimeChooseTheRIGHTOptionDEEPMAINTIMEOK”, “TimeOKSCALETIMEOK”, “LeaveStage”)
+xCount = MR.Count
+xStr = xArrName(xFNum)
+For xFFNum = xCount To 1 Step -1
+Set xRg = MR(1, xFFNum)
+For xFNum = 0 To UBound(xArrName)
+xStr = xArrName(xFNum)
+If xRg.Value = xStr Then xRg.EntireColumn.Delete
+Next xFNum
+Next
+End Sub
