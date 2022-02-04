@@ -7,7 +7,7 @@ We include codes and scripts for data processing from this method that increase 
 
 In the materials, we have included z-tree files for the DEEP [Risk] and DEEP [Time]. Note that you should accept the z-Tree License Agreement if you want to use these files (https://www.ztree.uzh.ch/en.html).
 
-Further, we have included the adjusted VBA script in order to prepare the data, as well as the maximum likelhood programs for the baseline estimation. 
+Further, we have included the adjusted VBA script in order to prepare the data, as well as the maximum likelhood programs [Stata] for the baseline estimation. 
 
 Finally, you can download other materials related to the DEEP method from: https://github.com/ColumbiaCDS.
 
