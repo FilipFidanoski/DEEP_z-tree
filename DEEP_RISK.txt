@@ -1,0 +1,3267 @@
+treatment "DEEP_RISK"{
+	background{
+		table globals{
+		}
+		table numbers{
+			lifetime = PERIOD;
+			execute = WITHEACH;
+		}
+		table blocks{
+			lifetime = PERIOD;
+			execute = WITHEACH;
+		}
+		table subjects{
+		}
+		table summary{
+		}
+		table contracts{
+		}
+		table session{
+		}
+		table logfile{
+		}
+		numsubjects = 1;
+		numgroups = 1;
+		numpracticeperiods = 0;
+		numactualperiods = 1;
+		exchangerate = 1;
+		startendowment = 0;
+		showupfee = 0;
+		noAutoscope = FALSE;
+		firstBoxesOnTop = FALSE;
+		showupfeeawaytext = "Sie haben Verlust gemacht. Wollen Sie das Startgeld einsetzen, um diesen Verlust zu decken?";
+		showupfeeawayyestext = "Ja";
+		showupfeeawaynotext = "Nein";
+		moneyawaytext = "Sie haben Verlust gemacht. Wollen Sie weiterfahren?";
+		moneyawayyestext = "Ja";
+		moneyawaynotext = "Nein";
+		bancruptwaittext = "Bitte warten Sie bis Ihr Computer wieder freigegeben wird.";
+		program{
+			table = globals;
+			do{
+				///RISK
+				
+				db_coded_indexers_2 = "BAKb";
+				
+				db_coded_indexers_3 = "CAKAWAgA";
+				
+				db_coded_indexers_4 = "BBDbAJHDIABIAbFi";
+				
+				db_coded_indexers_5 = "DAVCAJNANAHDPADbIJHARABMHBNbIICi";
+				
+				db_coded_indexers_6 = "EAADBCIDHCHDZLPCCADbBCIJVCBCIJFbHPJAIJhACbIBPBCMKIISZAZAIbMDBiMB";
+				
+				db_coded_indexers_7 = "FCFBCSFAJBIDDbKCPCLLBCACSCNBPBICIDIDTcFMPJMONBWPVCAJAJObBSPANBFMSOJAHNKaKCBSFbIJKSBbKSSACIASeAKIISISNbFMIbIbBMHSAbHbHIGiPWRIMbKi";
+				
+				db_coded_indexers_8 = "BDHENBBCLLDbIDVADAWBDbVCKBADAJFSBCWCeCNBlCFSMOMOKBMCRNLLVCBCJBHCLGFbZcDBKWJWIDMNObZXFSKBBSNBMONBAJObLcObECYOHBIDfCRPMOIAPJRPRNIJBUJABCFSFCMOkaReSOVPhADbObObKaHNFIJCMOeCFICVHBMAASASPBISNBASASASPJLPASPJHJICFICVITFMPSITHSGiHbLAZAHSHSJBKMAMNbHMIMHMRbNWKiPJNBAi";
+				
+				db_coded_indexers_9 = "GAFBDbBCFSBCCSOAHEXCZGdGFSAJIDBSOAIDJBWBKCRPKBAJKCVCHESCBBHDBBHCFCKCKBKBIDNACBNAPJHPHPZLlCCBBBIJFAICRPdCXCCBRPRNFAFAFCWBIDWCIDeCBMAWHDTGMAhGPEOBgGdKdhIWLOMPTGBBHBIDDbHPhDPBRCZLITDbfCBBHPHNBSNBACBCPCWBMIAWJCPBVPSLDbHPWBFSRPKChDhDBBBBHPHNMOGeObObObPJLOSPHTZXBTDbKCKCFShCFCMOKFHPKeHPJaKeKemeKFObBSeCHNVCNBFIDbKBPJFIkaReBCHJCVhAZLHCFbhDJChDHJHJZXLOBbHJASASCVRDLARDZACICIJBSWABYWISLAISLAISYACVgPHBdKdLSNZPBCIbFCeCPbCVPSITFMZOFIJNYPITFMWBHbEPMPCiHNHNhbNNKIIShBbeBMKINbAIPBAMNIGiKMEBPJJbAbJWSDPIMbSWDBJbGFAiJbRBPbNBSbHi";
+				
+				db_coded_indexers_10 = "FDFDVCBBIEMCNBRPADADADADFCVCCSAJIEdCHEHEeGIWZGMNKCFBFSMOUCAJRPIDADIDADAJCSCSFCDbKBVCJBHEAJPJBBHDVCJCObObICWCRPMCBCVCPJhDAJAJWCeCSOIBIDVCICFAFANAKBZLZLKBNARPIDBBRLYOKAPJWBVCVCACBCHPIJIJVAPCHNJCObObACHCYCRNRPRPVAUCYWPDgLRNBBPDJBJBJCJCFAFAKCKCWCObVCRPJBWCIDRCMDeceGDBOBZXMNDBNWLKKWJWRWMNPDPDMIMAgGHDKWeGBbfGgLSPLOYPBBObdLdGDbVPFCHBKVHBZYIJWPlCABJBLLLLICCFHNNAITgOHNhDBBJCBCHNHPHPITIThDfCBCWCIJDbABJBICIDJWaaeKLGPCICMCHCRBHERBVPBURLZYHNKCDbhDVPlChCVPHBObCFObBBBBNBCBPJKVHNHPBBHNHNJeVQCBNBNBNBIJQCNBObFICBFICBBBTGHTMPADFUBTCbHNSWKFBUKVDbIBJBSOKVBCIBKCHPKCKCKaReKeAJWaKeAaRaCeRaRabZIDSWZYBCVPPCWCWBHPMOABABITNBNBZONBFIRPhDPACBKBSPJaKeKeCQhDHPMONBKBFbNBFMVAICgLeCECECVPZLICHCLOWCITIThDYARNITZORNCbhDhBFIHBHJHBISISMfHBISZARDHBPBZXCVISZXCVHTCIJBObKBhDRDLANBHBPBgAZAhDObgARWhDHSSALPIjSPeAHBSWSWfcHWMNNBIBdcSWSWPbECHSYAHAhAhASCHNJPJNITBIJNFIWBFIWPBIgOHSRBWPPbSPCIFMWBFIWPdABIHNHNCICIRBRBRNhbVRFIKCFIBIKTSBJPLAISHBCMNbhBJebgPSCMNbNbAIRNPbPSNbPBhbSBPBPbSWJBHSHSIMHMZAPbPIJIHIGiMITGNIGFJIPbIjIBKUGFDBRbPbRbMBSBMBSBPIPbRWObNWNWPbYIIiIiYISB";
+				
+				db_coded_indexers_11 = "HEKJaZTGFBKVSOZYAEBCIGHGHPNBMOgLCFIDRNIDFBFBKCCSMLADBBVCADAJPJHPMCLCMCRNOAYWTGUCgGRWLPPWgGFIYPFIBCCSPDgLMOHNhDPJXCDbCBICAJAJFBRNCSIDADZXFCKVJBHPSLHPRLHPSOHPCSBJKBKBObObADKCIEJBHPHDKBHDCSPJPJhDBCBBPDPCKCPDKBJCACeCJCICFSRNRPdCOAVCBCPJHPHPBBWPPJPJPJPJICBBhCBBSBNAIDIDJBNANAFAFAZLIDICIDNAICIDhCFANABBIDCFZLKBBSQCVANARPNBVAZCRBKFFAYWSOPJFAHNWBVPKBFAKCKBgLgLIJIJKVHNPCHNWPNBhDWPhDJCBBHPPCHNRCRPCFKBVCWCPDeCKBObYCdLObRNObgCNBVAVAVAgOCBgOVALCObgLbCbCIDXCBBVCKCIDJCVCJBIDJBKFYLIBlCFAIDIBdLFAFAACWCWBABABRNJBRPObObJBhCIDIDdcdcAGSGZPBILPdGPDFMHTDBDBEBHDOBiaKWcaiaeKcZdKLGIWdLPDEBTGZXDbYPeKYGfcNWTKLGLGCMdcZGCIBbAWHDZPRWRNVANBTGCBObObObdLCBHTCBOBHDfGCBHBHBVPDbVPlCDbVPVPdLIDVPKVHNHNhDlCHPWPWPlClClClChCCFgLVAJCWCDbJCHCBBFBFBCBFMZOSPHChDBSWPSCWPACICHNHNlCITKCKCBCCSHNhDPJPJBBHNhDhDVPdLWBdLFShDKCJCZLACPBJCIBWCdLWCjdiaScceKWcZPWFMZLABABZLYCdCWCeCSLRLURRPCCRBMLFCBTKCCbNCRBZXZYPJWBDbWBKCIJWPVPDbdLICVCSCDbHBAChBPJdCWPVCPJKBNBBBCBPJBBNBITPJBBBBHNHNKCKCKCKCBBHPHPHPHPHPWeDeDZXRZOCVYWITITRPITIJPJNBPJPJITITIJIJNBCBBBObNBObBBYPZXCBOBBBBBOBSPYPRODbADNCFUCMIDRLBCBCAJAJHNHNBTHNZXYOObObHCPCPBIBBUKCDbDbNCKCRPWBHPKeKCKCKVKeKVKekaCeKaVRKaReZKCSKZKZKZBZCeCeKZaZkaBZCebZCeCGIZVRmeVLBUYOVOKVFSDbHDACCbJCWBVCVAHBFCKCeAHPCFVCVCDbhDJAIThDObRPFbLOITNBhDhDhDhDRPKBMABIBBhDIJITLORNKZKZAaRaWZRaRameeAKVKCKCHPHPFbFbhAZOPBIJObKBITObBCVAPCgLZLLLgLWCBSASASHPRCLCWCWPPCWPWPWCUCSPhCWPFbABSARPKBFMSAITABPJZOZYFIFMFMhAHJhDLOFMCbCbYAJBPBJBHPWCPBCIhBCIIjKQFgRAHBPBJNPBIBgAHTIBHBPBHBIShDCVZXKQCVGehDHTKUROLARDCVJNJNhBIjPJZYRNRDRDIBhDgAZAObZXNBYWHSPBMNIjISEBObIjSWHSJWIjPWZAMDPJIjObMAgPgPMNHANbhAMPHBHBeAeAZPCMZPLAZGIWGidcIBABABIBABMNFiPWHBHBHBHBKCZYKCPSIJgcMAgPVLSLACNClCHChAdCXRPSRBCCWPVPPbdALAYPITITJPPSRPJNPSPbPbPbPSdACISPKUCCRBRBCVITYPITgOCILAhBFIPbJNJNCVRBCVCVLOZOPbCIISKTHPFIKTNNJbJbKIYPZYAIYPWBMPgLmeQRFMXRHPXRFMNCWPJbHPITNPNPJbWPIBZPLAMDZPPBHSKQCVXRHTNbWeKeEeVRMPCINbNbPbPbPBLPPbKUGFYWJBhBKUhBHbSWhDPbZXIMGiYBSWPBSDIMhDNIeAHMRWHbAbHbAMHMSWJbTGdGSDSNOBOBGFRbLAZASDZAGiJIHMdhRbPEGiNBIjdGJbJbfKMBSDeGURObPSMDJbIjPbMBYDPWJWMBPJSbSBMDSBYBHiRIfcNWfGRbMBRBRBMIMBMBMBMBMBMBSbIjYIJBPBPJJWYbSBPW";
+				
+				db_coded_indexers_12 = "IEVCAESOTZMGLGPESOKCGAKFRLZXGACSBJKJOBKJRCAChCYCYWZXKJCSCSCFOBFSgLJCKCKCRPHEOAOAPDFCCSCSCBJCCBFBKBdLVCPDZYHPBBHPKCPDPJHPCSHPHNHNhCfCdCNBSCRNRPNBIEDbOARNMPgOOAYWMDLGOAOAgPMDOADBeGFMfGfGTGVAVAFMVCCSHCBBVALLdCTCBCCBICHDBBWPhDCSCBDbYWCBVANBCBCBFBFBIThDDBFIHDFIYLYWHPAJdLKVJBAJDbDbKBPDPJOAHNHNEADbYOIDBJGAYOIDGAKVKVAJSOFCXRSLVCVCVCPDPDPDKBPDKCVCdLdLTGVCKCKCHDHNPJKBAJAJHPhDZXMOMOMOHPhDWPWPPDKBPDCSADKBPDICPDKBKCADPDPDPDACIEIEIEMCRPKBKBHCACFAKBKBYCYCRPRPDADACSMOCSPJCSMOHNHNDAVCWPWPHPHPCSZLZLZLMOMOMOMOBBBBZLFABBBBZLFAFJFJKFKFWBPBNAWBJBABKBFAIDFAIDJCIDNAFABBACACNAKBKBFSZLKBObFAICKBFAFAhChCFAKBhCNAFAFASCBBCFCFIDObRPHDRPRPVANAVAQCBBTCRPfCVAVABBfCVLRBMLKAPAIDFAHPBUKFFUKFIDWBFAVPhDHBVPVPFAKBNAVCKBVCKCVCCFBBJCWChDhDWPhDHNHNKAIJWPFBHPHPNBNACBNBJCPCPCVABBBBhDICJCJCBBITNBNBICHPKBKBKBRNIDKBYCRPJBJCPCJBRNFAPDRCFAKBFAKBKBKBIEYCIDFAKBdLIDFAfCRNVAObObCBObVAObCBObMPIDVAVAMPNBCBZCObBBIDPDBBPDPDIDIDgLRPYWUCNBBBJBJCObJCVCVCIDVCJBObACWCVCVCIDACVPRLKAVPWBIBHBIBObIDFAPBFAIDRPIBACJBJBJBJCAJJBJBVCdLJBVCFAWBABKAFAFAABRNAJJBAJAJhCRPObObJBObRPZLOBDBOAOALcZcKWfcBIOAZGZPfGBIfGOBOBOBYPPDDBFBYPSPDBOBgPPEDBPDDBOBgKjeHGaZDWDWDWDAQKSGCIfKZPZPDBHWHDdGPWPWHDHTTGHDMNHDFbYPFbFMMPHDYGMANIhGTKdKLGfcfKBBfcCMBBBBHEMAYNYNHDdcHDKWRDCIHDfGeGAWRWBMdGdLfCTCPDNBMPdLNBdLZORNSWBBSPCBFbCBBBObIDCBPDHDBBdLdGPEOBOBgPCBIDCBlChBlChBDbDbVPVPYLMLHBKCHBlCVPHBVPHBSLFCFCObFCIDDbObIJIJZYVPWPWPIJIJlCIBIJIJIJIJABKCPBKCJBKCIBKCWCeCPJJCKBKBCFDbACPJDbHCLLdCACICNBeCBBMfFBFBOBFBRPRPZORNCBFIFIYPMOeCPJWPPJRPHNPJHNYCCFHNVAVAVAVAhDhDhDhDBCKCKCGehDKehDCehDlCITHJNBPJCBPJhDFIgODBBSBSfCBBBBBBBBBBYLdLlClCWBPCRNICYOObKVHNWBJBWBWBAChDABPBABJCJBDbDbPJIBIBRNICICWBiecaUCPWJWKWKWKWcaaZJWJWdKeGLLZGACACZLZLZLPBABCFZLZLZLZLIBIBJBJBRBVPSBVLbRXRRNLhYLKFVLFJCbdLVPdLADPJSOPJRBECECRBObSOSOIJNCZXFCSOIJDbMOWBKCHBHBWBWPWPIJIJhBDbhBhBKCKCdLHClCRCeCgOVPVPDbDbWBWBHBVPKBAJMCPAHCBBKCVANBHNKBKBNBNBWPWPCBPJNBNBPJNBPJPJPJLOCBCBITNBITNBBCWPKCKCITGeITVQKVXgKVPKBSWPKVITGeBBBBBBBBBBBBBBKeDeOeOeDeRekaeKFIgOFIBBgOITCVRNIJBBIJIJIJCVITITNBBShDhDBSBSBSIJObRNObRNNBNBNBNBZONBgOgOBBIJCBFILOLOBBYWMPYPMPObZYYPZYZYLPBbOBMNZYZYMNBBBBBBBBRNieRWFUFJROPDSBCMADNCKFFUSBVLECVLGFITAJROPJPJPJPJFCFCFCFCFUHNADCSObHNDbYWPAPAPAPAJBDbObJCBSObRCeCDbBTHNBUObObYOObdLObObBSPBgLRCVCGFGFKaReGFBeGFBgKaGFKaEeKaBCKaedJaCeRaBZCeaZRaXZkaCeKaVRKWDWIEHJkekeKekeWaWaCQCeJaPAKZRaCeCeBQCeKZKZEeRaKZPAEeCeKeKeCeRGMfVQZhbRRGVQVLDbIDBTBUBUKFKFFSYOdLNCHDHDhBObHDPCACACCbICVClCHCWBBSgLBSCbKFKCKVVQHPHPKCCFABABMOABeAeAVCHCJACVPAFbhDhDJAITITFbObObJAObCBSPCVhDITITITNBCVCVKBKBITNBKBKBDbBSDbRADbBbZOgOFMFMKBITKBZOZOFMMPSWWaWaKeWaJaJaCemeDZkaCemeCeCGRKbgWPWPWPWPKVFSKVFSKCKChDAJITLONBNBKBKBhALOObPBbCABRNRNLOLOHJNBHJSPHNHPRBRBACFbFbLLWPLLFbFbZLhCgLLLSBASPSHNHDKCKVPSVAVAeAeAHCWPVCLLKCVAhDVAhDVAWPVAXChAABYPWPWPhClCWPABhDCbFMYAPBPBLOgOITObFMMAFMMASASAhAABFILOMPCIPBhDFIeAIBSPMPMPKSYAeAJBFISPHJPBKShDFbBbITZCIThDSPFMJNFIBCECRBPSCVPBISYPJNhBHSGeMfITCQIgAiBgSWhAHTPBHBHTHTHTJNJNZXHTHTRDHBIBIBIBHTPBHBHTHBHBHBHTeACIZYYAKQITGeIQITYAKQDZHBHBHBHBTGIjYXIAgAgAPBPBKUGeRDHSIThBhBhBdGDbSAhDRNCIRDgPSWSWNBRNRNRNABASRNKBKBZYCbHTgANBObNBCQIjIjKaRDHSKBIjXZHJIjObMNOBOBKBKaPJRNOBIjABNIPWDWDbNIZAdLDBMNMNDBEBPWMDOBRNhALPABMNABABABZPTCMPHSSAXCLORNdLhDhDhDhDSWCMSWLAIBIBhDLARDLAgPeAYATKMIHWIWAIJWDBNBZPObNBMNABPJZPABABIBIBPWZGfGGiRDRDLALPIBIbLALAHNASASYOPbPbRPPCSPPBUCMAGidhPBMNIAIAVLeAIAVPdLeAHAVCWCeARPRChALCbQVPhAIbRBRBXRECPSPSVPVPPSIbPSPSJNJNSPhBWBRPWBWBHNPSWBPbJNPSZAWBhDKUISCVCVCVJNJNISWBPSPSBIBIISYPCCCFXRLhCVCVCVCVPbITCVVPSPBMVPBIdALOLOLAhBhBMPhBCVPbCVCVRPWBWBWBVRHNRBRBLAPbVPJNgOSPCIPbWBJNPbZOSOSOZYKUITKCFMWPHPHNSBJNFIFIRPhbWBHSSPAIRNWBRBhDSPMPgPhBdLhBBTRPRGVQVRRCMOCVVQQCGFGFVRHCKTbRbRVPFMCIVPKIICHNKVGiSBZCECCFMCEPJbCMABeAISIBSNMDABSNLPSWZYLACVKQGeMQKUXZbZXCMPRDJBVRkeKeCeEeKeQemebRHTCIBIPbCVMPISZAIjbehBBMAIPBhDYWIjKeGeIjKeGBhDJBYWCVKUhBVRIjhBhBhDYWhDPBSWIjAMAMJbCVPIbgPIPIPIPIObKMJBPbPBPBPBeAMNIMIMJbPBdLJbYWHIAbHIHBIbHIAMIBEBPbEBObhDPISDYDHIdhIBRWIMYNJBSDYNPBPBhDObJBGFGFfcAWMbGifGAMDBGFHBdGHMMbGFSDdGHBKiGFfGIjPJPJRWNBKQJbNBNBRWRIJIRIeKIBMBeKfcHMNWHBRehXGFPJEBSBPSYWMBPbKaKUPEPJMBPEdKRbJWMbPWPJJWYIPWKUKURIAiKUhBPSSBIiPShBMBSDGFhDZAeGYDNBNBNBTGMBJBRBObObRWMBOBMBJbNBJbNBNBRbNBRbNWNWNWNWJWRWKQYbHiPJPbYDPBPBRBPWPBRWPWSBYIKVPJJW"; 
+			}
+		}
+		program{
+			table = globals;
+			do{
+				///RISK
+				
+				array dr_outcomes_A_chance_1[40]; 
+				dr_outcomes_A_chance_1[1] = 0.9; 
+				dr_outcomes_A_chance_1[2] = 0.7; 
+				dr_outcomes_A_chance_1[3] = 0.5; 
+				dr_outcomes_A_chance_1[4] = 0.1; 
+				dr_outcomes_A_chance_1[5] = 0.3; 
+				dr_outcomes_A_chance_1[6] = 0.7; 
+				dr_outcomes_A_chance_1[7] = 0.1; 
+				dr_outcomes_A_chance_1[8] = 0.3; 
+				dr_outcomes_A_chance_1[9] = 0.1; 
+				dr_outcomes_A_chance_1[10] = 0.3; 
+				dr_outcomes_A_chance_1[11] = 0.5; 
+				dr_outcomes_A_chance_1[12] = 0.9; 
+				dr_outcomes_A_chance_1[13] = 0.9; 
+				dr_outcomes_A_chance_1[14] = 0.3; 
+				dr_outcomes_A_chance_1[15] = 0.1; 
+				dr_outcomes_A_chance_1[16] = 0.9; 
+				dr_outcomes_A_chance_1[17] = 0.7; 
+				dr_outcomes_A_chance_1[18] = 0.5; 
+				dr_outcomes_A_chance_1[19] = 0.7; 
+				dr_outcomes_A_chance_1[20] = 0.5; 
+				dr_outcomes_A_chance_1[21] = 0.9; 
+				dr_outcomes_A_chance_1[22] = 0.5; 
+				dr_outcomes_A_chance_1[23] = 0.3; 
+				dr_outcomes_A_chance_1[24] = 0.9; 
+				dr_outcomes_A_chance_1[25] = 0.7; 
+				dr_outcomes_A_chance_1[26] = 0.7; 
+				dr_outcomes_A_chance_1[27] = 0.3; 
+				dr_outcomes_A_chance_1[28] = 0.7; 
+				dr_outcomes_A_chance_1[29] = 0.3; 
+				dr_outcomes_A_chance_1[30] = 0.1; 
+				dr_outcomes_A_chance_1[31] = 0.1; 
+				dr_outcomes_A_chance_1[32] = 0.3; 
+				dr_outcomes_A_chance_1[33] = 0.9; 
+				dr_outcomes_A_chance_1[34] = 0.1; 
+				dr_outcomes_A_chance_1[35] = 0.5; 
+				dr_outcomes_A_chance_1[36] = 0.7; 
+				dr_outcomes_A_chance_1[37] = 0.1; 
+				dr_outcomes_A_chance_1[38] = 0.3; 
+				dr_outcomes_A_chance_1[39] = 0.5; 
+				dr_outcomes_A_chance_1[40] = 0.7; 
+				
+				array dr_outcomes_A_percent_1[40]; 
+				dr_outcomes_A_percent_1[1] = 9; 
+				dr_outcomes_A_percent_1[2] = 7; 
+				dr_outcomes_A_percent_1[3] = 5; 
+				dr_outcomes_A_percent_1[4] = 1; 
+				dr_outcomes_A_percent_1[5] = 3; 
+				dr_outcomes_A_percent_1[6] = 7; 
+				dr_outcomes_A_percent_1[7] = 1; 
+				dr_outcomes_A_percent_1[8] = 3; 
+				dr_outcomes_A_percent_1[9] = 1; 
+				dr_outcomes_A_percent_1[10] = 3; 
+				dr_outcomes_A_percent_1[11] = 5; 
+				dr_outcomes_A_percent_1[12] = 9; 
+				dr_outcomes_A_percent_1[13] = 9; 
+				dr_outcomes_A_percent_1[14] = 3; 
+				dr_outcomes_A_percent_1[15] = 1; 
+				dr_outcomes_A_percent_1[16] = 9; 
+				dr_outcomes_A_percent_1[17] = 7; 
+				dr_outcomes_A_percent_1[18] = 5; 
+				dr_outcomes_A_percent_1[19] = 7; 
+				dr_outcomes_A_percent_1[20] = 5; 
+				dr_outcomes_A_percent_1[21] = 9; 
+				dr_outcomes_A_percent_1[22] = 5; 
+				dr_outcomes_A_percent_1[23] = 3; 
+				dr_outcomes_A_percent_1[24] = 9; 
+				dr_outcomes_A_percent_1[25] = 7; 
+				dr_outcomes_A_percent_1[26] = 7; 
+				dr_outcomes_A_percent_1[27] = 3; 
+				dr_outcomes_A_percent_1[28] = 7; 
+				dr_outcomes_A_percent_1[29] = 3; 
+				dr_outcomes_A_percent_1[30] = 1; 
+				dr_outcomes_A_percent_1[31] = 1; 
+				dr_outcomes_A_percent_1[32] = 3; 
+				dr_outcomes_A_percent_1[33] = 9; 
+				dr_outcomes_A_percent_1[34] = 1; 
+				dr_outcomes_A_percent_1[35] = 5; 
+				dr_outcomes_A_percent_1[36] = 7; 
+				dr_outcomes_A_percent_1[37] = 1; 
+				dr_outcomes_A_percent_1[38] = 3; 
+				dr_outcomes_A_percent_1[39] = 5; 
+				dr_outcomes_A_percent_1[40] = 7;
+				
+				
+				array dr_outcomes_A_amount_1[40]; 
+				dr_outcomes_A_amount_1[1] =1; 
+				dr_outcomes_A_amount_1[2] = 1; 
+				dr_outcomes_A_amount_1[3] = 1; 
+				dr_outcomes_A_amount_1[4] = 30; 
+				dr_outcomes_A_amount_1[5] = 40; 
+				dr_outcomes_A_amount_1[6] = 1; 
+				dr_outcomes_A_amount_1[7] = 1; 
+				dr_outcomes_A_amount_1[8] = 1; 
+				dr_outcomes_A_amount_1[9] = 1; 
+				dr_outcomes_A_amount_1[10] = 30; 
+				dr_outcomes_A_amount_1[11] = 1; 
+				dr_outcomes_A_amount_1[12] = 40; 
+				dr_outcomes_A_amount_1[13] = 30; 
+				dr_outcomes_A_amount_1[14] = 30; 
+				dr_outcomes_A_amount_1[15] = 40; 
+				dr_outcomes_A_amount_1[16] = 1; 
+				dr_outcomes_A_amount_1[17] = 100; 
+				dr_outcomes_A_amount_1[18] = 30; 
+				dr_outcomes_A_amount_1[19] = 30; 
+				dr_outcomes_A_amount_1[20] = 100; 
+				dr_outcomes_A_amount_1[21] = 100; 
+				dr_outcomes_A_amount_1[22] = 40; 
+				dr_outcomes_A_amount_1[23] = 40; 
+				dr_outcomes_A_amount_1[24] = 100; 
+				dr_outcomes_A_amount_1[25] = 30; 
+				dr_outcomes_A_amount_1[26] = 40; 
+				dr_outcomes_A_amount_1[27] = 300; 
+				dr_outcomes_A_amount_1[28] = 100; 
+				dr_outcomes_A_amount_1[29] = 300; 
+				dr_outcomes_A_amount_1[30] = 100; 
+				dr_outcomes_A_amount_1[31] = 100; 
+				dr_outcomes_A_amount_1[32] = 100; 
+				dr_outcomes_A_amount_1[33] = 40; 
+				dr_outcomes_A_amount_1[34] = 40; 
+				dr_outcomes_A_amount_1[35] = 300; 
+				dr_outcomes_A_amount_1[36] = 300; 
+				dr_outcomes_A_amount_1[37] = 300; 
+				dr_outcomes_A_amount_1[38] = 100; 
+				dr_outcomes_A_amount_1[39] = 300; 
+				dr_outcomes_A_amount_1[40] = 300; 
+				
+				array dr_outcomes_A_chance_2[40]; 
+				dr_outcomes_A_chance_2[1] = 0.1; 
+				dr_outcomes_A_chance_2[2] = 0.3; 
+				dr_outcomes_A_chance_2[3] = 0.5; 
+				dr_outcomes_A_chance_2[4] = 0.9; 
+				dr_outcomes_A_chance_2[5] = 0.7; 
+				dr_outcomes_A_chance_2[6] = 0.3; 
+				dr_outcomes_A_chance_2[7] = 0.9; 
+				dr_outcomes_A_chance_2[8] = 0.7; 
+				dr_outcomes_A_chance_2[9] = 0.9; 
+				dr_outcomes_A_chance_2[10] = 0.7; 
+				dr_outcomes_A_chance_2[11] = 0.5; 
+				dr_outcomes_A_chance_2[12] = 0.1; 
+				dr_outcomes_A_chance_2[13] = 0.1; 
+				dr_outcomes_A_chance_2[14] = 0.7; 
+				dr_outcomes_A_chance_2[15] = 0.9; 
+				dr_outcomes_A_chance_2[16] = 0.1; 
+				dr_outcomes_A_chance_2[17] = 0.3; 
+				dr_outcomes_A_chance_2[18] = 0.5; 
+				dr_outcomes_A_chance_2[19] = 0.3; 
+				dr_outcomes_A_chance_2[20] = 0.5; 
+				dr_outcomes_A_chance_2[21] = 0.1; 
+				dr_outcomes_A_chance_2[22] = 0.5; 
+				dr_outcomes_A_chance_2[23] = 0.7; 
+				dr_outcomes_A_chance_2[24] = 0.1; 
+				dr_outcomes_A_chance_2[25] = 0.3; 
+				dr_outcomes_A_chance_2[26] = 0.3; 
+				dr_outcomes_A_chance_2[27] = 0.7; 
+				dr_outcomes_A_chance_2[28] = 0.3; 
+				dr_outcomes_A_chance_2[29] = 0.7; 
+				dr_outcomes_A_chance_2[30] = 0.9; 
+				dr_outcomes_A_chance_2[31] = 0.9; 
+				dr_outcomes_A_chance_2[32] = 0.7; 
+				dr_outcomes_A_chance_2[33] = 0.1; 
+				dr_outcomes_A_chance_2[34] = 0.9; 
+				dr_outcomes_A_chance_2[35] = 0.5; 
+				dr_outcomes_A_chance_2[36] = 0.3; 
+				dr_outcomes_A_chance_2[37] = 0.9; 
+				dr_outcomes_A_chance_2[38] = 0.7; 
+				dr_outcomes_A_chance_2[39] = 0.5; 
+				dr_outcomes_A_chance_2[40] = 0.3; 
+				
+				array dr_outcomes_A_percent_2[40]; 
+				dr_outcomes_A_percent_2[1] = 1; 
+				dr_outcomes_A_percent_2[2] = 3; 
+				dr_outcomes_A_percent_2[3] = 5; 
+				dr_outcomes_A_percent_2[4] = 9; 
+				dr_outcomes_A_percent_2[5] = 7; 
+				dr_outcomes_A_percent_2[6] = 3; 
+				dr_outcomes_A_percent_2[7] = 9; 
+				dr_outcomes_A_percent_2[8] = 7; 
+				dr_outcomes_A_percent_2[9] = 9; 
+				dr_outcomes_A_percent_2[10] = 7; 
+				dr_outcomes_A_percent_2[11] = 5; 
+				dr_outcomes_A_percent_2[12] = 1; 
+				dr_outcomes_A_percent_2[13] = 1; 
+				dr_outcomes_A_percent_2[14] = 7; 
+				dr_outcomes_A_percent_2[15] = 9; 
+				dr_outcomes_A_percent_2[16] = 1; 
+				dr_outcomes_A_percent_2[17] = 3; 
+				dr_outcomes_A_percent_2[18] = 5; 
+				dr_outcomes_A_percent_2[19] = 3; 
+				dr_outcomes_A_percent_2[20] = 5; 
+				dr_outcomes_A_percent_2[21] = 1; 
+				dr_outcomes_A_percent_2[22] = 5; 
+				dr_outcomes_A_percent_2[23] = 7; 
+				dr_outcomes_A_percent_2[24] = 1; 
+				dr_outcomes_A_percent_2[25] = 3; 
+				dr_outcomes_A_percent_2[26] = 3; 
+				dr_outcomes_A_percent_2[27] = 7; 
+				dr_outcomes_A_percent_2[28] = 3; 
+				dr_outcomes_A_percent_2[29] = 7; 
+				dr_outcomes_A_percent_2[30] = 9; 
+				dr_outcomes_A_percent_2[31] = 9; 
+				dr_outcomes_A_percent_2[32] = 7; 
+				dr_outcomes_A_percent_2[33] = 1; 
+				dr_outcomes_A_percent_2[34] = 9; 
+				dr_outcomes_A_percent_2[35] = 5; 
+				dr_outcomes_A_percent_2[36] = 3; 
+				dr_outcomes_A_percent_2[37] = 9; 
+				dr_outcomes_A_percent_2[38] = 7; 
+				dr_outcomes_A_percent_2[39] = 5; 
+				dr_outcomes_A_percent_2[40] = 3;
+				
+				
+				array dr_outcomes_A_amount_2[40]; 
+				dr_outcomes_A_amount_2[1] = 5; 
+				dr_outcomes_A_amount_2[2] = -15; 
+				dr_outcomes_A_amount_2[3] = -10; 
+				dr_outcomes_A_amount_2[4] = -10; 
+				dr_outcomes_A_amount_2[5] = -15; 
+				dr_outcomes_A_amount_2[6] = -20; 
+				dr_outcomes_A_amount_2[7] = -15; 
+				dr_outcomes_A_amount_2[8] = 10; 
+				dr_outcomes_A_amount_2[9] = 5; 
+				dr_outcomes_A_amount_2[10] = -5; 
+				dr_outcomes_A_amount_2[11] = -5; 
+				dr_outcomes_A_amount_2[12] = 10; 
+				dr_outcomes_A_amount_2[13] = -15; 
+				dr_outcomes_A_amount_2[14] = -10; 
+				dr_outcomes_A_amount_2[15] = -10; 
+				dr_outcomes_A_amount_2[16] = 30; 
+				dr_outcomes_A_amount_2[17] = -5; 
+				dr_outcomes_A_amount_2[18] = -5; 
+				dr_outcomes_A_amount_2[19] = 5; 
+				dr_outcomes_A_amount_2[20] = 5; 
+				dr_outcomes_A_amount_2[21] = 30; 
+				dr_outcomes_A_amount_2[22] = -20; 
+				dr_outcomes_A_amount_2[23] = -5; 
+				dr_outcomes_A_amount_2[24] = -10; 
+				dr_outcomes_A_amount_2[25] = 10; 
+				dr_outcomes_A_amount_2[26] = 30; 
+				dr_outcomes_A_amount_2[27] = 5; 
+				dr_outcomes_A_amount_2[28] = -15; 
+				dr_outcomes_A_amount_2[29] = 30; 
+				dr_outcomes_A_amount_2[30] = 30; 
+				dr_outcomes_A_amount_2[31] = 10; 
+				dr_outcomes_A_amount_2[32] = 10; 
+				dr_outcomes_A_amount_2[33] = 5; 
+				dr_outcomes_A_amount_2[34] = 10; 
+				dr_outcomes_A_amount_2[35] = 10; 
+				dr_outcomes_A_amount_2[36] = 30; 
+				dr_outcomes_A_amount_2[37] = -5; 
+				dr_outcomes_A_amount_2[38] = -20; 
+				dr_outcomes_A_amount_2[39] = -15; 
+				dr_outcomes_A_amount_2[40] = -10; 
+				
+			}
+		}
+		program{
+			table = globals;
+			do{
+				/// RISK
+				
+				array dr_outcomes_A_chance_1[40]; 
+				dr_outcomes_A_chance_1[1] = 0.9; 
+				dr_outcomes_A_chance_1[2] = 0.7; 
+				dr_outcomes_A_chance_1[3] = 0.5; 
+				dr_outcomes_A_chance_1[4] = 0.1; 
+				dr_outcomes_A_chance_1[5] = 0.3; 
+				dr_outcomes_A_chance_1[6] = 0.7; 
+				dr_outcomes_A_chance_1[7] = 0.1; 
+				dr_outcomes_A_chance_1[8] = 0.3; 
+				dr_outcomes_A_chance_1[9] = 0.1; 
+				dr_outcomes_A_chance_1[10] = 0.3; 
+				dr_outcomes_A_chance_1[11] = 0.5; 
+				dr_outcomes_A_chance_1[12] = 0.9; 
+				dr_outcomes_A_chance_1[13] = 0.9; 
+				dr_outcomes_A_chance_1[14] = 0.3; 
+				dr_outcomes_A_chance_1[15] = 0.1; 
+				dr_outcomes_A_chance_1[16] = 0.9; 
+				dr_outcomes_A_chance_1[17] = 0.7; 
+				dr_outcomes_A_chance_1[18] = 0.5; 
+				dr_outcomes_A_chance_1[19] = 0.7; 
+				dr_outcomes_A_chance_1[20] = 0.5; 
+				dr_outcomes_A_chance_1[21] = 0.9; 
+				dr_outcomes_A_chance_1[22] = 0.5; 
+				dr_outcomes_A_chance_1[23] = 0.3; 
+				dr_outcomes_A_chance_1[24] = 0.9; 
+				dr_outcomes_A_chance_1[25] = 0.7; 
+				dr_outcomes_A_chance_1[26] = 0.7; 
+				dr_outcomes_A_chance_1[27] = 0.3; 
+				dr_outcomes_A_chance_1[28] = 0.7; 
+				dr_outcomes_A_chance_1[29] = 0.3; 
+				dr_outcomes_A_chance_1[30] = 0.1; 
+				dr_outcomes_A_chance_1[31] = 0.1; 
+				dr_outcomes_A_chance_1[32] = 0.3; 
+				dr_outcomes_A_chance_1[33] = 0.9; 
+				dr_outcomes_A_chance_1[34] = 0.1; 
+				dr_outcomes_A_chance_1[35] = 0.5; 
+				dr_outcomes_A_chance_1[36] = 0.7; 
+				dr_outcomes_A_chance_1[37] = 0.1; 
+				dr_outcomes_A_chance_1[38] = 0.3; 
+				dr_outcomes_A_chance_1[39] = 0.5; 
+				dr_outcomes_A_chance_1[40] = 0.7; 
+				
+				array dr_outcomes_A_percent_1[40]; 
+				dr_outcomes_A_percent_1[1] = 9; 
+				dr_outcomes_A_percent_1[2] = 7; 
+				dr_outcomes_A_percent_1[3] = 5; 
+				dr_outcomes_A_percent_1[4] = 1; 
+				dr_outcomes_A_percent_1[5] = 3; 
+				dr_outcomes_A_percent_1[6] = 7; 
+				dr_outcomes_A_percent_1[7] = 1; 
+				dr_outcomes_A_percent_1[8] = 3; 
+				dr_outcomes_A_percent_1[9] = 1; 
+				dr_outcomes_A_percent_1[10] = 3; 
+				dr_outcomes_A_percent_1[11] = 5; 
+				dr_outcomes_A_percent_1[12] = 9; 
+				dr_outcomes_A_percent_1[13] = 9; 
+				dr_outcomes_A_percent_1[14] = 3; 
+				dr_outcomes_A_percent_1[15] = 1; 
+				dr_outcomes_A_percent_1[16] = 9; 
+				dr_outcomes_A_percent_1[17] = 7; 
+				dr_outcomes_A_percent_1[18] = 5; 
+				dr_outcomes_A_percent_1[19] = 7; 
+				dr_outcomes_A_percent_1[20] = 5; 
+				dr_outcomes_A_percent_1[21] = 9; 
+				dr_outcomes_A_percent_1[22] = 5; 
+				dr_outcomes_A_percent_1[23] = 3; 
+				dr_outcomes_A_percent_1[24] = 9; 
+				dr_outcomes_A_percent_1[25] = 7; 
+				dr_outcomes_A_percent_1[26] = 7; 
+				dr_outcomes_A_percent_1[27] = 3; 
+				dr_outcomes_A_percent_1[28] = 7; 
+				dr_outcomes_A_percent_1[29] = 3; 
+				dr_outcomes_A_percent_1[30] = 1; 
+				dr_outcomes_A_percent_1[31] = 1; 
+				dr_outcomes_A_percent_1[32] = 3; 
+				dr_outcomes_A_percent_1[33] = 9; 
+				dr_outcomes_A_percent_1[34] = 1; 
+				dr_outcomes_A_percent_1[35] = 5; 
+				dr_outcomes_A_percent_1[36] = 7; 
+				dr_outcomes_A_percent_1[37] = 1; 
+				dr_outcomes_A_percent_1[38] = 3; 
+				dr_outcomes_A_percent_1[39] = 5; 
+				dr_outcomes_A_percent_1[40] = 7;
+				
+				
+				array dr_outcomes_A_amount_1[40]; 
+				dr_outcomes_A_amount_1[1] =1; 
+				dr_outcomes_A_amount_1[2] = 1; 
+				dr_outcomes_A_amount_1[3] = 1; 
+				dr_outcomes_A_amount_1[4] = 30; 
+				dr_outcomes_A_amount_1[5] = 40; 
+				dr_outcomes_A_amount_1[6] = 1; 
+				dr_outcomes_A_amount_1[7] = 1; 
+				dr_outcomes_A_amount_1[8] = 1; 
+				dr_outcomes_A_amount_1[9] = 1; 
+				dr_outcomes_A_amount_1[10] = 30; 
+				dr_outcomes_A_amount_1[11] = 1; 
+				dr_outcomes_A_amount_1[12] = 40; 
+				dr_outcomes_A_amount_1[13] = 30; 
+				dr_outcomes_A_amount_1[14] = 30; 
+				dr_outcomes_A_amount_1[15] = 40; 
+				dr_outcomes_A_amount_1[16] = 1; 
+				dr_outcomes_A_amount_1[17] = 100; 
+				dr_outcomes_A_amount_1[18] = 30; 
+				dr_outcomes_A_amount_1[19] = 30; 
+				dr_outcomes_A_amount_1[20] = 100; 
+				dr_outcomes_A_amount_1[21] = 100; 
+				dr_outcomes_A_amount_1[22] = 40; 
+				dr_outcomes_A_amount_1[23] = 40; 
+				dr_outcomes_A_amount_1[24] = 100; 
+				dr_outcomes_A_amount_1[25] = 30; 
+				dr_outcomes_A_amount_1[26] = 40; 
+				dr_outcomes_A_amount_1[27] = 300; 
+				dr_outcomes_A_amount_1[28] = 100; 
+				dr_outcomes_A_amount_1[29] = 300; 
+				dr_outcomes_A_amount_1[30] = 100; 
+				dr_outcomes_A_amount_1[31] = 100; 
+				dr_outcomes_A_amount_1[32] = 100; 
+				dr_outcomes_A_amount_1[33] = 40; 
+				dr_outcomes_A_amount_1[34] = 40; 
+				dr_outcomes_A_amount_1[35] = 300; 
+				dr_outcomes_A_amount_1[36] = 300; 
+				dr_outcomes_A_amount_1[37] = 300; 
+				dr_outcomes_A_amount_1[38] = 100; 
+				dr_outcomes_A_amount_1[39] = 300; 
+				dr_outcomes_A_amount_1[40] = 300; 
+				
+				array dr_outcomes_A_chance_2[40]; 
+				dr_outcomes_A_chance_2[1] = 0.1; 
+				dr_outcomes_A_chance_2[2] = 0.3; 
+				dr_outcomes_A_chance_2[3] = 0.5; 
+				dr_outcomes_A_chance_2[4] = 0.9; 
+				dr_outcomes_A_chance_2[5] = 0.7; 
+				dr_outcomes_A_chance_2[6] = 0.3; 
+				dr_outcomes_A_chance_2[7] = 0.9; 
+				dr_outcomes_A_chance_2[8] = 0.7; 
+				dr_outcomes_A_chance_2[9] = 0.9; 
+				dr_outcomes_A_chance_2[10] = 0.7; 
+				dr_outcomes_A_chance_2[11] = 0.5; 
+				dr_outcomes_A_chance_2[12] = 0.1; 
+				dr_outcomes_A_chance_2[13] = 0.1; 
+				dr_outcomes_A_chance_2[14] = 0.7; 
+				dr_outcomes_A_chance_2[15] = 0.9; 
+				dr_outcomes_A_chance_2[16] = 0.1; 
+				dr_outcomes_A_chance_2[17] = 0.3; 
+				dr_outcomes_A_chance_2[18] = 0.5; 
+				dr_outcomes_A_chance_2[19] = 0.3; 
+				dr_outcomes_A_chance_2[20] = 0.5; 
+				dr_outcomes_A_chance_2[21] = 0.1; 
+				dr_outcomes_A_chance_2[22] = 0.5; 
+				dr_outcomes_A_chance_2[23] = 0.7; 
+				dr_outcomes_A_chance_2[24] = 0.1; 
+				dr_outcomes_A_chance_2[25] = 0.3; 
+				dr_outcomes_A_chance_2[26] = 0.3; 
+				dr_outcomes_A_chance_2[27] = 0.7; 
+				dr_outcomes_A_chance_2[28] = 0.3; 
+				dr_outcomes_A_chance_2[29] = 0.7; 
+				dr_outcomes_A_chance_2[30] = 0.9; 
+				dr_outcomes_A_chance_2[31] = 0.9; 
+				dr_outcomes_A_chance_2[32] = 0.7; 
+				dr_outcomes_A_chance_2[33] = 0.1; 
+				dr_outcomes_A_chance_2[34] = 0.9; 
+				dr_outcomes_A_chance_2[35] = 0.5; 
+				dr_outcomes_A_chance_2[36] = 0.3; 
+				dr_outcomes_A_chance_2[37] = 0.9; 
+				dr_outcomes_A_chance_2[38] = 0.7; 
+				dr_outcomes_A_chance_2[39] = 0.5; 
+				dr_outcomes_A_chance_2[40] = 0.3; 
+				
+				array dr_outcomes_A_percent_2[40]; 
+				dr_outcomes_A_percent_2[1] = 1; 
+				dr_outcomes_A_percent_2[2] = 3; 
+				dr_outcomes_A_percent_2[3] = 5; 
+				dr_outcomes_A_percent_2[4] = 9; 
+				dr_outcomes_A_percent_2[5] = 7; 
+				dr_outcomes_A_percent_2[6] = 3; 
+				dr_outcomes_A_percent_2[7] = 9; 
+				dr_outcomes_A_percent_2[8] = 7; 
+				dr_outcomes_A_percent_2[9] = 9; 
+				dr_outcomes_A_percent_2[10] = 7; 
+				dr_outcomes_A_percent_2[11] = 5; 
+				dr_outcomes_A_percent_2[12] = 1; 
+				dr_outcomes_A_percent_2[13] = 1; 
+				dr_outcomes_A_percent_2[14] = 7; 
+				dr_outcomes_A_percent_2[15] = 9; 
+				dr_outcomes_A_percent_2[16] = 1; 
+				dr_outcomes_A_percent_2[17] = 3; 
+				dr_outcomes_A_percent_2[18] = 5; 
+				dr_outcomes_A_percent_2[19] = 3; 
+				dr_outcomes_A_percent_2[20] = 5; 
+				dr_outcomes_A_percent_2[21] = 1; 
+				dr_outcomes_A_percent_2[22] = 5; 
+				dr_outcomes_A_percent_2[23] = 7; 
+				dr_outcomes_A_percent_2[24] = 1; 
+				dr_outcomes_A_percent_2[25] = 3; 
+				dr_outcomes_A_percent_2[26] = 3; 
+				dr_outcomes_A_percent_2[27] = 7; 
+				dr_outcomes_A_percent_2[28] = 3; 
+				dr_outcomes_A_percent_2[29] = 7; 
+				dr_outcomes_A_percent_2[30] = 9; 
+				dr_outcomes_A_percent_2[31] = 9; 
+				dr_outcomes_A_percent_2[32] = 7; 
+				dr_outcomes_A_percent_2[33] = 1; 
+				dr_outcomes_A_percent_2[34] = 9; 
+				dr_outcomes_A_percent_2[35] = 5; 
+				dr_outcomes_A_percent_2[36] = 3; 
+				dr_outcomes_A_percent_2[37] = 9; 
+				dr_outcomes_A_percent_2[38] = 7; 
+				dr_outcomes_A_percent_2[39] = 5; 
+				dr_outcomes_A_percent_2[40] = 3;
+				
+				
+				array dr_outcomes_A_amount_2[40]; 
+				dr_outcomes_A_amount_2[1] = 5; 
+				dr_outcomes_A_amount_2[2] = -15; 
+				dr_outcomes_A_amount_2[3] = -10; 
+				dr_outcomes_A_amount_2[4] = -10; 
+				dr_outcomes_A_amount_2[5] = -15; 
+				dr_outcomes_A_amount_2[6] = -20; 
+				dr_outcomes_A_amount_2[7] = -15; 
+				dr_outcomes_A_amount_2[8] = 10; 
+				dr_outcomes_A_amount_2[9] = 5; 
+				dr_outcomes_A_amount_2[10] = -5; 
+				dr_outcomes_A_amount_2[11] = -5; 
+				dr_outcomes_A_amount_2[12] = 10; 
+				dr_outcomes_A_amount_2[13] = -15; 
+				dr_outcomes_A_amount_2[14] = -10; 
+				dr_outcomes_A_amount_2[15] = -10; 
+				dr_outcomes_A_amount_2[16] = 30; 
+				dr_outcomes_A_amount_2[17] = -5; 
+				dr_outcomes_A_amount_2[18] = -5; 
+				dr_outcomes_A_amount_2[19] = 5; 
+				dr_outcomes_A_amount_2[20] = 5; 
+				dr_outcomes_A_amount_2[21] = 30; 
+				dr_outcomes_A_amount_2[22] = -20; 
+				dr_outcomes_A_amount_2[23] = -5; 
+				dr_outcomes_A_amount_2[24] = -10; 
+				dr_outcomes_A_amount_2[25] = 10; 
+				dr_outcomes_A_amount_2[26] = 30; 
+				dr_outcomes_A_amount_2[27] = 5; 
+				dr_outcomes_A_amount_2[28] = -15; 
+				dr_outcomes_A_amount_2[29] = 30; 
+				dr_outcomes_A_amount_2[30] = 30; 
+				dr_outcomes_A_amount_2[31] = 10; 
+				dr_outcomes_A_amount_2[32] = 10; 
+				dr_outcomes_A_amount_2[33] = 5; 
+				dr_outcomes_A_amount_2[34] = 10; 
+				dr_outcomes_A_amount_2[35] = 10; 
+				dr_outcomes_A_amount_2[36] = 30; 
+				dr_outcomes_A_amount_2[37] = -5; 
+				dr_outcomes_A_amount_2[38] = -20; 
+				dr_outcomes_A_amount_2[39] = -15; 
+				dr_outcomes_A_amount_2[40] = -10; 
+				
+			}
+		}
+		program{
+			table = globals;
+			do{
+				////RISK
+				
+				array dr_outcomes_B_chance_1[36]; 
+				dr_outcomes_B_chance_1[1] = 0.3; 
+				dr_outcomes_B_chance_1[2] = 0.5; 
+				dr_outcomes_B_chance_1[3] = 0.1; 
+				dr_outcomes_B_chance_1[4] = 0.3; 
+				dr_outcomes_B_chance_1[5] = 0.5; 
+				dr_outcomes_B_chance_1[6] = 0.7; 
+				dr_outcomes_B_chance_1[7] = 0.7; 
+				dr_outcomes_B_chance_1[8] = 0.7; 
+				dr_outcomes_B_chance_1[9] = 0.1; 
+				dr_outcomes_B_chance_1[10] = 0.3; 
+				dr_outcomes_B_chance_1[11] = 0.9; 
+				dr_outcomes_B_chance_1[12] = 0.3; 
+				dr_outcomes_B_chance_1[13] = 0.1; 
+				dr_outcomes_B_chance_1[14] = 0.1; 
+				dr_outcomes_B_chance_1[15] = 0.1; 
+				dr_outcomes_B_chance_1[16] = 0.1; 
+				dr_outcomes_B_chance_1[17] = 0.3; 
+				dr_outcomes_B_chance_1[18] = 0.3; 
+				dr_outcomes_B_chance_1[19] = 0.3; 
+				dr_outcomes_B_chance_1[20] = 0.9; 
+				dr_outcomes_B_chance_1[21] = 0.9; 
+				dr_outcomes_B_chance_1[22] = 0.7; 
+				dr_outcomes_B_chance_1[23] = 0.9; 
+				dr_outcomes_B_chance_1[24] = 0.9; 
+				dr_outcomes_B_chance_1[25] = 0.9; 
+				dr_outcomes_B_chance_1[26] = 0.5; 
+				dr_outcomes_B_chance_1[27] = 0.7; 
+				dr_outcomes_B_chance_1[28] = 0.3; 
+				dr_outcomes_B_chance_1[29] = 0.7; 
+				dr_outcomes_B_chance_1[30] = 0.9; 
+				dr_outcomes_B_chance_1[31] = 0.9; 
+				dr_outcomes_B_chance_1[32] = 0.7; 
+				dr_outcomes_B_chance_1[33] = 0.5; 
+				dr_outcomes_B_chance_1[34] = 0.5; 
+				dr_outcomes_B_chance_1[35] = 0.1; 
+				dr_outcomes_B_chance_1[36] = 0.3; 
+				
+				array dr_outcomes_B_percent_1[36]; 
+				dr_outcomes_B_percent_1[1] = 3; 
+				dr_outcomes_B_percent_1[2] = 5; 
+				dr_outcomes_B_percent_1[3] = 1; 
+				dr_outcomes_B_percent_1[4] = 3; 
+				dr_outcomes_B_percent_1[5] = 5; 
+				dr_outcomes_B_percent_1[6] = 7; 
+				dr_outcomes_B_percent_1[7] = 7; 
+				dr_outcomes_B_percent_1[8] = 7; 
+				dr_outcomes_B_percent_1[9] = 1; 
+				dr_outcomes_B_percent_1[10] = 3; 
+				dr_outcomes_B_percent_1[11] = 9; 
+				dr_outcomes_B_percent_1[12] = 3; 
+				dr_outcomes_B_percent_1[13] = 1; 
+				dr_outcomes_B_percent_1[14] = 1; 
+				dr_outcomes_B_percent_1[15] = 1; 
+				dr_outcomes_B_percent_1[16] = 1; 
+				dr_outcomes_B_percent_1[17] = 3; 
+				dr_outcomes_B_percent_1[18] = 3; 
+				dr_outcomes_B_percent_1[19] = 3; 
+				dr_outcomes_B_percent_1[20] = 9; 
+				dr_outcomes_B_percent_1[21] = 9; 
+				dr_outcomes_B_percent_1[22] = 7; 
+				dr_outcomes_B_percent_1[23] = 9; 
+				dr_outcomes_B_percent_1[24] = 9; 
+				dr_outcomes_B_percent_1[25] = 9; 
+				dr_outcomes_B_percent_1[26] = 5; 
+				dr_outcomes_B_percent_1[27] = 7; 
+				dr_outcomes_B_percent_1[28] = 3; 
+				dr_outcomes_B_percent_1[29] = 7; 
+				dr_outcomes_B_percent_1[30] = 9; 
+				dr_outcomes_B_percent_1[31] = 9; 
+				dr_outcomes_B_percent_1[32] = 7; 
+				dr_outcomes_B_percent_1[33] = 5; 
+				dr_outcomes_B_percent_1[34] = 5; 
+				dr_outcomes_B_percent_1[35] = 1; 
+				dr_outcomes_B_percent_1[36] = 3;
+				
+				
+				array dr_outcomes_B_amount_1[36]; 
+				dr_outcomes_B_amount_1[1] =100; 
+				dr_outcomes_B_amount_1[2] = 40; 
+				dr_outcomes_B_amount_1[3] = 300; 
+				dr_outcomes_B_amount_1[4] = 40; 
+				dr_outcomes_B_amount_1[5] = 30; 
+				dr_outcomes_B_amount_1[6] = 1; 
+				dr_outcomes_B_amount_1[7] = 100; 
+				dr_outcomes_B_amount_1[8] = 40; 
+				dr_outcomes_B_amount_1[9] = 40; 
+				dr_outcomes_B_amount_1[10] = 30; 
+				dr_outcomes_B_amount_1[11] = 100; 
+				dr_outcomes_B_amount_1[12] = 100; 
+				dr_outcomes_B_amount_1[13] = 30; 
+				dr_outcomes_B_amount_1[14] = 40; 
+				dr_outcomes_B_amount_1[15] = 100; 
+				dr_outcomes_B_amount_1[16] = 100; 
+				dr_outcomes_B_amount_1[17] = 300; 
+				dr_outcomes_B_amount_1[18] = 300; 
+				dr_outcomes_B_amount_1[19] = 30; 
+				dr_outcomes_B_amount_1[20] = 1; 
+				dr_outcomes_B_amount_1[21] = 1; 
+				dr_outcomes_B_amount_1[22] = 1; 
+				dr_outcomes_B_amount_1[23] = 30; 
+				dr_outcomes_B_amount_1[24] = 40; 
+				dr_outcomes_B_amount_1[25] = 40; 
+				dr_outcomes_B_amount_1[26] = 300; 
+				dr_outcomes_B_amount_1[27] = 300; 
+				dr_outcomes_B_amount_1[28] = 40; 
+				dr_outcomes_B_amount_1[29] = 100; 
+				dr_outcomes_B_amount_1[30] = 300; 
+				dr_outcomes_B_amount_1[31] = 300; 
+				dr_outcomes_B_amount_1[32] = 300; 
+				dr_outcomes_B_amount_1[33] = 300; 
+				dr_outcomes_B_amount_1[34] = 100; 
+				dr_outcomes_B_amount_1[35] = 30; 
+				dr_outcomes_B_amount_1[36] = 1; 
+				
+				array dr_outcomes_B_chance_2[36]; 
+				dr_outcomes_B_chance_2[1] = 0.7; 
+				dr_outcomes_B_chance_2[2] = 0.5; 
+				dr_outcomes_B_chance_2[3] = 0.9; 
+				dr_outcomes_B_chance_2[4] = 0.7; 
+				dr_outcomes_B_chance_2[5] = 0.5; 
+				dr_outcomes_B_chance_2[6] = 0.3; 
+				dr_outcomes_B_chance_2[7] = 0.3; 
+				dr_outcomes_B_chance_2[8] = 0.3; 
+				dr_outcomes_B_chance_2[9] = 0.9; 
+				dr_outcomes_B_chance_2[10] = 0.7; 
+				dr_outcomes_B_chance_2[11] = 0.1; 
+				dr_outcomes_B_chance_2[12] = 0.7; 
+				dr_outcomes_B_chance_2[13] = 0.9; 
+				dr_outcomes_B_chance_2[14] = 0.9; 
+				dr_outcomes_B_chance_2[15] = 0.9; 
+				dr_outcomes_B_chance_2[16] = 0.9; 
+				dr_outcomes_B_chance_2[17] = 0.7; 
+				dr_outcomes_B_chance_2[18] = 0.7; 
+				dr_outcomes_B_chance_2[19] = 0.7; 
+				dr_outcomes_B_chance_2[20] = 0.1; 
+				dr_outcomes_B_chance_2[21] = 0.1; 
+				dr_outcomes_B_chance_2[22] = 0.3; 
+				dr_outcomes_B_chance_2[23] = 0.1; 
+				dr_outcomes_B_chance_2[24] = 0.1; 
+				dr_outcomes_B_chance_2[25] = 0.1; 
+				dr_outcomes_B_chance_2[26] = 0.5; 
+				dr_outcomes_B_chance_2[27] = 0.3; 
+				dr_outcomes_B_chance_2[28] = 0.7; 
+				dr_outcomes_B_chance_2[29] = 0.3; 
+				dr_outcomes_B_chance_2[30] = 0.1; 
+				dr_outcomes_B_chance_2[31] = 0.1; 
+				dr_outcomes_B_chance_2[32] = 0.3; 
+				dr_outcomes_B_chance_2[33] = 0.5; 
+				dr_outcomes_B_chance_2[34] = 0.5; 
+				dr_outcomes_B_chance_2[35] = 0.9; 
+				dr_outcomes_B_chance_2[36] = 0.7; 
+				
+				array dr_outcomes_B_percent_2[36]; 
+				dr_outcomes_B_percent_2[1] = 7; 
+				dr_outcomes_B_percent_2[2] = 5; 
+				dr_outcomes_B_percent_2[3] = 9; 
+				dr_outcomes_B_percent_2[4] = 7; 
+				dr_outcomes_B_percent_2[5] = 5; 
+				dr_outcomes_B_percent_2[6] = 3; 
+				dr_outcomes_B_percent_2[7] = 3; 
+				dr_outcomes_B_percent_2[8] = 3; 
+				dr_outcomes_B_percent_2[9] = 9; 
+				dr_outcomes_B_percent_2[10] = 7; 
+				dr_outcomes_B_percent_2[11] = 1; 
+				dr_outcomes_B_percent_2[12] = 7; 
+				dr_outcomes_B_percent_2[13] = 9; 
+				dr_outcomes_B_percent_2[14] = 9; 
+				dr_outcomes_B_percent_2[15] = 9; 
+				dr_outcomes_B_percent_2[16] = 9; 
+				dr_outcomes_B_percent_2[17] = 7; 
+				dr_outcomes_B_percent_2[18] = 7; 
+				dr_outcomes_B_percent_2[19] = 7; 
+				dr_outcomes_B_percent_2[20] = 1; 
+				dr_outcomes_B_percent_2[21] = 1; 
+				dr_outcomes_B_percent_2[22] = 3; 
+				dr_outcomes_B_percent_2[23] = 1; 
+				dr_outcomes_B_percent_2[24] = 1; 
+				dr_outcomes_B_percent_2[25] = 1; 
+				dr_outcomes_B_percent_2[26] = 5; 
+				dr_outcomes_B_percent_2[27] = 3; 
+				dr_outcomes_B_percent_2[28] = 7; 
+				dr_outcomes_B_percent_2[29] = 3; 
+				dr_outcomes_B_percent_2[30] = 1; 
+				dr_outcomes_B_percent_2[31] = 1; 
+				dr_outcomes_B_percent_2[32] = 3; 
+				dr_outcomes_B_percent_2[33] = 5; 
+				dr_outcomes_B_percent_2[34] = 5; 
+				dr_outcomes_B_percent_2[35] = 9; 
+				dr_outcomes_B_percent_2[36] = 7;
+				
+				
+				array dr_outcomes_B_amount_2[36]; 
+				dr_outcomes_B_amount_2[1] = -20; 
+				dr_outcomes_B_amount_2[2] = -20; 
+				dr_outcomes_B_amount_2[3] = -5; 
+				dr_outcomes_B_amount_2[4] = -5; 
+				dr_outcomes_B_amount_2[5] = -5; 
+				dr_outcomes_B_amount_2[6] = -20; 
+				dr_outcomes_B_amount_2[7] = -15; 
+				dr_outcomes_B_amount_2[8] = 30; 
+				dr_outcomes_B_amount_2[9] = -10; 
+				dr_outcomes_B_amount_2[10] = -5; 
+				dr_outcomes_B_amount_2[11] = -10; 
+				dr_outcomes_B_amount_2[12] = 10; 
+				dr_outcomes_B_amount_2[13] = -10; 
+				dr_outcomes_B_amount_2[14] = 10; 
+				dr_outcomes_B_amount_2[15] = 30; 
+				dr_outcomes_B_amount_2[16] = 10; 
+				dr_outcomes_B_amount_2[17] = 30; 
+				dr_outcomes_B_amount_2[18] = 5; 
+				dr_outcomes_B_amount_2[19] = -10; 
+				dr_outcomes_B_amount_2[20] = 30; 
+				dr_outcomes_B_amount_2[21] = 5; 
+				dr_outcomes_B_amount_2[22] = -15; 
+				dr_outcomes_B_amount_2[23] = -15; 
+				dr_outcomes_B_amount_2[24] = 5; 
+				dr_outcomes_B_amount_2[25] = 10; 
+				dr_outcomes_B_amount_2[26] = -15; 
+				dr_outcomes_B_amount_2[27] = -10; 
+				dr_outcomes_B_amount_2[28] = -15; 
+				dr_outcomes_B_amount_2[29] = -5; 
+				dr_outcomes_B_amount_2[30] = -5; 
+				dr_outcomes_B_amount_2[31] = -20; 
+				dr_outcomes_B_amount_2[32] = 30; 
+				dr_outcomes_B_amount_2[33] = 10; 
+				dr_outcomes_B_amount_2[34] = 5; 
+				dr_outcomes_B_amount_2[35] = -20; 
+				dr_outcomes_B_amount_2[36] = 10; 
+				
+			}
+		}
+		program{
+			table = globals;
+			do{
+				/// RISK
+				
+				DR_PAYOUT_SCALE = 0.05;
+				
+				array dr_outcomes_A_modded_1[40];
+				array dr_outcomes_A_modded_2[40];
+				array dr_outcomes_B_modded_1[36];
+				array dr_outcomes_B_modded_2[36];
+				
+				for (i, 40)
+				{
+				    dr_outcomes_A_amount_1[i] = dr_outcomes_A_amount_1[i] * DR_PAYOUT_SCALE;
+				    dr_outcomes_A_amount_2[i] = dr_outcomes_A_amount_2[i] * DR_PAYOUT_SCALE;
+				
+				    dr_outcomes_A_modded_1[i] = abs(dr_outcomes_A_amount_1[i]);
+				    dr_outcomes_A_modded_2[i] = abs(dr_outcomes_A_amount_2[i]);
+				}
+				
+				for (i, 36)
+				{
+				    dr_outcomes_B_amount_1[i] = dr_outcomes_B_amount_1[i] * DR_PAYOUT_SCALE;
+				    dr_outcomes_B_amount_2[i] = dr_outcomes_B_amount_2[i] * DR_PAYOUT_SCALE;
+				
+				    dr_outcomes_B_modded_1[i] = abs(dr_outcomes_B_amount_1[i]);
+				    dr_outcomes_B_modded_2[i] = abs(dr_outcomes_B_amount_2[i]);
+				}
+			}
+		}
+		screen action{
+			usesbg = TRUE;
+			withalertscreen = FALSE;
+			noalertscreen = FALSE;
+			headerbox "Header"{
+				hasframe = TRUE;
+				height = 10%;
+				top = 0p;
+				cuttop = TRUE;
+				showPeriods = TRUE;
+				showNumPeriods = TRUE;
+				periodtext = "Period";
+				periodoftext = "out of";
+				practiceperiodprefix = "Trial ";
+				showtime = TRUE;
+				timestr = "Remaining time";
+				pleasedecidetext = "Please reach a decision!";
+			}
+		}
+		screen wait{
+			usesbg = TRUE;
+			withalertscreen = FALSE;
+			noalertscreen = FALSE;
+			standardbox "Text"{
+				hasframe = TRUE;
+				buttonposition = BOTTOMRIGHT;
+				buttonsequence = HORIZONTAL;
+				item{
+					label = "Please wait for the experiment to continue.";
+				}
+			}
+		}
+	}
+	stage "DEEP_RISK_INSTRUCTIONS"{
+		startwaitforall = FALSE;
+		startConditionStr = "";
+		singleentry = FALSE;
+		singleentrycontinuation = FALSE;
+		timeouttype = never;
+		timeout = -1;
+		program{
+			table = subjects;
+			do{
+				n=1;
+			}
+		}
+		screen action{
+			usesbg = FALSE;
+			withalertscreen = FALSE;
+			noalertscreen = FALSE;
+			containerbox "Container I"{
+				hasframe = TRUE;
+				displaycondition = n==1;
+				standardbox "Standard"{
+					hasframe = FALSE;
+					left = 1%;
+					top = 2%;
+					buttonposition = BOTTOMRIGHT;
+					buttonsequence = HORIZONTAL;
+					item{
+						label = "{\\rtf \\b\\fs40 TASK 1   }";
+					}
+					item{
+					}
+					item{
+					}
+					item{
+						label = "{\\rtf \\fs30 In TASK 1 you will face two options, labelled \"LEFT\" option and \"RIGHT\" option. }";
+					}
+					item{
+					}
+					item{
+						label = "{\\rtf\\fs30 These choices are given in a descriptive form i.e. they are written in words and numbers. You should state your preferred choice for \"LEFT\" option by clicking on the button \"Choose the LEFT option\" or if you prefer \"RIGHT\" option you should click on the button \"Choose the RIGHT option\".  } ";
+					}
+					item{
+					}
+					item{
+						label = "{\\rtf\\fs30 TASK 1 consists of 13 decision rounds/choices and you should explore which option you find more attractive. }";
+					}
+					item{
+					}
+					item{
+						label = "{\\rtf \\fs30 Note that the first choice [\"TRIAL\"] in TASK 1 is not payment relevant and is meant to help you to familiarize yourself with TASK 1.  } ";
+					}
+					item{
+					}
+					item{
+						label = "{\\rtf \\fs30 At the end of the experiment, one choice will be randomly chosen for payment. You do not know in advance which choice will be selected for payment. Every choice has an equal chance to get selected. } ";
+					}
+				}
+				standardbox "Standard"{
+					hasframe = FALSE;
+					height = 30%;
+					top = 70%;
+					buttonposition = BOTTOMRIGHT;
+					buttonsequence = HORIZONTAL;
+					onofftrigger "ON/OFF trigger"{
+						what = ON;
+						eventtime = START_DEEP_RISK_INSTRUCTIONS;
+					}
+					button "  NEXT"{
+						clearinputafterok = FALSE;
+						norecordmadeorselected = FALSE;
+						terminatestage = FALSE;
+						donotterminatestage = TRUE;
+						specialbuttoncolor = TRUE;
+						buttoncolor = 5921535;
+						eventtime = START_DEEP_RISK_INSTRUCTIONS_BUTTON;
+						program{
+							table = subjects;
+							do{
+								n=n+1;
+								DEEP_INSTRUCTIONS=1;
+							}
+						}
+					}
+				}
+			}
+			containerbox "Container II"{
+				hasframe = TRUE;
+				displaycondition = n==2;
+				standardbox "Standard"{
+					hasframe = FALSE;
+					height = 60%;
+					left = 2%;
+					top = 15%;
+					buttonposition = BOTTOMRIGHT;
+					buttonsequence = HORIZONTAL;
+					item{
+					}
+					item{
+					}
+					item{
+					}
+					item{
+					}
+					item{
+					}
+					item{
+					}
+					item{
+					}
+					item{
+					}
+					item{
+					}
+					item{
+						label = "{\\rtf\\fs30 Note that the options in TASK 1 may involve gains or losses. Each of these options has some chance (probability) of occurring, between 0 in 10 chances (no chance of occurring) and 10 in 10 chances (certain to occur). One of the outcomes will definitely happen, so the probabilities of the two outcomes add up to 10 in 10 chances.}";
+					}
+					item{
+					}
+					item{
+					}
+					item{
+					}
+					item{
+					}
+					item{
+					}
+					item{
+						label = "{\\rtf \\fs30 For example, one choice could be: \"5 in 10 chances to win $5 or 5 in 10 chances to win 2.5$\". The two options both have a 5 in 10 chances of occurring, which means that you are equally likely to win $5 or to win $2.5. }";
+					}
+					item{
+					}
+					item{
+					}
+					item{
+					}
+					item{
+					}
+					item{
+					}
+					item{
+						label = "{\\rtf \\fs30 Also, the possible choice could involve the following options: \"3 in 10 chances to win $8 or 7 in 10 chances to win $2\". The chance to win $2 is higher than the chance to win $8. }";
+					}
+					item{
+					}
+					item{
+					}
+					item{
+					}
+					item{
+					}
+					item{
+					}
+					item{
+						label = "{\\rtf \\fs30 In both examples you can only win money. }";
+					}
+					item{
+					}
+					item{
+					}
+					item{
+					}
+					item{
+					}
+					item{
+					}
+					item{
+						label = "{\\rtf \\fs30 Other choices might involve a chance of losing money. }";
+					}
+					item{
+					}
+					item{
+					}
+					item{
+					}
+					item{
+					}
+					item{
+					}
+					item{
+						label = "{\\rtf \\fs30 If you want to see a graphical representation/picture of TASK1, please click on the button \"PICTURE\" below. }";
+					}
+					item{
+					}
+					item{
+					}
+					item{
+					}
+					item{
+					}
+					item{
+					}
+					item{
+						label = "{\\rtf \\fs30 The picture shows that you can win $0.05 with probability 5 in 10 chances or lose $0.25 with probability 5 in 10 chances if you choose \"LEFT\" option and you can win $5 with probability 3 in 10 chances or lose $1 with probability 7 in 10 chances if you choose \"RIGHT\" option, respectively. }";
+					}
+					item{
+					}
+					item{
+					}
+					item{
+					}
+					item{
+					}
+					item{
+					}
+					item{
+					}
+					item{
+					}
+				}
+				standardbox "Standard"{
+					hasframe = FALSE;
+					height = 30%;
+					top = 70%;
+					buttonposition = BOTTOMRIGHT;
+					buttonsequence = HORIZONTAL;
+					onofftrigger "ON/OFF trigger"{
+						what = ON;
+						eventtime = END_DEEP_RISK_INSTRUCTIONS;
+					}
+					button "  OK"{
+						clearinputafterok = FALSE;
+						norecordmadeorselected = FALSE;
+						terminatestage = TRUE;
+						donotterminatestage = FALSE;
+						specialbuttoncolor = TRUE;
+						buttoncolor = 5921535;
+						eventtime = END_DEEP_RISK_INSTRUCTIONS_BUTTON;
+						checker{
+							condition = DEEP_INSTRUCTIONS>1;
+							message = "Are you sure that you want to proceed?";
+							yesButtonStr = "Yes";
+							noButtonStr = "No";
+						}
+					}
+					button "  Previous screen"{
+						clearinputafterok = FALSE;
+						norecordmadeorselected = FALSE;
+						terminatestage = FALSE;
+						donotterminatestage = TRUE;
+						specialbuttoncolor = TRUE;
+						buttoncolor = 13158600;
+						program{
+							table = subjects;
+							do{
+								n=n-1;
+							}
+						}
+					}
+					button "PICTURE"{
+						clearinputafterok = FALSE;
+						norecordmadeorselected = FALSE;
+						terminatestage = FALSE;
+						donotterminatestage = TRUE;
+						specialbuttoncolor = TRUE;
+						buttoncolor = 13158600;
+						program{
+							table = subjects;
+							do{
+								n=n+1;
+							}
+						}
+					}
+				}
+			}
+			containerbox "Container III"{
+				hasframe = TRUE;
+				displaycondition = n==3;
+				multimediabox "DEEP"{
+					hasframe = TRUE;
+					width = 100%;
+					height = 100%;
+					URL = /share/zTree/DEEP_RISK.jpg;
+					dorepeat = FALSE;
+					maintainaspectratio = TRUE;
+					enlargetofit = FALSE;
+					shrinktofit = TRUE;
+					allowusercontrol = FALSE;
+					rewind = FALSE;
+				}
+				standardbox "Standard"{
+					hasframe = FALSE;
+					height = 30%;
+					top = 70%;
+					buttonposition = BOTTOMRIGHT;
+					buttonsequence = HORIZONTAL;
+					onofftrigger "ON/OFF trigger"{
+						what = ON;
+						eventtime = END_DEEP_RISK_PICTURE;
+					}
+					button "  Previous screen"{
+						clearinputafterok = FALSE;
+						norecordmadeorselected = FALSE;
+						terminatestage = FALSE;
+						donotterminatestage = TRUE;
+						specialbuttoncolor = TRUE;
+						buttoncolor = 5921535;
+						eventtime = END_DEEP_RISK_PICTURE_BUTTON;
+						program{
+							table = subjects;
+							do{
+								n=n-1;
+								PICTURE_DEEP_RISK = 1;
+								
+							}
+						}
+					}
+				}
+			}
+		}
+		screen wait{
+			usesbg = TRUE;
+			withalertscreen = FALSE;
+			noalertscreen = FALSE;
+		}
+	}
+	stage "DEEP COMPREHENSION_RISK"{
+		startwaitforall = FALSE;
+		startConditionStr = "";
+		singleentry = FALSE;
+		singleentrycontinuation = FALSE;
+		timeouttype = never;
+		timeout = -1;
+		program{
+			table = subjects;
+			do{
+				n=1;
+			}
+		}
+		screen action{
+			usesbg = FALSE;
+			withalertscreen = FALSE;
+			noalertscreen = FALSE;
+			containerbox "Container I"{
+				hasframe = TRUE;
+				displaycondition = n==1;
+				standardbox "Standard"{
+					hasframe = FALSE;
+					left = 1%;
+					top = 2%;
+					buttonposition = BOTTOMRIGHT;
+					buttonsequence = HORIZONTAL;
+					item{
+						label = "{\\rtf \\b \\fs40 COMPREHENSION QUESTIONS: TASK 1  }";
+					}
+					item{
+					}
+					item{
+						label = "{\\rtf \\fs30 To make sure that you understand TASK 1, here are a few questions we like you to answer. }";
+					}
+					item{
+					}
+					item{
+						label = "{\\rtf \\fs30 \\qc Consider the following \"LEFT\" option:}";
+					}
+					item{
+						label = "{\\rtf \\fs25 \\qc • {\\b 3 in 10} chances to {\\b win $10}}";
+					}
+					item{
+						label = "{\\rtf \\fs25 \\qc • {\\b 7 in 10} chances to {\\b win $5}}";
+					}
+					item{
+					}
+					item{
+						label = "{\\rtf \\qc \\fs22 \\b 1. \\b0 What is the {\\b most} money you could win if you played \"LEFT\" option?}";
+					}
+					item{
+						variable = dr_comp_1;
+						format = "!radio: 1 = \"$10 \"; 2 = \"$5\"; 3= \"$50\";\r 4 = \"I would lose $1\";";
+						input = TRUE;
+						showdefault = FALSE;
+						emptyallowed = TRUE;
+						min = 1;
+						max = 4;
+					}
+					item{
+					}
+					item{
+						label = "{\\rtf \\qc \\fs22 \\b 2. \\b0 Is the following statement true or false? \"If you played 'LEFT' option, you would make {\\b at least} $5.\"}";
+					}
+					item{
+						variable = dr_comp_2;
+						format = "!radio: 1 = \"True\"; 2 = \"False\"; 3 = \"It cannot be determined\";";
+						input = TRUE;
+						showdefault = FALSE;
+						emptyallowed = TRUE;
+						min = 1;
+						max = 3;
+					}
+					item{
+					}
+					item{
+						label = "{\\rtf \\fs30 \\qc Now consider the following \"RIGHT\" option.}";
+					}
+					item{
+						label = "{\\rtf \\fs25 \\qc • {\\b 1 in 10} chances to {\\b win $15}}";
+					}
+					item{
+						label = "{\\rtf \\fs25 \\qc • {\\b 9 in 10} chances to {\\b lose $1}}";
+					}
+					item{
+					}
+					item{
+						label = "{\\rtf \\qc \\fs22 \\b 3. \\b0 What is the probability/chance that you would {\\b lose} money playing \"RIGHT\" option?}";
+					}
+					item{
+						variable = dr_comp_3;
+						format = "!radio: 1 = \"3 in 10 chances\"; 2 = \"7 in 10 chances\"; 3= \"9 in 10 chances\";\r 4 = \"1 in 10 chances\";";
+						input = TRUE;
+						showdefault = FALSE;
+						emptyallowed = TRUE;
+						min = 1;
+						max = 4;
+					}
+					item{
+					}
+					item{
+						label = "{\\rtf \\qc \\fs22 \\b 4. \\b0 What is the most {\\b likely} outcome in \"RIGHT\" option?}";
+					}
+					item{
+						variable = dr_comp_4;
+						format = "!radio:  1 = \"Winning $15\"; 2 = \"Winning $1\"; 3= \"Losing $1\";";
+						input = TRUE;
+						showdefault = FALSE;
+						emptyallowed = TRUE;
+						min = 1;
+						max = 3;
+					}
+				}
+				standardbox "Standard"{
+					hasframe = FALSE;
+					height = 30%;
+					top = 70%;
+					buttonposition = BOTTOMRIGHT;
+					buttonsequence = HORIZONTAL;
+					onofftrigger "ON/OFF trigger"{
+						what = ON;
+						eventtime = START_DEEP_RISK_COMPREHENSION;
+					}
+					button "OK"{
+						clearinputafterok = FALSE;
+						norecordmadeorselected = FALSE;
+						terminatestage = FALSE;
+						donotterminatestage = TRUE;
+						specialbuttoncolor = TRUE;
+						buttoncolor = 5921535;
+						eventtime = START_DEEP_RISK_COMPREHENSION_BUTTON;
+						checker{
+							condition = dr_comp_1 >=1;
+							message = "Please make your choice in question 1!";
+							yesButtonStr = "";
+							noButtonStr = "OK";
+						}
+						checker{
+							condition = dr_comp_2 >=1;
+							message = "Please make your choice in question 2!";
+							yesButtonStr = "";
+							noButtonStr = "OK";
+						}
+						checker{
+							condition = dr_comp_3 >=1;
+							message = "Please make your choice in question 3!";
+							yesButtonStr = "";
+							noButtonStr = "OK";
+						}
+						checker{
+							condition = dr_comp_4 >=1;
+							message = "Please make your choice in question 4!";
+							yesButtonStr = "";
+							noButtonStr = "OK";
+						}
+						program{
+							table = subjects;
+							do{
+								n=n+1;
+							}
+						}
+					}
+				}
+			}
+			containerbox "Container II"{
+				hasframe = TRUE;
+				displaycondition = n==2;
+				containerbox "TopBox"{
+					hasframe = FALSE;
+					height = 6%;
+					top = 0p;
+					standardbox "T_01"{
+						hasframe = FALSE;
+						height = 6%;
+						top = 200p;
+						displaycondition = dr_comp_1==1;
+						buttonposition = BOTTOMRIGHT;
+						buttonsequence = HORIZONTAL;
+						item{
+							label = "{\\rtf \\fs30\\bullet\\qc {\\colortbl; \\red0\\green0\\blue0; \\red0\\green255\\blue0;\\red0\\green0\\blue0;} Your response in {\\b Question 1} is {\\b\\cf2 correct!}  }\r\n\r\n";
+						}
+					}
+					standardbox "T_01"{
+						hasframe = FALSE;
+						height = 6%;
+						top = 200p;
+						displaycondition = dr_comp_1==2|dr_comp_1==3|dr_comp_1==4;
+						buttonposition = BOTTOMRIGHT;
+						buttonsequence = HORIZONTAL;
+						item{
+							label = "{\\rtf \\fs25 \\qc \\i The amount of $10 that is offered is {\\b larger} than the amount of $5 that is offered. }";
+						}
+						item{
+						}
+						item{
+							label = "{\\rtf \\fs30\\bullet\\qc {\\colortbl; \\red0\\green0\\blue0; \\red255\\green0\\blue0;\\red0\\green0\\blue0;}  Your response in {\\b Question 1} is {\\b\\cf2 incorrect!}  }\r\n\r\n";
+						}
+					}
+					standardbox "T_02"{
+						hasframe = FALSE;
+						height = 6%;
+						top = 400p;
+						displaycondition = dr_comp_2==1;
+						buttonposition = BOTTOMRIGHT;
+						buttonsequence = HORIZONTAL;
+						item{
+							label = "{\\rtf \\fs30\\bullet\\qc {\\colortbl; \\red0\\green0\\blue0; \\red0\\green255\\blue0;\\red0\\green0\\blue0;} Your response in {\\b Question 2} is {\\b\\cf2 correct!}  }\r\n\r\n";
+						}
+					}
+					standardbox "T_02"{
+						hasframe = FALSE;
+						height = 6%;
+						top = 400p;
+						displaycondition = dr_comp_2==2|dr_comp_2==3;
+						buttonposition = BOTTOMRIGHT;
+						buttonsequence = HORIZONTAL;
+						item{
+							label = "{\\rtf \\fs25 \\qc \\i If you play the \"LEFT\" option that is offered you would make {\\b at least} $5. }";
+						}
+						item{
+						}
+						item{
+							label = "{\\rtf \\fs30\\bullet\\qc {\\colortbl; \\red0\\green0\\blue0; \\red255\\green0\\blue0;\\red0\\green0\\blue0;}  Your response in {\\b Question 2} is {\\b\\cf2 incorrect!}  }\r\n\r\n";
+						}
+					}
+					standardbox "T_03"{
+						hasframe = FALSE;
+						height = 6%;
+						top = 600p;
+						displaycondition = dr_comp_3==3;
+						buttonposition = BOTTOMRIGHT;
+						buttonsequence = HORIZONTAL;
+						item{
+							label = "{\\rtf \\fs30\\bullet\\qc {\\colortbl; \\red0\\green0\\blue0; \\red0\\green255\\blue0;\\red0\\green0\\blue0;} Your response in {\\b Question 3} is {\\b\\cf2 correct!}  }\r\n\r\n";
+						}
+					}
+					standardbox "T_03"{
+						hasframe = FALSE;
+						height = 6%;
+						top = 600p;
+						displaycondition = dr_comp_3==1|dr_comp_3==2|dr_comp_3==4;
+						buttonposition = BOTTOMRIGHT;
+						buttonsequence = HORIZONTAL;
+						item{
+							label = "{\\rtf \\fs25 \\qc \\i The probability/chance that you would {\\b lose} money in the offered \"RIGHT\" option is 9 in 10 chances. }";
+						}
+						item{
+						}
+						item{
+							label = "{\\rtf \\fs30\\bullet\\qc {\\colortbl; \\red0\\green0\\blue0; \\red255\\green0\\blue0;\\red0\\green0\\blue0;}  Your response in {\\b Question 3} is {\\b\\cf2 incorrect!}  }\r\n\r\n";
+						}
+					}
+					standardbox "T_04"{
+						hasframe = FALSE;
+						height = 6%;
+						top = 800p;
+						displaycondition = dr_comp_4==3;
+						buttonposition = BOTTOMRIGHT;
+						buttonsequence = HORIZONTAL;
+						item{
+							label = "{\\rtf \\fs30\\bullet\\qc {\\colortbl; \\red0\\green0\\blue0; \\red0\\green255\\blue0;\\red0\\green0\\blue0;} Your response in {\\b Question 4} is {\\b\\cf2 correct!}  }\r\n\r\n";
+						}
+					}
+					standardbox "T_04"{
+						hasframe = FALSE;
+						height = 6%;
+						top = 800p;
+						displaycondition = dr_comp_4==1|dr_comp_4==2;
+						buttonposition = BOTTOMRIGHT;
+						buttonsequence = HORIZONTAL;
+						item{
+							label = "{\\rtf \\fs25 \\qc \\i  {\\b Most likely} outcome in the offered \"RIGHT\" option is losing $1. }";
+						}
+						item{
+						}
+						item{
+							label = "{\\rtf \\fs30\\bullet\\qc {\\colortbl; \\red0\\green0\\blue0; \\red255\\green0\\blue0;\\red0\\green0\\blue0;}  Your response in {\\b Question 4} is {\\b\\cf2 incorrect!}  }\r\n\r\n";
+						}
+					}
+				}
+				containerbox "ButtonBox"{
+					hasframe = FALSE;
+					standardbox "Standard"{
+						hasframe = FALSE;
+						height = 80p;
+						top = 92.5%;
+						buttonposition = BOTTOMRIGHT;
+						buttonsequence = HORIZONTAL;
+						onofftrigger "ON/OFF trigger"{
+							what = ON;
+							eventtime = END_DEEP_RISK_COMPREHENSION;
+						}
+						button "FINISH"{
+							clearinputafterok = FALSE;
+							norecordmadeorselected = FALSE;
+							terminatestage = TRUE;
+							donotterminatestage = FALSE;
+							specialbuttoncolor = TRUE;
+							buttoncolor = 5921535;
+							eventtime = END_DEEP_RISK_COMPREHENSION_BUTTON;
+							checker{
+								condition = dr_comp_1 ==0|dr_comp_2 ==0|dr_comp_3 ==0|dr_comp_4  ==0;
+								message = "Are you sure that you want to proceed?";
+								yesButtonStr = "Yes";
+								noButtonStr = "No";
+							}
+						}
+					}
+				}
+			}
+		}
+		screen wait{
+			usesbg = TRUE;
+			withalertscreen = FALSE;
+			noalertscreen = FALSE;
+		}
+	}
+	stage "DEEP_TRIAL_RISK"{
+		startwaitforall = FALSE;
+		startConditionStr = "";
+		singleentry = FALSE;
+		singleentrycontinuation = FALSE;
+		timeouttype = never;
+		timeout = -1;
+		screen action{
+			usesbg = FALSE;
+			withalertscreen = FALSE;
+			noalertscreen = FALSE;
+			containerbox "TopBox"{
+				hasframe = FALSE;
+				height = 6%;
+				top = 0p;
+				standardbox "T_01"{
+					hasframe = FALSE;
+					height = 6%;
+					buttonposition = BOTTOMRIGHT;
+					buttonsequence = HORIZONTAL;
+					item{
+						label = "{\\rtf \\fs30 \\qc {\\b TRIAL }}";
+					}
+				}
+			}
+			containerbox "MiddleBox"{
+				hasframe = TRUE;
+				containerbox "Left_A"{
+					hasframe = TRUE;
+					width = 50%;
+					height = 500p;
+					left = 0p;
+					top = 50p;
+					standardbox "A_01"{
+						hasframe = TRUE;
+						buttonposition = BOTTOMRIGHT;
+						buttonsequence = HORIZONTAL;
+						item{
+							label = "{\\rtf \\fs30 \\qc {\\b 1 in 10} chances to {\\b win $4 }}";
+						}
+						item{
+							label = "{\\rtf \\fs30 \\qc {\\b 9 in 10} chances to {\\b lose $1 }}";
+						}
+					}
+				}
+				containerbox "Right_B"{
+					hasframe = TRUE;
+					width = 50%;
+					height = 500p;
+					right = 0p;
+					top = 50p;
+					standardbox "B_01"{
+						hasframe = TRUE;
+						buttonposition = BOTTOMRIGHT;
+						buttonsequence = HORIZONTAL;
+						item{
+							label = "{\\rtf \\fs30 \\qc {\\b 3 in 10} chances to {\\b win $4 }}";
+						}
+						item{
+							label = "{\\rtf \\fs30 \\qc {\\b 7 in 10} chances to {\\b lose $1.50 }}";
+						}
+					}
+				}
+			}
+			containerbox "ButtonBox"{
+				hasframe = FALSE;
+				standardbox "Standard"{
+					hasframe = FALSE;
+					height = 80p;
+					bottom = 190p;
+					buttonposition = BOTTOMMIDDLE;
+					buttonsequence = HORIZONTAL;
+					onofftrigger "ON/OFF trigger"{
+						what = ON;
+						eventtime = START_DEEP_RISK_TRIAL;
+					}
+					button " Confirm choice "{
+						clearinputafterok = FALSE;
+						norecordmadeorselected = FALSE;
+						terminatestage = TRUE;
+						donotterminatestage = FALSE;
+						specialbuttoncolor = TRUE;
+						buttoncolor = 5921535;
+						eventtime = START_DEEP_RISK_TRIAL_BUTTON;
+					}
+				}
+				standardbox "Standard"{
+					hasframe = FALSE;
+					width = 700p;
+					height = 40p;
+					left = 0p;
+					top = 600p;
+					buttonposition = BOTTOMMIDDLE;
+					buttonsequence = HORIZONTAL;
+					button " Choose the LEFT option "{
+						clearinputafterok = FALSE;
+						norecordmadeorselected = FALSE;
+						terminatestage = FALSE;
+						donotterminatestage = TRUE;
+						specialbuttoncolor = FALSE;
+						buttoncolor = 0;
+						program{
+							table = subjects;
+							do{
+								DEEP_T=1;
+							}
+						}
+					}
+				}
+				standardbox "Standard"{
+					hasframe = FALSE;
+					width = 700p;
+					height = 40p;
+					left = 0p;
+					top = 600p;
+					displaycondition = DEEP_T==1;
+					buttonposition = BOTTOMMIDDLE;
+					buttonsequence = HORIZONTAL;
+					button " Choose the LEFT option "{
+						clearinputafterok = FALSE;
+						norecordmadeorselected = FALSE;
+						terminatestage = FALSE;
+						donotterminatestage = TRUE;
+						specialbuttoncolor = TRUE;
+						buttoncolor = 5921535;
+					}
+				}
+				standardbox "Standard"{
+					hasframe = FALSE;
+					width = 700p;
+					height = 40p;
+					right = 0p;
+					top = 600p;
+					buttonposition = BOTTOMMIDDLE;
+					buttonsequence = HORIZONTAL;
+					button " Choose the RIGHT option "{
+						clearinputafterok = FALSE;
+						norecordmadeorselected = FALSE;
+						terminatestage = FALSE;
+						donotterminatestage = TRUE;
+						specialbuttoncolor = FALSE;
+						buttoncolor = 0;
+						program{
+							table = subjects;
+							do{
+								DEEP_T=2;
+							}
+						}
+					}
+				}
+				standardbox "Standard"{
+					hasframe = FALSE;
+					width = 700p;
+					height = 40p;
+					right = 0p;
+					top = 600p;
+					displaycondition = DEEP_T==2;
+					buttonposition = BOTTOMMIDDLE;
+					buttonsequence = HORIZONTAL;
+					button " Choose the RIGHT option "{
+						clearinputafterok = FALSE;
+						norecordmadeorselected = FALSE;
+						terminatestage = FALSE;
+						donotterminatestage = TRUE;
+						specialbuttoncolor = TRUE;
+						buttoncolor = 5921535;
+					}
+				}
+			}
+		}
+		screen wait{
+			usesbg = TRUE;
+			withalertscreen = FALSE;
+			noalertscreen = FALSE;
+		}
+	}
+	stage "DEEP_MAIN_RISK"{
+		startwaitforall = FALSE;
+		startConditionStr = "";
+		singleentry = FALSE;
+		singleentrycontinuation = FALSE;
+		timeouttype = never;
+		timeout = -1;
+		program{
+			table = subjects;
+			do{
+				
+				n=1;
+				
+				Period = 1;
+				
+				
+				DR_MAX_CHOICES = 12;
+				array dr_choices [DR_MAX_CHOICES];
+				array dr_path [DR_MAX_CHOICES];
+				
+				// we will need this data to compute a payout
+				array dr_index_A [DR_MAX_CHOICES];
+				array dr_index_B [DR_MAX_CHOICES];
+				array dr_shown_chance_A1 [DR_MAX_CHOICES];
+				array dr_shown_amount_A1 [DR_MAX_CHOICES];
+				array dr_shown_chance_A2 [DR_MAX_CHOICES];
+				array dr_shown_amount_A2 [DR_MAX_CHOICES];
+				array dr_shown_chance_B1 [DR_MAX_CHOICES];
+				array dr_shown_amount_B1 [DR_MAX_CHOICES];
+				array dr_shown_chance_B2 [DR_MAX_CHOICES];
+				array dr_shown_amount_B2 [DR_MAX_CHOICES];
+				
+				// show the first one initially
+				dr_index_A[1] = 1;
+				dr_index_B[1] = 1; 
+				dr_shown_chance_A1[1] = dr_outcomes_A_chance_1[1];
+				dr_shown_amount_A1[1] = dr_outcomes_A_amount_1[1];
+				dr_shown_chance_A2[1] = dr_outcomes_A_chance_2[1]; 
+				dr_shown_amount_A2[1] = dr_outcomes_A_amount_2[1];
+				dr_shown_chance_B1[1] = dr_outcomes_B_chance_1[1];
+				dr_shown_amount_B1[1] = dr_outcomes_B_amount_1[1];
+				dr_shown_chance_B2[1] = dr_outcomes_B_chance_2[1]; 
+				dr_shown_amount_B2[1] = dr_outcomes_B_amount_2[1];
+				
+				char1 = "?";
+				char2 = "?";
+				code1 = 0;
+				code2 = 0;
+				path = 0;
+			}
+		}
+		screen action{
+			usesbg = FALSE;
+			withalertscreen = FALSE;
+			noalertscreen = FALSE;
+			containerbox "Background"{
+				hasframe = TRUE;
+				standardbox "DEBUG"{
+					hasframe = TRUE;
+					width = 25%;
+					height = 25%;
+					left = 0p;
+					bottom = 0p;
+					displaycondition = 1 == 0;
+					buttonposition = BOTTOMRIGHT;
+					buttonsequence = HORIZONTAL;
+					item{
+						label = "CHAR1";
+						variable = char1;
+						format = "";
+						input = FALSE;
+					}
+					item{
+						label = "CHAR2";
+						variable = char2;
+						format = "";
+						input = FALSE;
+					}
+					item{
+						label = "CODE1";
+						variable = code1;
+						format = "1";
+						input = FALSE;
+					}
+					item{
+						label = "CODE2";
+						variable = code2;
+						format = "1";
+						input = FALSE;
+					}
+					item{
+						label = "CODE2";
+						variable = code2;
+						format = "1";
+						input = FALSE;
+					}
+					item{
+						label = "PATH";
+						variable = path;
+						format = "1";
+						input = FALSE;
+					}
+				}
+				containerbox "TopBox"{
+					hasframe = FALSE;
+					height = 6%;
+					top = 0p;
+					standardbox "T_01"{
+						hasframe = FALSE;
+						height = 6%;
+						displaycondition = n==1;
+						buttonposition = BOTTOMRIGHT;
+						buttonsequence = HORIZONTAL;
+						item{
+							label = "<>{\\rtf \\fs30 \\qc \\b Choice 1/<DR_MAX_CHOICES|1>}";
+						}
+					}
+					standardbox "T_02"{
+						hasframe = FALSE;
+						displaycondition = n==2;
+						buttonposition = BOTTOMRIGHT;
+						buttonsequence = HORIZONTAL;
+						item{
+							label = "<>{\\rtf \\fs30 \\qc \\b Choice 2/<DR_MAX_CHOICES|1>}";
+						}
+					}
+					standardbox "T_03"{
+						hasframe = FALSE;
+						displaycondition = n==3;
+						buttonposition = BOTTOMRIGHT;
+						buttonsequence = HORIZONTAL;
+						item{
+							label = "<>{\\rtf \\fs30 \\qc \\b Choice 3/<DR_MAX_CHOICES|1>}";
+						}
+					}
+					standardbox "T_04"{
+						hasframe = FALSE;
+						displaycondition = n==4;
+						buttonposition = BOTTOMRIGHT;
+						buttonsequence = HORIZONTAL;
+						item{
+							label = "<>{\\rtf \\fs30 \\qc \\b Choice 4/<DR_MAX_CHOICES|1>}";
+						}
+					}
+					standardbox "T_05"{
+						hasframe = FALSE;
+						displaycondition = n==5;
+						buttonposition = BOTTOMRIGHT;
+						buttonsequence = HORIZONTAL;
+						item{
+							label = "<>{\\rtf \\fs30 \\qc \\b Choice 5/<DR_MAX_CHOICES|1>}";
+						}
+					}
+					standardbox "T_06"{
+						hasframe = FALSE;
+						displaycondition = n==6;
+						buttonposition = BOTTOMRIGHT;
+						buttonsequence = HORIZONTAL;
+						item{
+							label = "<>{\\rtf \\fs30 \\qc \\b Choice 6/<DR_MAX_CHOICES|1>}";
+						}
+					}
+					standardbox "T_07"{
+						hasframe = FALSE;
+						displaycondition = n==7;
+						buttonposition = BOTTOMRIGHT;
+						buttonsequence = HORIZONTAL;
+						item{
+							label = "<>{\\rtf \\fs30 \\qc \\b Choice 7/<DR_MAX_CHOICES|1>}";
+						}
+					}
+					standardbox "T_08"{
+						hasframe = FALSE;
+						displaycondition = n==8;
+						buttonposition = BOTTOMRIGHT;
+						buttonsequence = HORIZONTAL;
+						item{
+							label = "<>{\\rtf \\fs30 \\qc \\b Choice 8/<DR_MAX_CHOICES|1>}";
+						}
+					}
+					standardbox "T_09"{
+						hasframe = FALSE;
+						displaycondition = n==9;
+						buttonposition = BOTTOMRIGHT;
+						buttonsequence = HORIZONTAL;
+						item{
+							label = "<>{\\rtf \\fs30 \\qc \\b Choice 9/<DR_MAX_CHOICES|1>}";
+						}
+					}
+					standardbox "T_10"{
+						hasframe = FALSE;
+						displaycondition = n==10;
+						buttonposition = BOTTOMRIGHT;
+						buttonsequence = HORIZONTAL;
+						item{
+							label = "<>{\\rtf \\fs30 \\qc \\b Choice 10/<DR_MAX_CHOICES|1>}";
+						}
+					}
+					standardbox "T_11"{
+						hasframe = FALSE;
+						displaycondition = n==11;
+						buttonposition = BOTTOMRIGHT;
+						buttonsequence = HORIZONTAL;
+						item{
+							label = "<>{\\rtf \\fs30 \\qc \\b Choice 11/<DR_MAX_CHOICES|1>}";
+						}
+					}
+					standardbox "T_12"{
+						hasframe = FALSE;
+						displaycondition = n==12;
+						buttonposition = BOTTOMRIGHT;
+						buttonsequence = HORIZONTAL;
+						item{
+							label = "<>{\\rtf \\fs30 \\qc \\b Choice 12/<DR_MAX_CHOICES|1>}";
+						}
+					}
+				}
+				containerbox "MiddleBox"{
+					hasframe = TRUE;
+					containerbox "Left_A"{
+						hasframe = TRUE;
+						width = 50%;
+						height = 500p;
+						left = 0p;
+						top = 50p;
+						standardbox "A_01"{
+							hasframe = TRUE;
+							displaycondition = dr_index_A[n] == 1;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_A_percent_1[1] | 1> in 10} chances to {\\b win $<dr_outcomes_A_amount_1[1] | .01>}}";
+							}
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_A_percent_2[1] | 1> in 10} chances to {\\b win $<dr_outcomes_A_amount_2[1] | .01>}}";
+							}
+						}
+						standardbox "A_02"{
+							hasframe = TRUE;
+							displaycondition = dr_index_A[n] == 2;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_A_percent_1[2] | 1> in 10} chances to {\\b win $<dr_outcomes_A_amount_1[2] | .01>}}";
+							}
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_A_percent_2[2] | 1> in 10} chances to {\\b lose $<dr_outcomes_A_modded_2[2] | .01>}}";
+							}
+						}
+						standardbox "A_03"{
+							hasframe = TRUE;
+							displaycondition = dr_index_A[n] == 3;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_A_percent_1[3] | 1> in 10} chances to {\\b win $<dr_outcomes_A_amount_1[3] | .01>}}";
+							}
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_A_percent_2[3] | 1> in 10} chances to {\\b lose $<dr_outcomes_A_modded_2[3] | .01>}}";
+							}
+						}
+						standardbox "A_04"{
+							hasframe = TRUE;
+							displaycondition = dr_index_A[n] == 4;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_A_percent_1[4] | 1> in 10} chances to {\\b win $<dr_outcomes_A_amount_1[4] | .01>}}";
+							}
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_A_percent_2[4] | 1> in 10} chances to {\\b lose $<dr_outcomes_A_modded_2[4] | .01>}}";
+							}
+						}
+						standardbox "A_05"{
+							hasframe = TRUE;
+							displaycondition = dr_index_A[n] == 5;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_A_percent_1[5] | 1> in 10} chances to {\\b win $<dr_outcomes_A_amount_1[5] | .01>}}";
+							}
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_A_percent_2[5] | 1> in 10} chances to {\\b lose $<dr_outcomes_A_modded_2[5] | .01>}}";
+							}
+						}
+						standardbox "A_06"{
+							hasframe = TRUE;
+							displaycondition = dr_index_A[n] == 6;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_A_percent_1[6] | 1> in 10} chances to {\\b win $<dr_outcomes_A_amount_1[6] | .01>}}";
+							}
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_A_percent_2[6] | 1> in 10} chances to {\\b lose $<dr_outcomes_A_modded_2[6] | .01>}}";
+							}
+						}
+						standardbox "A_07"{
+							hasframe = TRUE;
+							displaycondition = dr_index_A[n] == 7;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_A_percent_1[7] | 1> in 10} chances to {\\b win $<dr_outcomes_A_amount_1[7] | .01>}}";
+							}
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_A_percent_2[7] | 1> in 10} chances to {\\b lose $<dr_outcomes_A_modded_2[7] | .01>}}";
+							}
+						}
+						standardbox "A_08"{
+							hasframe = TRUE;
+							displaycondition = dr_index_A[n] == 8;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_A_percent_1[8] | 1> in 10} chances to {\\b win $<dr_outcomes_A_amount_1[8] | .01>}}";
+							}
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_A_percent_2[8] | 1> in 10} chances to {\\b win $<dr_outcomes_A_amount_2[8] | .01>}}";
+							}
+						}
+						standardbox "A_09"{
+							hasframe = TRUE;
+							displaycondition = dr_index_A[n] == 9;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_A_percent_1[9] | 1> in 10} chances to {\\b win $<dr_outcomes_A_amount_1[9] | .01>}}";
+							}
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_A_percent_2[9] | 1> in 10} chances to {\\b win $<dr_outcomes_A_amount_2[9] | .01>}}";
+							}
+						}
+						standardbox "A_10"{
+							hasframe = TRUE;
+							displaycondition = dr_index_A[n] == 10;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_A_percent_1[10] | 1> in 10} chances to {\\b win $<dr_outcomes_A_amount_1[10] | .01>}}";
+							}
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_A_percent_2[10] | 1> in 10} chances to {\\b lose $<dr_outcomes_A_modded_2[10] | .01>}}";
+							}
+						}
+						standardbox "A_11"{
+							hasframe = TRUE;
+							displaycondition = dr_index_A[n] == 11;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_A_percent_1[11] | 1> in 10} chances to {\\b win $<dr_outcomes_A_amount_1[11] | .01>}}";
+							}
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_A_percent_2[11] | 1> in 10} chances to {\\b lose $<dr_outcomes_A_modded_2[11] | .01>}}";
+							}
+						}
+						standardbox "A_12"{
+							hasframe = TRUE;
+							displaycondition = dr_index_A[n] == 12;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_A_percent_1[12] | 1> in 10} chances to {\\b win $<dr_outcomes_A_amount_1[12] | .01>}}";
+							}
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_A_percent_2[12] | 1> in 10} chances to {\\b win $<dr_outcomes_A_amount_2[12] | .01>}}";
+							}
+						}
+						standardbox "A_13"{
+							hasframe = TRUE;
+							displaycondition = dr_index_A[n] == 13;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_A_percent_1[13] | 1> in 10} chances to {\\b win $<dr_outcomes_A_amount_1[13] | .01>}}";
+							}
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_A_percent_2[13] | 1> in 10} chances to {\\b lose $<dr_outcomes_A_modded_2[13] | .01>}}";
+							}
+						}
+						standardbox "A_14"{
+							hasframe = TRUE;
+							displaycondition = dr_index_A[n] == 14;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_A_percent_1[14] | 1> in 10} chances to {\\b win $<dr_outcomes_A_amount_1[14] | .01>}}";
+							}
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_A_percent_2[14] | 1> in 10} chances to {\\b lose $<dr_outcomes_A_modded_2[14] | .01>}}";
+							}
+						}
+						standardbox "A_15"{
+							hasframe = TRUE;
+							displaycondition = dr_index_A[n] == 15;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_A_percent_1[15] | 1> in 10} chances to {\\b win $<dr_outcomes_A_amount_1[15] | .01>}}";
+							}
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_A_percent_2[15] | 1> in 10} chances to {\\b lose $<dr_outcomes_A_modded_2[15] | .01>}}";
+							}
+						}
+						standardbox "A_16"{
+							hasframe = TRUE;
+							displaycondition = dr_index_A[n] == 16;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_A_percent_1[16] | 1> in 10} chances to {\\b win $<dr_outcomes_A_amount_1[16] | .01>}}";
+							}
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_A_percent_2[16] | 1> in 10} chances to {\\b win $<dr_outcomes_A_amount_2[16] | .01>}}";
+							}
+						}
+						standardbox "A_17"{
+							hasframe = TRUE;
+							displaycondition = dr_index_A[n] == 17;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_A_percent_1[17] | 1> in 10} chances to {\\b win $<dr_outcomes_A_amount_1[17] | .01>}}";
+							}
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_A_percent_2[17] | 1> in 10} chances to {\\b lose $<dr_outcomes_A_modded_2[17] | .01>}}";
+							}
+						}
+						standardbox "A_18"{
+							hasframe = TRUE;
+							displaycondition = dr_index_A[n] == 18;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_A_percent_1[18] | 1> in 10} chances to {\\b win $<dr_outcomes_A_amount_1[18] | .01>}}";
+							}
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_A_percent_2[18] | 1> in 10} chances to {\\b lose $<dr_outcomes_A_modded_2[18] | .01>}}";
+							}
+						}
+						standardbox "A_19"{
+							hasframe = TRUE;
+							displaycondition = dr_index_A[n] == 19;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_A_percent_1[19] | 1> in 10} chances to {\\b win $<dr_outcomes_A_amount_1[19] | .01>}}";
+							}
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_A_percent_2[19] | 1> in 10} chances to {\\b win $<dr_outcomes_A_amount_2[19] | .01>}}";
+							}
+						}
+						standardbox "A_20"{
+							hasframe = TRUE;
+							displaycondition = dr_index_A[n] == 20;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_A_percent_1[20] | 1> in 10} chances to {\\b win $<dr_outcomes_A_amount_1[20] | .01>}}";
+							}
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_A_percent_2[20] | 1> in 10} chances to {\\b win $<dr_outcomes_A_amount_2[20] | .01>}}";
+							}
+						}
+						standardbox "A_21"{
+							hasframe = TRUE;
+							displaycondition = dr_index_A[n] == 21;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_A_percent_1[21] | 1> in 10} chances to {\\b win $<dr_outcomes_A_amount_1[21] | .01>}}";
+							}
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_A_percent_2[21] | 1> in 10} chances to {\\b win $<dr_outcomes_A_amount_2[21] | .01>}}";
+							}
+						}
+						standardbox "A_22"{
+							hasframe = TRUE;
+							displaycondition = dr_index_A[n] == 22;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_A_percent_1[22] | 1> in 10} chances to {\\b win $<dr_outcomes_A_amount_1[22] | .01>}}";
+							}
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_A_percent_2[22] | 1> in 10} chances to {\\b lose $<dr_outcomes_A_modded_2[22] | .01>}}";
+							}
+						}
+						standardbox "A_23"{
+							hasframe = TRUE;
+							displaycondition = dr_index_A[n] == 23;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_A_percent_1[23] | 1> in 10} chances to {\\b win $<dr_outcomes_A_amount_1[23] | .01>$}}";
+							}
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_A_percent_2[23] | 1> in 10} chances to {\\b lose $<dr_outcomes_A_modded_2[23] | .01>}}";
+							}
+						}
+						standardbox "A_24"{
+							hasframe = TRUE;
+							displaycondition = dr_index_A[n] == 24;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_A_percent_1[24] | 1> in 10} chances to {\\b win $<dr_outcomes_A_amount_1[24] | .01>}}";
+							}
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_A_percent_2[24] | 1> in 10} chances to {\\b lose $<dr_outcomes_A_modded_2[24] | .01>}}";
+							}
+						}
+						standardbox "A_25"{
+							hasframe = TRUE;
+							displaycondition = dr_index_A[n] == 25;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_A_percent_1[25] | 1> in 10} chances to {\\b win $<dr_outcomes_A_amount_1[25] | .01>}}";
+							}
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_A_percent_2[25] | 1> in 10} chances to {\\b win $<dr_outcomes_A_amount_2[25] | .01>}}";
+							}
+						}
+						standardbox "A_26"{
+							hasframe = TRUE;
+							displaycondition = dr_index_A[n] == 26;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_A_percent_1[26] | 1> in 10} chances to {\\b win $<dr_outcomes_A_amount_1[26] | .01>}}";
+							}
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_A_percent_2[26] | 1> in 10} chances to {\\b win $<dr_outcomes_A_amount_2[26] | .01>}}";
+							}
+						}
+						standardbox "A_27"{
+							hasframe = TRUE;
+							displaycondition = dr_index_A[n] == 27;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_A_percent_1[27] | 1> in 10} chances to {\\b win $<dr_outcomes_A_amount_1[27] | .01>}}";
+							}
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_A_percent_2[27] | 1> in 10} chances to {\\b win $<dr_outcomes_A_amount_2[27] | .01>}}";
+							}
+						}
+						standardbox "A_28"{
+							hasframe = TRUE;
+							displaycondition = dr_index_A[n] == 28;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_A_percent_1[28] | 1> in 10} chances to {\\b win $<dr_outcomes_A_amount_1[28] | .01>}}";
+							}
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_A_percent_2[28] | 1> in 10} chances to {\\b lose $<dr_outcomes_A_modded_2[28] | .01>}}";
+							}
+						}
+						standardbox "A_29"{
+							hasframe = TRUE;
+							displaycondition = dr_index_A[n] == 29;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_A_percent_1[29] | 1> in 10} chances to {\\b win $<dr_outcomes_A_amount_1[29] | .01>}}";
+							}
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_A_percent_2[29] | 1> in 10} chances to {\\b win $<dr_outcomes_A_amount_2[29] | .01>}}";
+							}
+						}
+						standardbox "A_30"{
+							hasframe = TRUE;
+							displaycondition = dr_index_A[n] == 30;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_A_percent_1[30] | 1> in 10} chances to {\\b win $<dr_outcomes_A_amount_1[30] | .01>}}";
+							}
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_A_percent_2[30] | 1> in 10} chances to {\\b win $<dr_outcomes_A_amount_2[30] | .01>}}";
+							}
+						}
+						standardbox "A_31"{
+							hasframe = TRUE;
+							displaycondition = dr_index_A[n] == 31;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_A_percent_1[31] | 1> in 10} chances to {\\b win $<dr_outcomes_A_amount_1[31] | .01>}}";
+							}
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_A_percent_2[31] | 1> in 10} chances to {\\b win $<dr_outcomes_A_amount_2[31] | .01>}}";
+							}
+						}
+						standardbox "A_32"{
+							hasframe = TRUE;
+							displaycondition = dr_index_A[n] == 32;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_A_percent_1[32] | 1> in 10} chances to {\\b win $<dr_outcomes_A_amount_1[32] | .01>}}";
+							}
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_A_percent_2[32] | 1> in 10} chances to {\\b win $<dr_outcomes_A_amount_2[32] | .01>}}";
+							}
+						}
+						standardbox "A_33"{
+							hasframe = TRUE;
+							displaycondition = dr_index_A[n] == 33;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_A_percent_1[33] | 1> in 10} chances to {\\b win $<dr_outcomes_A_amount_1[33] | .01>}}";
+							}
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_A_percent_2[33] | 1> in 10} chances to {\\b win $<dr_outcomes_A_amount_2[33] | .01>}}";
+							}
+						}
+						standardbox "A_34"{
+							hasframe = TRUE;
+							displaycondition = dr_index_A[n] == 34;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_A_percent_1[34] | 1> in 10} chances to {\\b win $<dr_outcomes_A_amount_1[34] | .01>}}";
+							}
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_A_percent_2[34] | 1> in 10} chances to {\\b win $<dr_outcomes_A_amount_2[34] | .01>}}";
+							}
+						}
+						standardbox "A_35"{
+							hasframe = TRUE;
+							displaycondition = dr_index_A[n] == 35;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_A_percent_1[35] | 1> in 10} chances to {\\b win $<dr_outcomes_A_amount_1[35] | .01>}}";
+							}
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_A_percent_2[35] | 1> in 10} chances to {\\b win $<dr_outcomes_A_amount_2[35] | .01>}}";
+							}
+						}
+						standardbox "A_36"{
+							hasframe = TRUE;
+							displaycondition = dr_index_A[n] == 36;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_A_percent_1[36] | 1> in 10} chances to {\\b win $<dr_outcomes_A_amount_1[36] | .01>}}";
+							}
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_A_percent_2[36] | 1> in 10} chances to {\\b win $<dr_outcomes_A_amount_2[36] | .01>}}";
+							}
+						}
+						standardbox "A_37"{
+							hasframe = TRUE;
+							displaycondition = dr_index_A[n] == 37;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_A_percent_1[37] | 1> in 10} chances to {\\b win $<dr_outcomes_A_amount_1[37] | .01>}}";
+							}
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_A_percent_2[37] | 1> in 10} chances to {\\b lose $<dr_outcomes_A_modded_2[37] | .01>}}";
+							}
+						}
+						standardbox "A_38"{
+							hasframe = TRUE;
+							displaycondition = dr_index_A[n] == 38;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_A_percent_1[38] | 1> in 10} chances to {\\b win $<dr_outcomes_A_amount_1[38] | .01>}}";
+							}
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_A_percent_2[38] | 1> in 10} chances to {\\b lose $<dr_outcomes_A_modded_2[38] | .01>}}";
+							}
+						}
+						standardbox "A_39"{
+							hasframe = TRUE;
+							displaycondition = dr_index_A[n] == 39;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_A_percent_1[39] | 1> in 10} chances to {\\b win $<dr_outcomes_A_amount_1[39] | .01>}}";
+							}
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_A_percent_2[39] | 1> in 10} chances to {\\b lose $<dr_outcomes_A_modded_2[39] | .01>}}";
+							}
+						}
+						standardbox "A_40"{
+							hasframe = TRUE;
+							displaycondition = dr_index_A[n] == 40;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_A_percent_1[40] | 1> in 10} chances to {\\b win $<dr_outcomes_A_amount_1[40] | .01>}}";
+							}
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_A_percent_2[40] | 1> in 10} chances to {\\b lose $<dr_outcomes_A_modded_2[40] | .01>}}";
+							}
+						}
+					}
+					containerbox "Right_B"{
+						hasframe = TRUE;
+						width = 50%;
+						height = 500p;
+						right = 0p;
+						top = 50p;
+						standardbox "B_01"{
+							hasframe = TRUE;
+							displaycondition = dr_index_B[n] == 1;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_B_percent_1[1] | 1> in 10} chances to {\\b win $<dr_outcomes_B_amount_1[1] | .01>}}";
+							}
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_B_percent_2[1] | 1> in 10} chances to {\\b lose $<dr_outcomes_B_modded_2[1] | .01>}}";
+							}
+						}
+						standardbox "B_02"{
+							hasframe = TRUE;
+							displaycondition = dr_index_B[n] == 2;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_B_percent_1[2] | 1> in 10} chances to {\\b win $<dr_outcomes_B_amount_1[2] | .01>}}";
+							}
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_B_percent_2[2] | 1> in 10} chances to {\\b lose $<dr_outcomes_B_modded_2[2] | .01>}}";
+							}
+						}
+						standardbox "B_03"{
+							hasframe = TRUE;
+							displaycondition = dr_index_B[n] == 3;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_B_percent_1[3] | 1> in 10} chances to {\\b win $<dr_outcomes_B_amount_1[3] | .01>}}";
+							}
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_B_percent_2[3] | 1> in 10} chances to {\\b lose $<dr_outcomes_B_modded_2[3] | .01>}}";
+							}
+						}
+						standardbox "B_04"{
+							hasframe = TRUE;
+							displaycondition = dr_index_B[n] == 4;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_B_percent_1[4] | 1> in 10} chances to {\\b win $<dr_outcomes_B_amount_1[4] | .01>}}";
+							}
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_B_percent_2[4] | 1> in 10} chances to {\\b lose $<dr_outcomes_B_modded_2[4] | .01>}}";
+							}
+						}
+						standardbox "B_05"{
+							hasframe = TRUE;
+							displaycondition = dr_index_B[n] == 5;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_B_percent_1[5] | 1> in 10} chances to {\\b win $<dr_outcomes_B_amount_1[5] | .01>}}";
+							}
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_B_percent_2[5] | 1> in 10} chances to {\\b lose $<dr_outcomes_B_modded_2[5] | .01>}}";
+							}
+						}
+						standardbox "B_06"{
+							hasframe = TRUE;
+							displaycondition = dr_index_B[n] == 6;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_B_percent_1[6] | 1> in 10} chances to {\\b win $<dr_outcomes_B_amount_1[6] | .01>}}";
+							}
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_B_percent_2[6] | 1> in 10} chances to {\\b lose $<dr_outcomes_B_modded_2[6] | .01>}}";
+							}
+						}
+						standardbox "B_07"{
+							hasframe = TRUE;
+							displaycondition = dr_index_B[n] == 7;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_B_percent_1[7] | 1> in 10} chances to {\\b win $<dr_outcomes_B_amount_1[7] | .01>}}";
+							}
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_B_percent_2[7] | 1> in 10} chances to {\\b lose $<dr_outcomes_B_modded_2[7] | .01>}}";
+							}
+						}
+						standardbox "B_08"{
+							hasframe = TRUE;
+							displaycondition = dr_index_B[n] == 8;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_B_percent_1[8] | 1> in 10} chances to {\\b win $<dr_outcomes_B_amount_1[8] | .01>}}";
+							}
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_B_percent_2[8] | 1> in 10} chances to {\\b win $<dr_outcomes_B_amount_2[8] | .01>}}";
+							}
+						}
+						standardbox "B_09"{
+							hasframe = TRUE;
+							displaycondition = dr_index_B[n] == 9;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_B_percent_1[9] | 1> in 10} chances to {\\b win $<dr_outcomes_B_amount_1[9] | .01>}}";
+							}
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_B_percent_2[9] | 1> in 10} chances to {\\b lose $<dr_outcomes_B_modded_2[9] | .01>}}";
+							}
+						}
+						standardbox "B_10"{
+							hasframe = TRUE;
+							displaycondition = dr_index_B[n] == 10;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_B_percent_1[10] | 1> in 10} chances to {\\b win $<dr_outcomes_B_amount_1[10] | .01>}}";
+							}
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_B_percent_2[10] | 1> in 10} chances to {\\b lose $<dr_outcomes_B_modded_2[10] | .01>}}";
+							}
+						}
+						standardbox "B_11"{
+							hasframe = TRUE;
+							displaycondition = dr_index_B[n] == 11;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_B_percent_1[11] | 1> in 10} chances to {\\b win $<dr_outcomes_B_amount_1[11] | .01>}}";
+							}
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_B_percent_2[11] | 1> in 10} chances to {\\b lose $<dr_outcomes_B_modded_2[11] | .01>}}";
+							}
+						}
+						standardbox "B_12"{
+							hasframe = TRUE;
+							displaycondition = dr_index_B[n] == 12;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_B_percent_1[12] | 1> in 10} chances to {\\b win $<dr_outcomes_B_amount_1[12] | .01>}}";
+							}
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_B_percent_2[12] | 1> in 10} chances to {\\b win $<dr_outcomes_B_amount_2[12] | .01>}}";
+							}
+						}
+						standardbox "B_13"{
+							hasframe = TRUE;
+							displaycondition = dr_index_B[n] == 13;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_B_percent_1[13] | 1> in 10} chances to {\\b win $<dr_outcomes_B_amount_1[13] | .01>}}";
+							}
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_B_percent_2[13] | 1> in 10} chances to {\\b lose $<dr_outcomes_B_modded_2[13] | .01>}}";
+							}
+						}
+						standardbox "B_14"{
+							hasframe = TRUE;
+							displaycondition = dr_index_B[n] == 14;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_B_percent_1[14] | 1> in 10} chances to {\\b win $<dr_outcomes_B_amount_1[14] | .01>}}";
+							}
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_B_percent_2[14] | 1> in 10} chances to {\\b win $<dr_outcomes_B_amount_2[14] | .01>}}";
+							}
+						}
+						standardbox "B_15"{
+							hasframe = TRUE;
+							displaycondition = dr_index_B[n] == 15;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_B_percent_1[15] | 1> in 10} chances to {\\b win $<dr_outcomes_B_amount_1[15] | .01>}}";
+							}
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_B_percent_2[15] | 1> in 10} chances to {\\b win $<dr_outcomes_B_amount_2[15] | .01>}}";
+							}
+						}
+						standardbox "B_16"{
+							hasframe = TRUE;
+							displaycondition = dr_index_B[n] == 16;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_B_percent_1[16] | 1> in 10} chances to {\\b win $<dr_outcomes_B_amount_1[16] | .01>}}";
+							}
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_B_percent_2[16] | 1> in 10} chances to {\\b win $<dr_outcomes_B_amount_2[16] | .01>}}";
+							}
+						}
+						standardbox "B_17"{
+							hasframe = TRUE;
+							displaycondition = dr_index_B[n] == 17;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_B_percent_1[17] | 1> in 10} chances to {\\b win $<dr_outcomes_B_amount_1[17] | .01>}}";
+							}
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_B_percent_2[17] | 1> in 10} chances to {\\b win $<dr_outcomes_B_amount_2[17] | .01>}}";
+							}
+						}
+						standardbox "B_18"{
+							hasframe = TRUE;
+							displaycondition = dr_index_B[n] == 18;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_B_percent_1[18] | 1> in 10} chances to {\\b win $<dr_outcomes_B_amount_1[18] | .01>}}";
+							}
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_B_percent_2[18] | 1> in 10} chances to {\\b win $<dr_outcomes_B_amount_2[18] | .01>}}";
+							}
+						}
+						standardbox "B_19"{
+							hasframe = TRUE;
+							displaycondition = dr_index_B[n] == 19;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_B_percent_1[19] | 1> in 10} chances to {\\b win $<dr_outcomes_B_amount_1[19] | .01>}}";
+							}
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_B_percent_2[19] | 1> in 10} chances to {\\b lose $<dr_outcomes_B_modded_2[19] | .01>}}";
+							}
+						}
+						standardbox "B_20"{
+							hasframe = TRUE;
+							displaycondition = dr_index_B[n] == 20;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_B_percent_1[20] | 1> in 10} chances to {\\b win $<dr_outcomes_B_amount_1[20] | .01>}}";
+							}
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_B_percent_2[20] | 1> in 10} chances to {\\b win $<dr_outcomes_B_amount_2[20] | .01>}}";
+							}
+						}
+						standardbox "B_21"{
+							hasframe = TRUE;
+							displaycondition = dr_index_B[n] == 21;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_B_percent_1[21] | 1> in 10} chances to {\\b win $<dr_outcomes_B_amount_1[21] | .01>}}";
+							}
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_B_percent_2[21] | 1> in 10} chances to {\\b win $<dr_outcomes_B_amount_2[21] | .01>}}";
+							}
+						}
+						standardbox "B_22"{
+							hasframe = TRUE;
+							displaycondition = dr_index_B[n] == 22;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_B_percent_1[22] | 1> in 10} chances to {\\b win $<dr_outcomes_B_amount_1[22] | .01>}}";
+							}
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_B_percent_2[22] | 1> in 10} chances to {\\b lose $<dr_outcomes_B_modded_2[22] | .01>}}";
+							}
+						}
+						standardbox "B_23"{
+							hasframe = TRUE;
+							displaycondition = dr_index_B[n] == 23;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_B_percent_1[23] | 1> in 10} chances to {\\b win $<dr_outcomes_B_amount_1[23] | .01>}}";
+							}
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_B_percent_2[23] | 1> in 10} chances to {\\b lose $<dr_outcomes_B_modded_2[23] | .01>}}";
+							}
+						}
+						standardbox "B_24"{
+							hasframe = TRUE;
+							displaycondition = dr_index_B[n] == 24;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_B_percent_1[24] | 1> in 10} chances to {\\b win $<dr_outcomes_B_amount_1[24] | .01>}}";
+							}
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_B_percent_2[24] | 1> in 10} chances to {\\b win $<dr_outcomes_B_amount_2[24] | .01>}}";
+							}
+						}
+						standardbox "B_25"{
+							hasframe = TRUE;
+							displaycondition = dr_index_B[n] == 25;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_B_percent_1[25] | 1> in 10} chances to {\\b win $<dr_outcomes_B_amount_1[25] | .01>}}";
+							}
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_B_percent_2[25] | 1> in 10} chances to {\\b win $<dr_outcomes_B_amount_2[25] | .01>}}";
+							}
+						}
+						standardbox "B_26"{
+							hasframe = TRUE;
+							displaycondition = dr_index_B[n] == 26;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_B_percent_1[26] | 1> in 10} chances to {\\b win $<dr_outcomes_B_amount_1[26] | .01>}}";
+							}
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_B_percent_2[26] | 1> in 10} chances to {\\b lose $<dr_outcomes_B_modded_2[26] | .01>}}";
+							}
+						}
+						standardbox "B_27"{
+							hasframe = TRUE;
+							displaycondition = dr_index_B[n] == 27;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_B_percent_1[27] | 1> in 10} chances to {\\b win $<dr_outcomes_B_amount_1[27] | .01>}}";
+							}
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_B_percent_2[27] | 1> in 10} chances to {\\b lose $<dr_outcomes_B_modded_2[27] | .01>}}";
+							}
+						}
+						standardbox "B_28"{
+							hasframe = TRUE;
+							displaycondition = dr_index_B[n] == 28;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_B_percent_1[28] | 1> in 10} chances to {\\b win $<dr_outcomes_B_amount_1[28] | .01>}}";
+							}
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_B_percent_2[28] | 1> in 10} chances to {\\b lose $<dr_outcomes_B_modded_2[28] | .01>}}";
+							}
+						}
+						standardbox "B_29"{
+							hasframe = TRUE;
+							displaycondition = dr_index_B[n] == 29;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_B_percent_1[29] | 1> in 10} chances to {\\b win $<dr_outcomes_B_amount_1[29] | .01>}}";
+							}
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_B_percent_2[29] | 1> in 10} chances to {\\b lose $<dr_outcomes_B_modded_2[29] | .01>}}";
+							}
+						}
+						standardbox "B_30"{
+							hasframe = TRUE;
+							displaycondition = dr_index_B[n] == 30;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_B_percent_1[30] | 1> in 10} chances to {\\b win $<dr_outcomes_B_amount_1[30] | .01>}}";
+							}
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_B_percent_2[30] | 1> in 10} chances to {\\b lose $<dr_outcomes_B_modded_2[30] | .01>}}";
+							}
+						}
+						standardbox "B_31"{
+							hasframe = TRUE;
+							displaycondition = dr_index_B[n] == 31;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_B_percent_1[31] | 1> in 10} chances to {\\b win $<dr_outcomes_B_amount_1[31] | .01>}}";
+							}
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_B_percent_2[31] | 1> in 10} chances to {\\b lose $<dr_outcomes_B_modded_2[31] | .01>}}";
+							}
+						}
+						standardbox "B_32"{
+							hasframe = TRUE;
+							displaycondition = dr_index_B[n] == 32;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_B_percent_1[32] | 1> in 10} chances to {\\b win $<dr_outcomes_B_amount_1[32] | .01>}}";
+							}
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_B_percent_2[32] | 1> in 10} chances to {\\b win $<dr_outcomes_B_amount_2[32] | .01>}}";
+							}
+						}
+						standardbox "B_33"{
+							hasframe = TRUE;
+							displaycondition = dr_index_B[n] == 33;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_B_percent_1[33] | 1> in 10} chances to {\\b win $<dr_outcomes_B_amount_1[33] | .01>}}";
+							}
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_B_percent_2[33] | 1> in 10} chances to {\\b win $<dr_outcomes_B_amount_2[33] | .01>}}";
+							}
+						}
+						standardbox "B_34"{
+							hasframe = TRUE;
+							displaycondition = dr_index_B[n] == 34;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_B_percent_1[34] | 1> in 10} chances to {\\b win $<dr_outcomes_B_amount_1[34] | .01>}}";
+							}
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_B_percent_2[34] | 1> in 10} chances to {\\b win $<dr_outcomes_B_amount_2[34] | .01>}}";
+							}
+						}
+						standardbox "B_35"{
+							hasframe = TRUE;
+							displaycondition = dr_index_B[n] == 35;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_B_percent_1[35] | 1> in 10} chances to {\\b win $<dr_outcomes_B_amount_1[35] | .01>}}";
+							}
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_B_percent_2[35] | 1> in 10} chances to {\\b lose $<dr_outcomes_B_modded_2[35] | .01>}}";
+							}
+						}
+						standardbox "B_36"{
+							hasframe = TRUE;
+							displaycondition = dr_index_B[n] == 36;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_B_percent_1[36] | 1> in 10} chances to {\\b win $<dr_outcomes_B_amount_1[36] | .01>}}";
+							}
+							item{
+								label = "<>{\\rtf \\fs30 \\qc {\\b <dr_outcomes_B_percent_2[36] | 1> in 10} chances to {\\b win $<dr_outcomes_B_amount_2[36] | .01>}}";
+							}
+						}
+					}
+				}
+				containerbox "ButtonBox"{
+					hasframe = FALSE;
+					standardbox "Standard"{
+						hasframe = FALSE;
+						height = 80p;
+						bottom = 190p;
+						displaycondition = n != DR_MAX_CHOICES;
+						buttonposition = BOTTOMMIDDLE;
+						buttonsequence = HORIZONTAL;
+						onofftrigger "ON/OFF trigger"{
+							what = ON;
+							eventtime = START_DEEP_RISK_MAIN;
+						}
+						button " Confirm choice "{
+							clearinputafterok = FALSE;
+							norecordmadeorselected = FALSE;
+							terminatestage = FALSE;
+							donotterminatestage = TRUE;
+							specialbuttoncolor = TRUE;
+							buttoncolor = 5921535;
+							eventtime = START_DEEP_RISK_MAIN_BUTTON;
+							checker{
+								condition = dr_choices[n]!=0;
+								message = "Please make a choice";
+								yesButtonStr = "";
+								noButtonStr = "OK";
+							}
+							program{
+								table = subjects;
+								do{
+									// compute path -- adapted javascript algorithm
+									path = 0;
+									
+									for (i, n) 
+									{    
+									    path = path + (dr_choices[i] - 1); // original algorthim is 0 and 1. we are 1 and 2, so adjust
+									    path = path * 2;
+									} 
+									
+									path = path + 1;  // arrays in ztree start from 1, so need to add 1
+									dr_path[n] = path;
+									
+									// increase n
+									n=n+1;
+									
+									if (n == 2) { char1 = mid(db_coded_indexers_2, path, 1); char2 = mid(db_coded_indexers_2, path + 1, 1); } 
+									elsif (n == 3) { char1 = mid(db_coded_indexers_3, path, 1); char2 = mid(db_coded_indexers_3, path + 1, 1); }
+									elsif (n == 4) { char1 = mid(db_coded_indexers_4, path, 1); char2 = mid(db_coded_indexers_4, path + 1, 1); }
+									elsif (n == 5) { char1 = mid(db_coded_indexers_5, path, 1); char2 = mid(db_coded_indexers_5, path + 1, 1); }
+									elsif (n == 6) { char1 = mid(db_coded_indexers_6, path, 1); char2 = mid(db_coded_indexers_6, path + 1, 1); }
+									elsif (n == 7) { char1 = mid(db_coded_indexers_7, path, 1); char2 = mid(db_coded_indexers_7, path + 1, 1); }
+									elsif (n == 8) { char1 = mid(db_coded_indexers_8, path, 1); char2 = mid(db_coded_indexers_8, path + 1, 1); }
+									elsif (n == 9) { char1 = mid(db_coded_indexers_9, path, 1); char2 = mid(db_coded_indexers_9, path + 1, 1); }
+									elsif (n == 10) { char1 = mid(db_coded_indexers_10, path, 1); char2 = mid(db_coded_indexers_10, path + 1, 1); }
+									elsif (n == 11) { char1 = mid(db_coded_indexers_11, path, 1); char2 = mid(db_coded_indexers_11, path + 1, 1); }
+									elsif (n == 12) { char1 = mid(db_coded_indexers_12, path, 1); char2 = mid(db_coded_indexers_12, path + 1, 1); }
+									
+									// convert to code
+									code1 = code(char1);
+									code2 = code(char2);
+									
+									// transform characters
+									if (code1 >= 97) { code1 = code1 - 97 + 26; }
+									elsif (code1 >= 65) { code1 = code1 - 65; }
+									elsif (code1 >= 48) { code1 = code1 - 48 + 52; }
+									elsif (code1 >= 42) { code1 = code1 - 42 + 62; }
+									
+									if (code2 >= 97) { code2 = code2 - 97 + 26; }
+									elsif (code2 >= 65) { code2 = code2 - 65; }
+									elsif (code2 >= 48) { code2 = code2 - 48 + 52; }
+									elsif (code2 >= 42) { code2 = code2 - 42 + 62; }
+									
+									// add one because ztree index start at 1
+									code1 = code1 + 1;
+									code2 = code2 + 1;
+									
+									// store in indexes
+									dr_index_A[n] = code1;
+									dr_index_B[n] = code2; 
+									
+									// collect payout data
+									dr_shown_chance_A1[n] = dr_outcomes_A_chance_1[code1];
+									dr_shown_amount_A1[n] = dr_outcomes_A_amount_1[code1];
+									dr_shown_chance_A2[n] = dr_outcomes_A_chance_2[code1]; 
+									dr_shown_amount_A2[n] = dr_outcomes_A_amount_2[code1];
+									dr_shown_chance_B1[n] = dr_outcomes_B_chance_1[code2];
+									dr_shown_amount_B1[n] = dr_outcomes_B_amount_1[code2];
+									dr_shown_chance_B2[n] = dr_outcomes_B_chance_2[code2]; 
+									dr_shown_amount_B2[n] = dr_outcomes_B_amount_2[code2];
+								}
+							}
+						}
+					}
+					standardbox "Standard"{
+						hasframe = FALSE;
+						height = 80p;
+						bottom = 190p;
+						displaycondition = n == DR_MAX_CHOICES;
+						buttonposition = BOTTOMMIDDLE;
+						buttonsequence = HORIZONTAL;
+						onofftrigger "ON/OFF trigger"{
+							what = ON;
+							eventtime = END_DEEP_RISK_MAIN;
+						}
+						button " FINISH "{
+							clearinputafterok = FALSE;
+							norecordmadeorselected = FALSE;
+							terminatestage = TRUE;
+							donotterminatestage = FALSE;
+							specialbuttoncolor = TRUE;
+							buttoncolor = 5921535;
+							eventtime = END_DEEP_RISK_MAIN_BUTTON;
+							checker{
+								condition = dr_choices[n]!=0;
+								message = "Please make a choice";
+								yesButtonStr = "";
+								noButtonStr = "OK";
+							}
+						}
+					}
+					standardbox "Standard"{
+						hasframe = FALSE;
+						width = 700p;
+						height = 40p;
+						left = 0p;
+						top = 600p;
+						displaycondition = dr_choices[n]!=1;
+						buttonposition = BOTTOMMIDDLE;
+						buttonsequence = HORIZONTAL;
+						button " Choose the LEFT option "{
+							clearinputafterok = FALSE;
+							norecordmadeorselected = FALSE;
+							terminatestage = FALSE;
+							donotterminatestage = TRUE;
+							specialbuttoncolor = FALSE;
+							buttoncolor = 0;
+							program{
+								table = subjects;
+								do{
+									dr_choices[n]=1;
+								}
+							}
+						}
+					}
+					standardbox "Standard"{
+						hasframe = FALSE;
+						width = 700p;
+						height = 40p;
+						left = 0p;
+						top = 600p;
+						displaycondition = dr_choices[n]==1;
+						buttonposition = BOTTOMMIDDLE;
+						buttonsequence = HORIZONTAL;
+						button " Choose the LEFT option "{
+							clearinputafterok = FALSE;
+							norecordmadeorselected = FALSE;
+							terminatestage = FALSE;
+							donotterminatestage = TRUE;
+							specialbuttoncolor = TRUE;
+							buttoncolor = 5921535;
+							program{
+								table = subjects;
+								do{
+									dr_choices[n]=1;
+								}
+							}
+						}
+					}
+					standardbox "Standard"{
+						hasframe = FALSE;
+						width = 700p;
+						height = 40p;
+						right = 0p;
+						top = 600p;
+						displaycondition = dr_choices[n]!=2;
+						buttonposition = BOTTOMMIDDLE;
+						buttonsequence = HORIZONTAL;
+						button " Choose the RIGHT option "{
+							clearinputafterok = FALSE;
+							norecordmadeorselected = FALSE;
+							terminatestage = FALSE;
+							donotterminatestage = TRUE;
+							specialbuttoncolor = FALSE;
+							buttoncolor = 0;
+							program{
+								table = subjects;
+								do{
+									dr_choices[n]=2;
+								}
+							}
+						}
+					}
+					standardbox "Standard"{
+						hasframe = FALSE;
+						width = 700p;
+						height = 40p;
+						right = 0p;
+						top = 600p;
+						displaycondition = dr_choices [n]==2;
+						buttonposition = BOTTOMMIDDLE;
+						buttonsequence = HORIZONTAL;
+						button " Choose the RIGHT option "{
+							clearinputafterok = FALSE;
+							norecordmadeorselected = FALSE;
+							terminatestage = FALSE;
+							donotterminatestage = TRUE;
+							specialbuttoncolor = TRUE;
+							buttoncolor = 5921535;
+							program{
+								table = subjects;
+								do{
+									dr_choices[n]=2;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		screen wait{
+			usesbg = TRUE;
+			withalertscreen = FALSE;
+			noalertscreen = FALSE;
+		}
+	}
+	stage "SCALE_RISK"{
+		startwaitforall = FALSE;
+		startConditionStr = "";
+		singleentry = FALSE;
+		singleentrycontinuation = FALSE;
+		timeouttype = never;
+		timeout = -1;
+		program{
+			table = subjects;
+			do{
+				
+				
+				dr_rand_1 = roundup(random()*DR_MAX_CHOICES, 1);
+				dr_rand_2 = random();
+				
+				//  Period
+				if(Period==1){
+				
+				// dr rand 1 gets us the index -- we need to get the users choice from that
+				if (dr_choices[dr_rand_1] == 1) // LEFT aka A
+				{
+				    if (dr_rand_2 < dr_shown_chance_A1[dr_rand_1])
+				    {
+				         payoffD = dr_shown_amount_A1[dr_rand_1]; // first payout result
+				    }
+				    else
+				    {
+				         payoffD = dr_shown_amount_A2[dr_rand_1]; // second payout result
+				    }
+				}
+				else // RIGHT aka B
+				{
+				    if (dr_rand_2 < dr_shown_chance_B1[dr_rand_1])
+				    {
+				         payoffD = dr_shown_amount_B1[dr_rand_1]; // first payout result
+				    }
+				    else
+				    {
+				         payoffD = dr_shown_amount_B2[dr_rand_1]; // second payout result
+				    }
+				}
+				
+				}
+				
+			}
+		}
+		screen action{
+			usesbg = FALSE;
+			withalertscreen = FALSE;
+			noalertscreen = FALSE;
+			headerbox "Header"{
+				hasframe = FALSE;
+				height = 10%;
+				top = 0p;
+				cuttop = TRUE;
+				showPeriods = FALSE;
+				showNumPeriods = FALSE;
+				periodtext = "";
+				periodoftext = "";
+				practiceperiodprefix = "";
+				showtime = FALSE;
+				timestr = "";
+				pleasedecidetext = "";
+			}
+			standardbox "Instructions"{
+				hasframe = FALSE;
+				left = 1%;
+				top = 2%;
+				buttonposition = BOTTOMRIGHT;
+				buttonsequence = HORIZONTAL;
+				item{
+					label = "{\\rtf \\fs40\\b SCALE: TASK 1 }";
+				}
+				item{
+				}
+				item{
+				}
+				item{
+					label = "{\\rtf \\fs35 You have now completed TASK 1. }";
+				}
+				item{
+				}
+				item{
+					label = "{\\rtf \\fs35 \\b 1. \\b0 On a scale of 1 to 7, where 1 indicates least confident (not confident) and 7 indicates most confident (fully confident), please rate how confident you feel about the choices that you made in TASK 1. }";
+				}
+				item{
+				}
+				item{
+					label = "{\\rtf \\fs30 Your confidence level regarding TASK 1: }";
+					variable = SCALE1a;
+					format = "!radioline: 1 = \"1\"; 7 = \"7\"; 7;";
+					input = TRUE;
+					showdefault = FALSE;
+					emptyallowed = TRUE;
+					min = 1;
+					max = 7;
+				}
+				item{
+				}
+				item{
+				}
+				item{
+				}
+				item{
+					label = "{\\rtf \\fs35 \\b 2. \\b0 On a scale of 1 to 7, where 1 indicates small effort and 7 indicates large effort, please rate how much effort you exercised in TASK 1. }";
+				}
+				item{
+				}
+				item{
+					label = "{\\rtf \\fs30 Your effort level regarding TASK 1: }";
+					variable = SCALE1b;
+					format = "!radioline: 1 = \"1\"; 7 = \"7\"; 7;";
+					input = TRUE;
+					showdefault = FALSE;
+					emptyallowed = TRUE;
+					min = 1;
+					max = 7;
+				}
+				item{
+				}
+				item{
+				}
+				item{
+				}
+				item{
+					label = "{\\rtf \\fs35 \\b 3. \\b0 On a scale of 1 to 7, where 1 indicates simplicity and 7 indicates complexity, please rate how simple/complex TASK 1 was. }";
+				}
+				item{
+				}
+				item{
+					label = "{\\rtf \\fs30 Simplicity/complexity of TASK 1: }";
+					variable = SCALE1c;
+					format = "!radioline: 1 = \"1\"; 7 = \"7\"; 7;";
+					input = TRUE;
+					showdefault = FALSE;
+					emptyallowed = TRUE;
+					min = 1;
+					max = 7;
+				}
+				item{
+				}
+			}
+			standardbox "Standard"{
+				hasframe = FALSE;
+				height = 30%;
+				top = 70%;
+				buttonposition = BOTTOMRIGHT;
+				buttonsequence = HORIZONTAL;
+				onofftrigger "ON/OFF trigger"{
+					what = ON;
+					eventtime = END_DEEP_RISK_SCALE;
+				}
+				button "  OK"{
+					clearinputafterok = FALSE;
+					norecordmadeorselected = FALSE;
+					terminatestage = TRUE;
+					donotterminatestage = FALSE;
+					specialbuttoncolor = TRUE;
+					buttoncolor = 5921535;
+					eventtime = END_DEEP_RISK_SCALE_BUTTON;
+					checker{
+						condition = SCALE1a >=1;
+						message = "Please make your choice on scale 1!";
+						yesButtonStr = "";
+						noButtonStr = "OK";
+					}
+					checker{
+						condition = SCALE1b >=1;
+						message = "Please make your choice on scale 2!";
+						yesButtonStr = "";
+						noButtonStr = "OK";
+					}
+					checker{
+						condition = SCALE1c >=1;
+						message = "Please make your choice on scale 3!";
+						yesButtonStr = "";
+						noButtonStr = "OK";
+					}
+				}
+			}
+		}
+		screen wait{
+			usesbg = TRUE;
+			withalertscreen = FALSE;
+			noalertscreen = FALSE;
+		}
+	}
+	roles{
+		role "S 1"{
+		}
+	}
+	period "1"{
+		prompt = "";
+		subject 1{
+			name = "";
+			group = 1;
+		}
+	}
+}

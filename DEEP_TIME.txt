@@ -1,0 +1,3002 @@
+treatment "DEEP_TIME"{
+	background{
+		table globals{
+		}
+		table numbers{
+			lifetime = PERIOD;
+			execute = WITHEACH;
+		}
+		table blocks{
+			lifetime = PERIOD;
+			execute = WITHEACH;
+		}
+		table subjects{
+		}
+		table summary{
+		}
+		table contracts{
+		}
+		table session{
+		}
+		table logfile{
+		}
+		numsubjects = 1;
+		numgroups = 1;
+		numpracticeperiods = 0;
+		numactualperiods = 1;
+		exchangerate = 1;
+		startendowment = 0;
+		showupfee = 0;
+		noAutoscope = FALSE;
+		firstBoxesOnTop = FALSE;
+		showupfeeawaytext = "Sie haben Verlust gemacht. Wollen Sie das Startgeld einsetzen, um diesen Verlust zu decken?";
+		showupfeeawayyestext = "Ja";
+		showupfeeawaynotext = "Nein";
+		moneyawaytext = "Sie haben Verlust gemacht. Wollen Sie weiterfahren?";
+		moneyawayyestext = "Ja";
+		moneyawaynotext = "Nein";
+		bancruptwaittext = "Bitte warten Sie bis Ihr Computer wieder freigegeben wird.";
+		program{
+			table = globals;
+			do{
+				///time
+				
+				dt_coded_indexers_2 = "BBbH";
+				
+				dt_coded_indexers_3 = "eIcBZI5H";
+				
+				dt_coded_indexers_4 = "ABGaVBgIcBcR6H4H";
+				
+				dt_coded_indexers_5 = "A3GBHBIafIeIMoIISaTItavaLnLn6HEg";
+				
+				dt_coded_indexers_6 = "PBPB7IKBeaLBHa6HSBpIYBmIb3LnLnmI6H6HpIuItRyada0aMoMoMoMX6QEgb3EU";
+				
+				dt_coded_indexers_7 = "A2A2A27I6IAIuINBAIAawaoIFa4a7a7aQBUBSBRBWBaBZBYBiIhIb3hIb3MolIb3QBQB5aWaoItIsRtadIdIva4axRxRya6aJlJlJlJlMFMFMOGV5QEgGiGicH6HMX6H";
+				
+				dt_coded_indexers_8 = "P3P3P37IP37I6I7a5I5I7aGaIByIoIOBfIDBeRPavR7apIOBHB3aLBHBNBLBJBLalIkIkIjIEIFIsarRUBXBZBbBEIFIrIpIbBkIbBDIhIhINpFIkIjIb3jIJILnbBoI4avaRB5HYBUBSBUBOIQIRIb3XIWIXIwasRrasasadIdIcB6HuacZcacadada3aaBKmKmKmKmKmKmKmKmMOMOMOMOMFMFGMGM6ZEgGiGiFhFhFhHjaBcBcBRYcB6HGiGV";
+				
+				dt_coded_indexers_9 = "CBCBCBCBCBCB6IAICBCB6IAI5I5I6IGa4I4I4IAI6I6aPaIa1IJBoI7aLBqImIlI6HgI7aGBAIfafaFBuIIBIBGBlIOBvIsIPaLBKBGBJBOB7a7aKBzaNaMaIB6aIBNaOBnIRBmITBmIWBlIlIRBlIUBIIyaTBsakIkIjIjIjIjIjIb3jIXBjIbBWBrRaBaBaBa2jIaBa2a2CIbBbBkIbBDIb3LoiIkIbBbBDIlIkIjIFIlILnlZMoLIrIpIMoqILaOBYBUBTaTaRaTaWB0aUaWa5H5H5H5HnIMIqIqIb3sIsasRsIrRvIvItRraXIyauIaIcIZRaIaIaZaRaIuaxaxaaB0aZBWBbQcZwauauauawauawaxazazacZcZ6HcB6Q6Q6Q6Q6Q6Q6Q6Q6Q6Q6Q6Q6Q6a6Q6Q6Q6Q6Q6Q6Q6Q6Q6Q6Q6Q6Q6Q6Q4HGDGD5ZEgGiGi5Q5Q5Q5QECECECECECECIkGDda6H6H6HcHSucHMXaHb3MoMOFhFhcHEL";
+				
+				dt_coded_indexers_10 = "P2P2P2P2P2P2P27IP2P2P27I5I5I7RCIP2P2P27I5I5I7RCI4I4I4IDa5IEaFaHaHB3I3I3I3I3IfIHa5IPI6HfIeRCB7a7aHBtIvIqIpIHBHBGaK3MBkIFIN3nIQBmI7I7aGIPB6aFIEBIB7aPBPBPafIka7a7apIJBH3KBGBGRFB6ahIOBMBB3MBuaQBB3eaCaJBOBIBNB7aHB7a1ayaQBGB6aJBIB6a1aB3OBKBMa6a6aKaKaLBMaJa6aJBOaNBB3jIOBQ3TBjIFIRBT3jIGIU3XBiIGIgIQBoInIiIUBnInIQBQBQB4aIIJITBvaTBlIV3lIW3kIZBkIXBkIZ3kIa3kIjIiIgIXBlIlIgIaBlIlIIIIIWBWBIIJIsIrIYBa3a3Z1fIbBZBGIa3Z1Z1Z1iIbBjIjIaBa2iIbBa2Z1CIjIbBa2b3KmEILoIklIDIDIZBlIhIbBbBbBDIbBDIlIJlIkHImIb3kIKInIb3KIMonIaBtIoIrILILIMIBIBBQ3OaBaWBtR1aXB5HRa5H5H7aSBBBRB4a2ayaVaRBTB7a7aTBTaTBVaXaXaYaZaLIMInInIOIb3SIsIrIrIrIuIbBuaSIraoRVIYIYIUIb3YIuRVIb3YIvRb3vab30abIaIqaqaqaqaqaqararauavRrauRvRvRuauaaRbRaIcBbRbR3a2adIdI7a6aZa5HwacadRbadRxabawawabQbQbauaxababacZcZcQcQdRdRcQcQ2a1acB4aZBda6H7aIkMFIkMFIkMFIkMFIkMFIkMFIkMF6aMFIkMFIkMFIkMFIkMFIkMF3acH6aMFIkMFJlMXJlMXJlMXJlcBJlMXJlMXJlMXJlb3MoMoMo4HMo4HMo4HGiGDGiGD6Q6Q6Q4HvYEgGiGiFhFhFhFhFhFhFhFhFhFhFhFhGDGDGDGDGDGDGDGDGDGDGDGDLnLnGMGVba6HbBaHbBaHcQcQUwcQRtMocBcBcHMOZBbBcH6HLnLncBLnECECECECb3RYHj6Q";
+				
+				dt_coded_indexers_11 = "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";
+				
+				dt_coded_indexers_12 = "A1A1A1A1A1A1A1A1A1A1A1A1A1A1A17IA1A1A1A1A1A1A17IA1A1A17I5I5I6I6HA1A1A1A1A1A1A17IA1A1A17I5I5I6I6HCB4I3I3I3I3IfI7a5I6HfI6ZfIEIHa6RA1A1A1A1A1A1A17IA1A1A17I5I5I6I6HCBFB3I3I3I3IfICB5IfIfI5RgIDIHa6RFBHB2I2I2I2I2IEa2I2I2IEa3IDIIa7a3I3I4IEa7ReaGaEBfaEaDa6aEa6a6a6aEB3I3IuI1I1I1I1I1I1I1I1I1I1I7afa1I1I1I1I1I1I7RfI4I6RgIHaEaCBFBGa3I3I3IA37RgIEaCB5IA35HgI5H5HhIEI7RFaEIDBEaHaIa7aCB6aJa6aG3Ha6a6aG36I0IvI0I2I6aDBHBJ3mIDIK3MBjIEIwInItIG35REBDIFIG3FBIByaCB6aHBHaIBtIsIqIsIpIpIO3pIrIJBDIIBLBLBzaLBM3MBB3lICIMBtIO3Q3Q3SBkIQBB3QB5I5I7RPI7I6a6a6a7I5HDBFBDI7RCBGB7RFBDIPBfI6a6H6HFa7aG36a7awItIKB6IPI6Q6QPI7RCBGBAI7RCBGBgRgRgara7R7R7RGBfRDBAREBDB6aEBFa6aIBGBHamIKBIBMBGBFIFIGIFBERI3zaFIJBGIMBEBEaFI4aFRGIKBJBDB6aFaHaIBIBH3JaNBkINBQBMBDIEIRBKBKBNBNBEIO3GIGIKBKBFINBKBIIMB4aFIO3GIHIO3uasRJIAIeRfanaeaoa7a7aIB7avRtIFIMBQBB3FB7a4aLBJBMBtaQBEBG3FBGRH36aJBIBHB2aIB6aKBwaKBIBMBua5a0atayaRBQ3FBHR6a6aHRH3HRKa6a6a6a2aH3JaJBKaHa1aHBJaMBMBLB6aOBOBRBQBMB5a0a3a5H6a5aJB5H6aKBOa5a3aJBLaNaNaMBQa6a6aI3JaJ3I3KBLaKB5a3aMaKaLaNaOaHBHaI3KaJ3KBJBKBIBKaKBMa6a5HNBBaKBMBN3B3NBB2Q3R3OBOBNBDIKBFIEIrIOBQ2Q2S3Q3S3S3U3RBRBDIDIDIEIpIoIQ3R3R3T3RBT2T2V3TBTBDIEIRBEITBS3S3T3U2W3U3W3X3ZBWBV3DIWBEIWBnInIB3kIB3RBNBDIFIFIOBFItIrIFIFIS3R3UBUBTBWBEIEIkIGImIGITBTBGIGIIIJINBHIQ3R3B3OBSBR3OBxaKIKaOB2aNaBaSBSBuItIIIIItIWBSBSBLIMIJaUBSB1aRBT3T3V3jITBTBnITBV2W3X3gIEIEInIUBW2W2Y3iICIDImIW3Y3Y3bBiIDIEImIW3X3X3Z3iIDIXBmIX3Z2a3b3gIDIEImIY3Z3a2a2gIDIEIlIa3a3iIGIa3Z1gIFIWBYBWBYBUBDIDIFIUBFInIHIFIFIHIIIiIhIaBb3EIEIEIb3kIkInIIIkIGIIIIIGIHIqIqIXBXBqIpIUBV3XBXBUBuaXBsaHIHIJIoIHIIIoIb3KILIZBtRKILIbBrRWBY3Y3a3Z3Z3Z2Z1ZBZ2Z2Z1aBaBaBjIZBhIZBa2YBaBEIFIFIGIFIlIFIFIlIlIZBZ2Z2Z1aBaBaBY0aBaBaBY0aBY0a3jIa2a2a2a2iIfIfIEIiIEIa2a2EIEIa2lIYBZ3Z3a2aBZ1a3a3bBbBaBa2aBaBa2lIaBZ1a3a3a3Y0a2VxbBbBa2EIa2EIbBbBZBa3a3Z1a3Z1bBWya3a2bBUwbBSuiIOqNpJlb3IkbBbBb3EIb3b3JljILoIISumIiIZBZBFIfIa2a2a2YBYBGInIGIGIa2a2bBbBa2a2FIFIa2a2a2a2a2a2a2a2a2nIfIbBaBjIaBaBGImIfIbBFIiIGIGImImIfIb3iIIkbBiIGIlIb3GIIkmIQsnIbBnIaBa2a2HIb3HIMonILnnIkIkImZLILnLIZBbBnIJIb3b3oIoIJIoIKIQsmZKIOIRtpIKInIqIZBMIsRrRJIJILILILIMIa2QIbBbBa2pILnTvOIOIa2Y0OIWya2rIQIrRIaxaRBQ3BBOBSBRBLa7aBaQaNaOaRBRaUBUBOINaaBbBNaQRNaOaSBRaOa1aZBYBQ2BaUaUaOBQaBB4HBaQaUaRaUa7aBBVaOa2aBaQaRBTaUBUaRaRa7aQ3BBVaSBWaUBVBTaUaRaTa3a6aRawaTaUa2a1aaBZBRaTaTBSB5H5H7a5HUa4aVaXaXaYaYaZaS3S37aS3RaQBUaVa7aS3VBVaS3S3XaXaT3T3YaYaVaVaTBVBXa7aaaaaXaYaVBXBlIMImImILnLImRmRLIBImRmRmRBIBIBIMIMIrImRrIrIZ1sImRmRrIrIRIUISIb3sIBIsIsIqIqIbBsIqIqIQIUIpRUIsRsRtRORa2tRaBQRxavaa2RIUIUIbBUIUIuapRpRUIrIUIUIWIWIWIWIWIaItIWIqRqRSIb3VIVIbBbBUIsaXIXIrRbIXIaIYIuaUIb3rRWIuauaVIWIrRtRaIaIsaaIuauavavaWIvauauab3xaSaTaxaxabBaI3aYacIaIcIcIXIrRrRrRXIpaXIrapapararaZZbIbIbIwIwIwIwIsRwIuRuRwIwIsawIXIqaXIuRqaqauRuRXIvRYIcBuRuRcIvaqaqabIuRxIbRaRdRbIuRcIvauRdRdRvaXIvRcBwavRvRwaxRcIcIvRvRwaxRxRxRcBwacIcIZBb3b3zacIcIdRdRcI0adR0aYBZBWaYabBb3bB5abIb3bRdR2a1adR3aXaYaYaaaZaaaaacaUBYaW3aaaacaXBYBwRwRbRcZwRwRbababRdItabZtadRcacaaRdIwRbZdIbZdRzatadRcacadRbQcayawRbacZwRcZcZbacQbababababQcQbQbQwRbQcZcQcZyRcZzabQbQbQbQcQxawawRxRyRbacaxaxacacacacaaHcH0R0RzR0RcIxa0RxadIcBcZ2a1R0R0R0RcZ2acH2a1a1acBdadacH2acHbBaBdadadacH7a5a5H5H7a5H5H5H5H5H7a5HdaaH5a5ab35HLo5QLo5Q5Q5Q5Q5QLo5QLo5Q5Q5Q5Q5QLo5QLo5Q5Q5Q5Q5QLo5QLo5Q5Q5Q5Q5QLo5QLo5Q5Q5Q5Q5QLo5QLo5Q5Q5Q5Q5QLo5QLo5Q5Q5Q5Q5QcHcH7a7a5Q5Q5Q4HLo5QLo5Q5Q5Q5Q5QLo5QLo5Q5Q5Q5Q5QLo5QLo5Q5Q5Q5Q5QLo5Q3acH5Q5Q5Q5QLo5QLo5Q5Q5Q5Q5Q1a2a4a5acQcQ5a4HcHcH7a7a5Q5Q5Q4H3H6a7a5Q5Q4H4H5Q5Q5Q5Q5Q5Q5QJlJl5Q5Q5Q5QJlJlJlcB5Q5Q5Q5QJlJlJl4HKmMXKmMXaBb3b3b35Q5Q5Q5QJlJlJlJl5Q5Q5Q5QJlJlJlcB5Q5Q5Q5QJlJlJl4HKmMXKmMXbBcB4H4HIkIkIkIkIkJWIkJWIkIkIkIkIkIkMoJNIkIkIkIkIkIkMoJNIkIkIkIkIkIkIkIk5Q4H4H4HGiGiGiGiHjHjHjHjGiGiGiGiEgEgGiEgEgEgGiGiEgEgGiGi6Q6Q6Q6QGiGiGiGiFhFhFhFhHjHjHjHjHjHjHjHj6Z6Z6Z6Z6Z6Z6Z6Z6Z6Z6Z6Z6Z6Z6Z6Z6Z6Z6Z6ZHjGDGDGD6Z6Z6Z6ZGDGDGDGD6Z6Z6Z6ZHjGDGDGD6Z6Z6Z6ZGDGDGDGDHjELHjELHjELHjcBHjELHjELHjELHjcBHjELHjELHjELHjcBHjELHjb3HjELMXLnHjELHjELHjELHjcBHjELHjcBHjELHjSuJlcBJlcBJlcBJlRYFhGVFhGVFhFhFhFhYaaaca6HcaaHYBZBa3cBaHcQdabBbBbBdabQaHbQdabBbQcQa2a2bQ6QaHbQbB6QTvTvTvTva2a2bQ6QTvcHTvcH6QcHLnLnaHaHaHcQbBbBbB6QbBbBcQ6QcBcBcH6Qaa6HaBaBaBcHcHcHbBbBbBcQcQcQcQcQ6Q6Q6Q6Q6Q6Q6Q6QaBb3b3b3cBb3MoJWHjcBHjcBHjcBHjMoHjb3MXLn6Q6QHjGD6Q6Q6Q6QbBb3cBMOcBb3Gi5QMoFhGiGM";
+				
+			}
+		}
+		program{
+			table = globals;
+			do{
+				///time
+				
+				array dt_outcomes_A_delay[60]; 
+				dt_outcomes_A_delay[1] = 0; 
+				dt_outcomes_A_delay[2] = 0; 
+				dt_outcomes_A_delay[3] = 0; 
+				dt_outcomes_A_delay[4] = 0; 
+				dt_outcomes_A_delay[5] = 0; 
+				dt_outcomes_A_delay[6] = 0; 
+				dt_outcomes_A_delay[7] = 0; 
+				dt_outcomes_A_delay[8] = 0; 
+				dt_outcomes_A_delay[9] = 0; 
+				dt_outcomes_A_delay[10] = 0; 
+				dt_outcomes_A_delay[11] = 0; 
+				dt_outcomes_A_delay[12] = 0; 
+				dt_outcomes_A_delay[13] = 0; 
+				dt_outcomes_A_delay[14] = 0; 
+				dt_outcomes_A_delay[15] = 0; 
+				dt_outcomes_A_delay[16] = 0; 
+				dt_outcomes_A_delay[17] = 0; 
+				dt_outcomes_A_delay[18] = 0; 
+				dt_outcomes_A_delay[19] = 0; 
+				dt_outcomes_A_delay[20] = 0; 
+				dt_outcomes_A_delay[21] = 0; 
+				dt_outcomes_A_delay[22] = 0; 
+				dt_outcomes_A_delay[23] = 0; 
+				dt_outcomes_A_delay[24] = 0; 
+				dt_outcomes_A_delay[25] = 0; 
+				dt_outcomes_A_delay[26] = 0; 
+				dt_outcomes_A_delay[27] = 0; 
+				dt_outcomes_A_delay[28] = 0; 
+				dt_outcomes_A_delay[29] = 0; 
+				dt_outcomes_A_delay[30] = 0; 
+				dt_outcomes_A_delay[31] = 7; 
+				dt_outcomes_A_delay[32] = 7; 
+				dt_outcomes_A_delay[33] = 7; 
+				dt_outcomes_A_delay[34] = 7; 
+				dt_outcomes_A_delay[35] = 7; 
+				dt_outcomes_A_delay[36] = 7; 
+				dt_outcomes_A_delay[37] = 7; 
+				dt_outcomes_A_delay[38] = 7; 
+				dt_outcomes_A_delay[39] = 7; 
+				dt_outcomes_A_delay[40] = 7; 
+				dt_outcomes_A_delay[41] = 7; 
+				dt_outcomes_A_delay[42] = 7; 
+				dt_outcomes_A_delay[43] = 7; 
+				dt_outcomes_A_delay[44] = 7; 
+				dt_outcomes_A_delay[45] = 7; 
+				dt_outcomes_A_delay[46] = 7; 
+				dt_outcomes_A_delay[47] = 7; 
+				dt_outcomes_A_delay[48] = 7; 
+				dt_outcomes_A_delay[49] = 7; 
+				dt_outcomes_A_delay[50] = 7; 
+				dt_outcomes_A_delay[51] = 7; 
+				dt_outcomes_A_delay[52] = 7; 
+				dt_outcomes_A_delay[53] = 7; 
+				dt_outcomes_A_delay[54] = 7; 
+				dt_outcomes_A_delay[55] = 7; 
+				dt_outcomes_A_delay[56] = 7; 
+				dt_outcomes_A_delay[57] = 7; 
+				dt_outcomes_A_delay[58] = 7; 
+				dt_outcomes_A_delay[59] = 7; 
+				dt_outcomes_A_delay[60] = 7; 
+				
+				dt_presentation_A_delay1= "now"; 
+				dt_presentation_A_delay2= "now"; 
+				dt_presentation_A_delay3= "now"; 
+				dt_presentation_A_delay4= "now"; 
+				dt_presentation_A_delay5= "now"; 
+				dt_presentation_A_delay6= "now"; 
+				dt_presentation_A_delay7= "now"; 
+				dt_presentation_A_delay8= "now";
+				dt_presentation_A_delay9= "now"; 
+				dt_presentation_A_delay10= "now";
+				dt_presentation_A_delay11= "now"; 
+				dt_presentation_A_delay12= "now"; 
+				dt_presentation_A_delay13= "now"; 
+				dt_presentation_A_delay14= "now"; 
+				dt_presentation_A_delay15= "now"; 
+				dt_presentation_A_delay16= "now"; 
+				dt_presentation_A_delay17= "now"; 
+				dt_presentation_A_delay18= "now";
+				dt_presentation_A_delay19= "now"; 
+				dt_presentation_A_delay20= "now";
+				dt_presentation_A_delay21= "now"; 
+				dt_presentation_A_delay22= "now"; 
+				dt_presentation_A_delay23= "now"; 
+				dt_presentation_A_delay24= "now"; 
+				dt_presentation_A_delay25= "now"; 
+				dt_presentation_A_delay26= "now"; 
+				dt_presentation_A_delay27= "now"; 
+				dt_presentation_A_delay28= "now";
+				dt_presentation_A_delay29= "now"; 
+				dt_presentation_A_delay30= "now";
+				dt_presentation_A_delay31= 7; 
+				dt_presentation_A_delay32= 7; 
+				dt_presentation_A_delay33= 7; 
+				dt_presentation_A_delay34= 7; 
+				dt_presentation_A_delay35= 7; 
+				dt_presentation_A_delay36= 7; 
+				dt_presentation_A_delay37= 7; 
+				dt_presentation_A_delay38= 7;
+				dt_presentation_A_delay39= 7; 
+				dt_presentation_A_delay40= 7;
+				dt_presentation_A_delay41= 7; 
+				dt_presentation_A_delay42= 7; 
+				dt_presentation_A_delay43= 7; 
+				dt_presentation_A_delay44= 7; 
+				dt_presentation_A_delay45= 7; 
+				dt_presentation_A_delay46= 7; 
+				dt_presentation_A_delay47= 7; 
+				dt_presentation_A_delay48= 7;
+				dt_presentation_A_delay49= 7; 
+				dt_presentation_A_delay50= 7;
+				dt_presentation_A_delay51= 7; 
+				dt_presentation_A_delay52= 7; 
+				dt_presentation_A_delay53= 7; 
+				dt_presentation_A_delay54= 7; 
+				dt_presentation_A_delay55= 7; 
+				dt_presentation_A_delay56= 7; 
+				dt_presentation_A_delay57= 7; 
+				dt_presentation_A_delay58= 7;
+				dt_presentation_A_delay59= 7; 
+				dt_presentation_A_delay60= 7;
+				
+				array dt_outcomes_A_amount[60]; 
+				dt_outcomes_A_amount[1] =5;
+				dt_outcomes_A_amount[2] =120;
+				dt_outcomes_A_amount[3] =15;
+				dt_outcomes_A_amount[4] =20;
+				dt_outcomes_A_amount[5] =25;
+				dt_outcomes_A_amount[6] =30;
+				dt_outcomes_A_amount[7] =40;
+				dt_outcomes_A_amount[8] =50;
+				dt_outcomes_A_amount[9] =60;
+				dt_outcomes_A_amount[10] =70;
+				dt_outcomes_A_amount[11] =80;
+				dt_outcomes_A_amount[12] =90;
+				dt_outcomes_A_amount[13] =95;
+				dt_outcomes_A_amount[14] =100;
+				dt_outcomes_A_amount[15] =110;
+				dt_outcomes_A_amount[16] =10;
+				dt_outcomes_A_amount[17] =130;
+				dt_outcomes_A_amount[18] =140;
+				dt_outcomes_A_amount[19] =150;
+				dt_outcomes_A_amount[20] =160;
+				dt_outcomes_A_amount[21] =170;
+				dt_outcomes_A_amount[22] =180;
+				dt_outcomes_A_amount[23] =190;
+				dt_outcomes_A_amount[24] =200;
+				dt_outcomes_A_amount[25] =210;
+				dt_outcomes_A_amount[26] =220;
+				dt_outcomes_A_amount[27] =230;
+				dt_outcomes_A_amount[28] =240;
+				dt_outcomes_A_amount[29] =245;
+				dt_outcomes_A_amount[30] =250;
+				dt_outcomes_A_amount[31] =5;
+				dt_outcomes_A_amount[32] =10;
+				dt_outcomes_A_amount[33] =15;
+				dt_outcomes_A_amount[34] =20;
+				dt_outcomes_A_amount[35] =25;
+				dt_outcomes_A_amount[36] =30;
+				dt_outcomes_A_amount[37] =40;
+				dt_outcomes_A_amount[38] =50;
+				dt_outcomes_A_amount[39] =60;
+				dt_outcomes_A_amount[40] =70;
+				dt_outcomes_A_amount[41] =80;
+				dt_outcomes_A_amount[42] =90;
+				dt_outcomes_A_amount[43] =95;
+				dt_outcomes_A_amount[44] =100;
+				dt_outcomes_A_amount[45] =110;
+				dt_outcomes_A_amount[46] =120;
+				dt_outcomes_A_amount[47] =130;
+				dt_outcomes_A_amount[48] =140;
+				dt_outcomes_A_amount[49] =150;
+				dt_outcomes_A_amount[50] =160;
+				dt_outcomes_A_amount[51] =170;
+				dt_outcomes_A_amount[52] =180;
+				dt_outcomes_A_amount[53] =190;
+				dt_outcomes_A_amount[54] =200;
+				dt_outcomes_A_amount[55] =210;
+				dt_outcomes_A_amount[56] =220;
+				dt_outcomes_A_amount[57] =230;
+				dt_outcomes_A_amount[58] =240;
+				dt_outcomes_A_amount[59] =245;
+				dt_outcomes_A_amount[60] =250;
+				
+				
+				
+				
+				
+			}
+		}
+		program{
+			table = globals;
+			do{
+				///time
+				
+				array dt_outcomes_B_delay[57]; 
+				dt_outcomes_B_delay[1] = 100; 
+				dt_outcomes_B_delay[2] = 7; 
+				dt_outcomes_B_delay[3] = 100; 
+				dt_outcomes_B_delay[4] = 100; 
+				dt_outcomes_B_delay[5] = 100; 
+				dt_outcomes_B_delay[6] = 100; 
+				dt_outcomes_B_delay[7] = 100; 
+				dt_outcomes_B_delay[8] = 150; 
+				dt_outcomes_B_delay[9] = 100; 
+				dt_outcomes_B_delay[10] = 125; 
+				dt_outcomes_B_delay[11] = 125; 
+				dt_outcomes_B_delay[12] = 125; 
+				dt_outcomes_B_delay[13] = 125; 
+				dt_outcomes_B_delay[14] = 125; 
+				dt_outcomes_B_delay[15] = 125; 
+				dt_outcomes_B_delay[16] = 125; 
+				dt_outcomes_B_delay[17] = 125; 
+				dt_outcomes_B_delay[18] = 125; 
+				dt_outcomes_B_delay[19] = 150; 
+				dt_outcomes_B_delay[20] = 150; 
+				dt_outcomes_B_delay[21] = 150; 
+				dt_outcomes_B_delay[22] = 150; 
+				dt_outcomes_B_delay[23] = 150; 
+				dt_outcomes_B_delay[24] = 150; 
+				dt_outcomes_B_delay[25] = 150; 
+				dt_outcomes_B_delay[26] = 100; 
+				dt_outcomes_B_delay[27] = 150; 
+				dt_outcomes_B_delay[28] = 7; 
+				dt_outcomes_B_delay[29] = 7; 
+				dt_outcomes_B_delay[30] = 7; 
+				dt_outcomes_B_delay[31] = 7; 
+				dt_outcomes_B_delay[32] = 7; 
+				dt_outcomes_B_delay[33] = 7; 
+				dt_outcomes_B_delay[34] = 7; 
+				dt_outcomes_B_delay[35] = 7; 
+				dt_outcomes_B_delay[36] = 7; 
+				dt_outcomes_B_delay[37] = 7; 
+				dt_outcomes_B_delay[38] = 7; 
+				dt_outcomes_B_delay[39] = 7; 
+				dt_outcomes_B_delay[40] = 7; 
+				dt_outcomes_B_delay[41] = 7; 
+				dt_outcomes_B_delay[42] = 7; 
+				dt_outcomes_B_delay[43] = 7; 
+				dt_outcomes_B_delay[44] = 7; 
+				dt_outcomes_B_delay[45] = 7; 
+				dt_outcomes_B_delay[46] = 7; 
+				dt_outcomes_B_delay[47] = 7; 
+				dt_outcomes_B_delay[48] = 7; 
+				dt_outcomes_B_delay[49] = 7; 
+				dt_outcomes_B_delay[50] = 7; 
+				dt_outcomes_B_delay[51] = 7; 
+				dt_outcomes_B_delay[52] = 7; 
+				dt_outcomes_B_delay[53] = 7; 
+				dt_outcomes_B_delay[54] = 7; 
+				dt_outcomes_B_delay[55] = 7; 
+				dt_outcomes_B_delay[56] = 7; 
+				dt_outcomes_B_delay[57] = 100; 
+				
+				
+				array dt_presentation_B_delay[57]; 
+				dt_presentation_B_delay[1] = 100; 
+				dt_presentation_B_delay[2] = 7; 
+				dt_presentation_B_delay[3] = 100; 
+				dt_presentation_B_delay[4] = 100; 
+				dt_presentation_B_delay[5] = 100; 
+				dt_presentation_B_delay[6] = 100; 
+				dt_presentation_B_delay[7] = 100; 
+				dt_presentation_B_delay[8] = 150; 
+				dt_presentation_B_delay[9] = 100; 
+				dt_presentation_B_delay[10] = 125; 
+				dt_presentation_B_delay[11] = 125; 
+				dt_presentation_B_delay[12] = 125; 
+				dt_presentation_B_delay[13] = 125; 
+				dt_presentation_B_delay[14] = 125; 
+				dt_presentation_B_delay[15] = 125; 
+				dt_presentation_B_delay[16] = 125; 
+				dt_presentation_B_delay[17] = 125; 
+				dt_presentation_B_delay[18] = 125; 
+				dt_presentation_B_delay[19] = 150; 
+				dt_presentation_B_delay[20] = 150; 
+				dt_presentation_B_delay[21] = 150; 
+				dt_presentation_B_delay[22] = 150; 
+				dt_presentation_B_delay[23] = 150; 
+				dt_presentation_B_delay[24] = 150; 
+				dt_presentation_B_delay[25] = 150; 
+				dt_presentation_B_delay[26] = 100; 
+				dt_presentation_B_delay[27] = 150; 
+				dt_presentation_B_delay[28] = 7; 
+				dt_presentation_B_delay[29] = 7; 
+				dt_presentation_B_delay[30] = 7; 
+				dt_presentation_B_delay[31] = 7; 
+				dt_presentation_B_delay[32] = 7; 
+				dt_presentation_B_delay[33] = 7; 
+				dt_presentation_B_delay[34] = 7; 
+				dt_presentation_B_delay[35] = 7; 
+				dt_presentation_B_delay[36] = 7; 
+				dt_presentation_B_delay[37] = 7; 
+				dt_presentation_B_delay[38] = 7; 
+				dt_presentation_B_delay[39] = 7; 
+				dt_presentation_B_delay[40] = 7; 
+				dt_presentation_B_delay[41] = 7; 
+				dt_presentation_B_delay[42] = 7; 
+				dt_presentation_B_delay[43] = 7; 
+				dt_presentation_B_delay[44] = 7; 
+				dt_presentation_B_delay[45] = 7; 
+				dt_presentation_B_delay[46] = 7; 
+				dt_presentation_B_delay[47] = 7; 
+				dt_presentation_B_delay[48] = 7; 
+				dt_presentation_B_delay[49] = 7; 
+				dt_presentation_B_delay[50] = 7; 
+				dt_presentation_B_delay[51] = 7; 
+				dt_presentation_B_delay[52] = 7; 
+				dt_presentation_B_delay[53] = 7; 
+				dt_presentation_B_delay[54] = 7; 
+				dt_presentation_B_delay[55] = 7; 
+				dt_presentation_B_delay[56] = 7; 
+				dt_presentation_B_delay[57] = 100; 
+				
+				
+				array dt_outcomes_B_amount[57]; 
+				dt_outcomes_B_amount[1] =15;
+				dt_outcomes_B_amount[2] =250;
+				dt_outcomes_B_amount[3] =30;
+				dt_outcomes_B_amount[4] =50;
+				dt_outcomes_B_amount[5] =80;
+				dt_outcomes_B_amount[6] =100;
+				dt_outcomes_B_amount[7] =150;
+				dt_outcomes_B_amount[8] =250;
+				dt_outcomes_B_amount[9] =300;
+				dt_outcomes_B_amount[10] =15;
+				dt_outcomes_B_amount[11] =20;
+				dt_outcomes_B_amount[12] =30;
+				dt_outcomes_B_amount[13] =50;
+				dt_outcomes_B_amount[14] =80;
+				dt_outcomes_B_amount[15] =100;
+				dt_outcomes_B_amount[16] =150;
+				dt_outcomes_B_amount[17] =250;
+				dt_outcomes_B_amount[18] =300;
+				dt_outcomes_B_amount[19] =15;
+				dt_outcomes_B_amount[20] =20;
+				dt_outcomes_B_amount[21] =30;
+				dt_outcomes_B_amount[22] =50;
+				dt_outcomes_B_amount[23] =80;
+				dt_outcomes_B_amount[24] =100;
+				dt_outcomes_B_amount[25] =150;
+				dt_outcomes_B_amount[26] =250;
+				dt_outcomes_B_amount[27] =300;
+				dt_outcomes_B_amount[28] =5;
+				dt_outcomes_B_amount[29] =10;
+				dt_outcomes_B_amount[30] =15;
+				dt_outcomes_B_amount[31] =20;
+				dt_outcomes_B_amount[32] =25;
+				dt_outcomes_B_amount[33] =30;
+				dt_outcomes_B_amount[34] =40;
+				dt_outcomes_B_amount[35] =50;
+				dt_outcomes_B_amount[36] =60;
+				dt_outcomes_B_amount[37] =70;
+				dt_outcomes_B_amount[38] =80;
+				dt_outcomes_B_amount[39] =90;
+				dt_outcomes_B_amount[40] =95;
+				dt_outcomes_B_amount[41] =100;
+				dt_outcomes_B_amount[42] =110;
+				dt_outcomes_B_amount[43] =120;
+				dt_outcomes_B_amount[44] =130;
+				dt_outcomes_B_amount[45] =140;
+				dt_outcomes_B_amount[46] =150;
+				dt_outcomes_B_amount[47] =160;
+				dt_outcomes_B_amount[48] =170;
+				dt_outcomes_B_amount[49] =180;
+				dt_outcomes_B_amount[50] =190;
+				dt_outcomes_B_amount[51] =200;
+				dt_outcomes_B_amount[52] =210;
+				dt_outcomes_B_amount[53] =220;
+				dt_outcomes_B_amount[54] =230;
+				dt_outcomes_B_amount[55] =240;
+				dt_outcomes_B_amount[56] =245;
+				dt_outcomes_B_amount[57] =20;
+				
+			}
+		}
+		program{
+			table = globals;
+			do{
+				///time
+				
+				DT_PAYOUT_SCALE = 0.1;
+				
+				array dt_outcomes_A_modded[60];
+				array dt_outcomes_B_modded[57];
+				
+				
+				for (i, 60)
+				{
+				    dt_outcomes_A_amount[i] = dt_outcomes_A_amount[i] * DT_PAYOUT_SCALE;
+				
+				    dt_outcomes_A_modded[i] = abs(dt_outcomes_A_amount[i]);
+				
+				}
+				
+				for (i, 57)
+				{
+				    dt_outcomes_B_amount[i] = dt_outcomes_B_amount[i] * DT_PAYOUT_SCALE;
+				
+				    dt_outcomes_B_modded[i] = abs(dt_outcomes_B_amount[i]);
+				}
+			}
+		}
+		screen action{
+			usesbg = TRUE;
+			withalertscreen = FALSE;
+			noalertscreen = FALSE;
+			headerbox "Header"{
+				hasframe = TRUE;
+				height = 10%;
+				top = 0p;
+				cuttop = TRUE;
+				showPeriods = TRUE;
+				showNumPeriods = TRUE;
+				periodtext = "Period";
+				periodoftext = "out of";
+				practiceperiodprefix = "Trial ";
+				showtime = TRUE;
+				timestr = "Remaining time";
+				pleasedecidetext = "Please reach a decision!";
+			}
+		}
+		screen wait{
+			usesbg = TRUE;
+			withalertscreen = FALSE;
+			noalertscreen = FALSE;
+			standardbox "Text"{
+				hasframe = TRUE;
+				buttonposition = BOTTOMRIGHT;
+				buttonsequence = HORIZONTAL;
+				item{
+					label = "Please wait for the experiment to continue.";
+				}
+			}
+		}
+	}
+	stage "DEEP_TIME_INSTRUCTIONS"{
+		startwaitforall = FALSE;
+		startConditionStr = "";
+		singleentry = FALSE;
+		singleentrycontinuation = FALSE;
+		timeouttype = never;
+		timeout = -1;
+		program{
+			table = subjects;
+			do{
+				n=1;
+			}
+		}
+		screen action{
+			usesbg = FALSE;
+			withalertscreen = FALSE;
+			noalertscreen = FALSE;
+			containerbox "Container I"{
+				hasframe = TRUE;
+				displaycondition = n==1;
+				standardbox "Standard"{
+					hasframe = FALSE;
+					left = 1%;
+					top = 2%;
+					buttonposition = BOTTOMRIGHT;
+					buttonsequence = HORIZONTAL;
+					item{
+						label = "{\\rtf \\b\\fs40 TASK 2   }";
+					}
+					item{
+					}
+					item{
+					}
+					item{
+						label = "{\\rtf \\fs30 In TASK 2 you will face two options, labelled \"LEFT\" option and \"RIGHT\" option. }";
+					}
+					item{
+					}
+					item{
+						label = "{\\rtf\\fs30 These choices are given in a descriptive form i.e. they are written in words and numbers. You should state your preferred choice for \"LEFT\" option by clicking on the button \"Choose the LEFT option\" or if you prefer \"RIGHT\" option you should click on the button \"Choose the RIGHT option\".  } ";
+					}
+					item{
+					}
+					item{
+						label = "{\\rtf\\fs30 TASK 2 consists of 13 decision rounds/choices and you should explore which option you find more attractive. }";
+					}
+					item{
+					}
+					item{
+						label = "{\\rtf \\fs30 Note that the first choice [\"TRIAL\"] in TASK 2 is not payment relevant and is meant to help you to familiarize yourself with TASK 2.  } ";
+					}
+					item{
+					}
+					item{
+						label = "{\\rtf \\fs30 At the end of the experiment, one choice will be randomly chosen for payment. You do not know in advance which choice will be selected for payment. Every choice has an equal chance to get selected. } ";
+					}
+				}
+				standardbox "Standard"{
+					hasframe = FALSE;
+					height = 30%;
+					top = 70%;
+					buttonposition = BOTTOMRIGHT;
+					buttonsequence = HORIZONTAL;
+					onofftrigger "ON/OFF trigger"{
+						what = ON;
+						eventtime = START_DEEP_TIME_INSTRUCTIONS;
+					}
+					button "  NEXT"{
+						clearinputafterok = FALSE;
+						norecordmadeorselected = FALSE;
+						terminatestage = FALSE;
+						donotterminatestage = TRUE;
+						specialbuttoncolor = TRUE;
+						buttoncolor = 5921535;
+						eventtime = START_DEEP_TIME_INSTRUCTIONS_BUTTON;
+						program{
+							table = subjects;
+							do{
+								n=n+1;
+								DEEP_INSTRUCTIONS=1;
+							}
+						}
+					}
+				}
+			}
+			containerbox "Container II"{
+				hasframe = TRUE;
+				displaycondition = n==2;
+				standardbox "Standard"{
+					hasframe = FALSE;
+					height = 60%;
+					left = 1%;
+					top = 23%;
+					buttonposition = BOTTOMRIGHT;
+					buttonsequence = HORIZONTAL;
+					item{
+					}
+					item{
+					}
+					item{
+					}
+					item{
+					}
+					item{
+					}
+					item{
+					}
+					item{
+					}
+					item{
+					}
+					item{
+					}
+					item{
+						label = "{\\rtf\\fs30 Each of these choices consists of options to compare.}";
+					}
+					item{
+					}
+					item{
+					}
+					item{
+					}
+					item{
+					}
+					item{
+					}
+					item{
+						label = "{\\rtf\\fs30 All options are about receiving a certain amount at a specific time.}";
+					}
+					item{
+					}
+					item{
+					}
+					item{
+					}
+					item{
+					}
+					item{
+					}
+					item{
+						label = "{\\rtf \\fs30 For example, a LEFT option could offer to receive $10 in 3 days, while a RIGHT option could offer to receive $5 now. You are asked to state your preferred option. }";
+					}
+					item{
+					}
+					item{
+					}
+					item{
+					}
+					item{
+					}
+					item{
+					}
+					item{
+						label = "{\\rtf \\fs30 If you want to see a graphical representation/picture of TASK 2, please click on the button \"PICTURE\" below. }";
+					}
+					item{
+					}
+					item{
+					}
+					item{
+					}
+					item{
+					}
+					item{
+					}
+					item{
+						label = "{\\rtf \\fs30 The picture shows that you can receive $2 in 7 days if you choose the LEFT option. }";
+					}
+					item{
+					}
+					item{
+					}
+					item{
+					}
+					item{
+					}
+					item{
+					}
+					item{
+						label = "{\\rtf \\fs30 On another side, the picture shows that you can receive $30 in 100 days if you choose the RIGHT option. }";
+					}
+					item{
+					}
+					item{
+					}
+					item{
+					}
+					item{
+					}
+					item{
+					}
+					item{
+					}
+					item{
+					}
+					item{
+					}
+					item{
+					}
+					item{
+					}
+					item{
+					}
+					item{
+					}
+					item{
+					}
+				}
+				standardbox "Standard"{
+					hasframe = FALSE;
+					height = 30%;
+					top = 70%;
+					buttonposition = BOTTOMRIGHT;
+					buttonsequence = HORIZONTAL;
+					onofftrigger "ON/OFF trigger"{
+						what = ON;
+						eventtime = END_DEEP_TIME_INSTRUCTIONS;
+					}
+					button "  OK"{
+						clearinputafterok = FALSE;
+						norecordmadeorselected = FALSE;
+						terminatestage = TRUE;
+						donotterminatestage = FALSE;
+						specialbuttoncolor = TRUE;
+						buttoncolor = 5921535;
+						eventtime = END_DEEP_TIME_INSTRUCTIONS_BUTTON;
+						checker{
+							condition = DEEP_INSTRUCTIONS>1;
+							message = "Are you sure that you want to proceed?";
+							yesButtonStr = "Yes";
+							noButtonStr = "No";
+						}
+					}
+					button "  Previous screen"{
+						clearinputafterok = FALSE;
+						norecordmadeorselected = FALSE;
+						terminatestage = FALSE;
+						donotterminatestage = TRUE;
+						specialbuttoncolor = TRUE;
+						buttoncolor = 13158600;
+						program{
+							table = subjects;
+							do{
+								n=n-1;
+							}
+						}
+					}
+					button "PICTURE"{
+						clearinputafterok = FALSE;
+						norecordmadeorselected = FALSE;
+						terminatestage = FALSE;
+						donotterminatestage = TRUE;
+						specialbuttoncolor = TRUE;
+						buttoncolor = 13158600;
+						program{
+							table = subjects;
+							do{
+								n=n+1;
+							}
+						}
+					}
+				}
+			}
+			containerbox "Container III"{
+				hasframe = TRUE;
+				displaycondition = n==3;
+				multimediabox "DEEP"{
+					hasframe = TRUE;
+					width = 100%;
+					height = 100%;
+					URL = /share/zTree/DEEP_TIME.jpg;
+					dorepeat = FALSE;
+					maintainaspectratio = TRUE;
+					enlargetofit = FALSE;
+					shrinktofit = TRUE;
+					allowusercontrol = FALSE;
+					rewind = FALSE;
+				}
+				standardbox "Standard"{
+					hasframe = FALSE;
+					height = 30%;
+					top = 70%;
+					buttonposition = BOTTOMRIGHT;
+					buttonsequence = HORIZONTAL;
+					onofftrigger "ON/OFF trigger"{
+						what = ON;
+						eventtime = END_DEEP_TIME_PICTURE;
+					}
+					button "  Previous screen"{
+						clearinputafterok = FALSE;
+						norecordmadeorselected = FALSE;
+						terminatestage = FALSE;
+						donotterminatestage = TRUE;
+						specialbuttoncolor = TRUE;
+						buttoncolor = 5921535;
+						eventtime = END_DEEP_TIME_PICTURE_BUTTON;
+						program{
+							table = subjects;
+							do{
+								n=n-1;
+								PICTURE_DEEP = 1;
+								
+							}
+						}
+					}
+				}
+			}
+		}
+		screen wait{
+			usesbg = TRUE;
+			withalertscreen = FALSE;
+			noalertscreen = FALSE;
+		}
+	}
+	stage "DEEP COMPREHENSION_TIME"{
+		startwaitforall = FALSE;
+		startConditionStr = "";
+		singleentry = FALSE;
+		singleentrycontinuation = FALSE;
+		timeouttype = never;
+		timeout = -1;
+		program{
+			table = subjects;
+			do{
+				n=1;
+			}
+		}
+		screen action{
+			usesbg = FALSE;
+			withalertscreen = FALSE;
+			noalertscreen = FALSE;
+			containerbox "Container I"{
+				hasframe = TRUE;
+				displaycondition = n==1;
+				standardbox "Standard"{
+					hasframe = FALSE;
+					left = 1%;
+					top = -390p;
+					buttonposition = BOTTOMRIGHT;
+					buttonsequence = HORIZONTAL;
+					item{
+						label = "{\\rtf \\b \\fs40 COMPREHENSION QUESTIONS: TASK 2  }";
+					}
+					item{
+					}
+					item{
+						label = "{\\rtf \\fs30 To make sure that you understand TASK 2, here are a few questions we like you to answer. }";
+					}
+					item{
+					}
+					item{
+						label = "{\\rtf \\fs30 \\qc Consider the following choice:}";
+					}
+				}
+				gridbox "Grid"{
+					hasframe = TRUE;
+					width = 150p;
+					height = 150p;
+					left = 705p;
+					top = 450p;
+					cutbottom = TRUE;
+					buttonposition = BOTTOMMIDDLE;
+					buttonsequence = HORIZONTAL;
+					numrows = 2;
+					numcolumns = 1;
+					firstcolumnwidth = 20;
+					firstrowheight = 20;
+					fieldsinrows = TRUE;
+					infieldlabeisallowed = FALSE;
+					firstrowislabel = TRUE;
+					firstcolumnislabel = TRUE;
+					labelseparators = TRUE;
+					rowseparators = TRUE;
+					columnseparators = FALSE;
+					item{
+						label = "LEFT option";
+					}
+					item{
+						label = "Receive $30 in 3 months";
+					}
+				}
+				gridbox "Grid"{
+					hasframe = TRUE;
+					width = 150p;
+					height = 150p;
+					left = 1000p;
+					top = 450p;
+					cutbottom = TRUE;
+					buttonposition = BOTTOMMIDDLE;
+					buttonsequence = HORIZONTAL;
+					numrows = 2;
+					numcolumns = 1;
+					firstcolumnwidth = 20;
+					firstrowheight = 20;
+					fieldsinrows = TRUE;
+					infieldlabeisallowed = FALSE;
+					firstrowislabel = TRUE;
+					firstcolumnislabel = TRUE;
+					labelseparators = TRUE;
+					rowseparators = TRUE;
+					columnseparators = FALSE;
+					item{
+						label = "RIGHT option";
+					}
+					item{
+						label = "Receive $5 now";
+					}
+				}
+				standardbox "Standard"{
+					hasframe = FALSE;
+					left = 1%;
+					bottom = -1111p;
+					buttonposition = BOTTOMRIGHT;
+					buttonsequence = HORIZONTAL;
+					item{
+					}
+					item{
+						label = "{\\rtf \\qc \\fs22 \\b 1. \\b0 Which of the following is the {\\b most} money you could receive?}";
+					}
+					item{
+						variable = dt_comp_1;
+						format = "!radio: 1 = \"$20 \"; 2 = \"$5\"; 3= \"$30\";\r 4 = \"$0\";";
+						input = TRUE;
+						showdefault = FALSE;
+						emptyallowed = TRUE;
+						min = 1;
+						max = 4;
+					}
+					item{
+					}
+					item{
+						label = "{\\rtf \\qc \\fs22 \\b 2. \\b0 Which of the following options is {\\b more} attractive?}";
+					}
+					item{
+						variable = dt_comp_2;
+						format = "!radio: 1 = \"Receive $10 in 2 weeks\"; 2 = \"Receive $10 today\";";
+						input = TRUE;
+						showdefault = FALSE;
+						emptyallowed = TRUE;
+						min = 1;
+						max = 2;
+					}
+					item{
+					}
+					item{
+						label = "{\\rtf \\qc \\fs22 \\b 3. \\b0 Which of the following options is {\\b more} attractive?}";
+					}
+					item{
+						variable = dt_comp_3;
+						format = "!radio: 1 = \"Receive $10 in 2 weeks\"; 2 = \"Receive $20 in 2 weeks\";";
+						input = TRUE;
+						showdefault = FALSE;
+						emptyallowed = TRUE;
+						min = 1;
+						max = 2;
+					}
+					item{
+					}
+				}
+				standardbox "Standard"{
+					hasframe = FALSE;
+					height = 30%;
+					top = 930p;
+					buttonposition = BOTTOMRIGHT;
+					buttonsequence = HORIZONTAL;
+					onofftrigger "ON/OFF trigger"{
+						what = ON;
+						eventtime = START_DEEP_TIME_COMPREHENSION;
+					}
+					button "OK"{
+						clearinputafterok = FALSE;
+						norecordmadeorselected = FALSE;
+						terminatestage = FALSE;
+						donotterminatestage = TRUE;
+						specialbuttoncolor = TRUE;
+						buttoncolor = 5921535;
+						eventtime = START_DEEP_TIME_COMPREHENSION_BUTTON;
+						checker{
+							condition = dt_comp_1 >=1;
+							message = "Please make your choice in question 1!";
+							yesButtonStr = "";
+							noButtonStr = "OK";
+						}
+						checker{
+							condition = dt_comp_2 >=1;
+							message = "Please make your choice in question 2!";
+							yesButtonStr = "";
+							noButtonStr = "OK";
+						}
+						checker{
+							condition = dt_comp_3 >=1;
+							message = "Please make your choice in question 3!";
+							yesButtonStr = "";
+							noButtonStr = "OK";
+						}
+						program{
+							table = subjects;
+							do{
+								n=n+1;
+							}
+						}
+					}
+				}
+			}
+			containerbox "Container II"{
+				hasframe = TRUE;
+				displaycondition = n==2;
+				containerbox "TopBox"{
+					hasframe = FALSE;
+					height = 6%;
+					top = 0p;
+					standardbox "T_01"{
+						hasframe = FALSE;
+						height = 6%;
+						top = 200p;
+						displaycondition = dt_comp_1==3;
+						buttonposition = BOTTOMRIGHT;
+						buttonsequence = HORIZONTAL;
+						item{
+							label = "{\\rtf \\fs30\\bullet\\qc {\\colortbl; \\red0\\green0\\blue0; \\red0\\green255\\blue0;\\red0\\green0\\blue0;} Your response in {\\b Question 1} is {\\b\\cf2 correct!}  }\r\n\r\n";
+						}
+					}
+					standardbox "T_01"{
+						hasframe = FALSE;
+						height = 6%;
+						top = 200p;
+						displaycondition = dt_comp_1==1|dt_comp_1==2|dt_comp_1==4;
+						buttonposition = BOTTOMRIGHT;
+						buttonsequence = HORIZONTAL;
+						item{
+							label = "{\\rtf \\fs25 \\qc \\i The amount of $30 that is offered is {\\b larger} than $0, $5, and $20. }";
+						}
+						item{
+						}
+						item{
+							label = "{\\rtf \\fs30\\bullet\\qc {\\colortbl; \\red0\\green0\\blue0; \\red255\\green0\\blue0;\\red0\\green0\\blue0;}  Your response in {\\b Question 1} is {\\b\\cf2 incorrect!}  }\r\n\r\n";
+						}
+					}
+					standardbox "T_02"{
+						hasframe = FALSE;
+						height = 6%;
+						top = 400p;
+						displaycondition = dt_comp_2==2;
+						buttonposition = BOTTOMRIGHT;
+						buttonsequence = HORIZONTAL;
+						item{
+							label = "{\\rtf \\fs30\\bullet\\qc {\\colortbl; \\red0\\green0\\blue0; \\red0\\green255\\blue0;\\red0\\green0\\blue0;} Your response in {\\b Question 2} is {\\b\\cf2 correct!}  }\r\n\r\n";
+						}
+					}
+					standardbox "T_02"{
+						hasframe = FALSE;
+						height = 6%;
+						top = 400p;
+						displaycondition = dt_comp_2==1;
+						buttonposition = BOTTOMRIGHT;
+						buttonsequence = HORIZONTAL;
+						item{
+							label = "{\\rtf \\fs25 \\qc \\i It is more attractive to receive $10 {\\b today}  than to receive $10 {\\b in two weeks.} }";
+						}
+						item{
+						}
+						item{
+							label = "{\\rtf \\fs30\\bullet\\qc {\\colortbl; \\red0\\green0\\blue0; \\red255\\green0\\blue0;\\red0\\green0\\blue0;}  Your response in {\\b Question 2} is {\\b\\cf2 incorrect!}  }\r\n\r\n";
+						}
+					}
+					standardbox "T_03"{
+						hasframe = FALSE;
+						height = 6%;
+						top = 600p;
+						displaycondition = dt_comp_3==2;
+						buttonposition = BOTTOMRIGHT;
+						buttonsequence = HORIZONTAL;
+						item{
+							label = "{\\rtf \\fs30\\bullet\\qc {\\colortbl; \\red0\\green0\\blue0; \\red0\\green255\\blue0;\\red0\\green0\\blue0;} Your response in {\\b Question 3} is {\\b\\cf2 correct!}  }\r\n\r\n";
+						}
+					}
+					standardbox "T_03"{
+						hasframe = FALSE;
+						height = 6%;
+						top = 600p;
+						displaycondition = dt_comp_3==1;
+						buttonposition = BOTTOMRIGHT;
+						buttonsequence = HORIZONTAL;
+						item{
+							label = "{\\rtf \\fs25 \\qc \\i It is more attractive to receive $20 {\\b in two weeks}  than to receive $10 {\\b in two weeks.} }";
+						}
+						item{
+						}
+						item{
+							label = "{\\rtf \\fs30\\bullet\\qc {\\colortbl; \\red0\\green0\\blue0; \\red255\\green0\\blue0;\\red0\\green0\\blue0;}  Your response in {\\b Question 3} is {\\b\\cf2 incorrect!}  }\r\n\r\n";
+						}
+					}
+				}
+				containerbox "ButtonBox"{
+					hasframe = FALSE;
+					standardbox "Standard"{
+						hasframe = FALSE;
+						height = 80p;
+						top = 92.5%;
+						buttonposition = BOTTOMRIGHT;
+						buttonsequence = HORIZONTAL;
+						onofftrigger "ON/OFF trigger"{
+							what = ON;
+							eventtime = END_DEEP_TIME_COMPREHENSION;
+						}
+						button "FINISH"{
+							clearinputafterok = FALSE;
+							norecordmadeorselected = FALSE;
+							terminatestage = TRUE;
+							donotterminatestage = FALSE;
+							specialbuttoncolor = TRUE;
+							buttoncolor = 5921535;
+							eventtime = END_DEEP_TIME_COMPREHENSION_BUTTON;
+							checker{
+								condition = dt_comp_1 ==0|dt_comp_2 ==0|dt_comp_3 ==0;
+								message = "Are you sure that you want to proceed?";
+								yesButtonStr = "Yes";
+								noButtonStr = "No";
+							}
+						}
+					}
+				}
+			}
+		}
+		screen wait{
+			usesbg = TRUE;
+			withalertscreen = FALSE;
+			noalertscreen = FALSE;
+		}
+	}
+	stage "DEEP_TRIAL_TIME"{
+		startwaitforall = FALSE;
+		startConditionStr = "";
+		singleentry = FALSE;
+		singleentrycontinuation = FALSE;
+		timeouttype = never;
+		timeout = -1;
+		screen action{
+			usesbg = FALSE;
+			withalertscreen = FALSE;
+			noalertscreen = FALSE;
+			containerbox "TopBox"{
+				hasframe = FALSE;
+				height = 6%;
+				top = 0p;
+				standardbox "T_01"{
+					hasframe = FALSE;
+					height = 6%;
+					buttonposition = BOTTOMRIGHT;
+					buttonsequence = HORIZONTAL;
+					item{
+						label = "{\\rtf \\fs30 \\qc {\\b TRIAL }}";
+					}
+				}
+			}
+			containerbox "MiddleBox"{
+				hasframe = TRUE;
+				containerbox "Left_A"{
+					hasframe = TRUE;
+					width = 50%;
+					height = 500p;
+					left = 0p;
+					top = 50p;
+					standardbox "A_01"{
+						hasframe = TRUE;
+						buttonposition = BOTTOMRIGHT;
+						buttonsequence = HORIZONTAL;
+						item{
+							label = "{\\rtf \\fs30 \\qc Receive {\\b $10} {\\b now }}";
+						}
+					}
+				}
+				containerbox "Right_B"{
+					hasframe = TRUE;
+					width = 50%;
+					height = 500p;
+					right = 0p;
+					top = 50p;
+					standardbox "B_01"{
+						hasframe = TRUE;
+						buttonposition = BOTTOMRIGHT;
+						buttonsequence = HORIZONTAL;
+						item{
+							label = "{\\rtf \\fs30 \\qc Receive {\\b $30} in {\\b 100 days }}";
+						}
+					}
+				}
+			}
+			containerbox "ButtonBox"{
+				hasframe = FALSE;
+				standardbox "Standard"{
+					hasframe = FALSE;
+					height = 80p;
+					bottom = 190p;
+					buttonposition = BOTTOMMIDDLE;
+					buttonsequence = HORIZONTAL;
+					onofftrigger "ON/OFF trigger"{
+						what = ON;
+						eventtime = START_DEEP_TIME_TRIAL;
+					}
+					button " Confirm choice "{
+						clearinputafterok = FALSE;
+						norecordmadeorselected = FALSE;
+						terminatestage = TRUE;
+						donotterminatestage = FALSE;
+						specialbuttoncolor = TRUE;
+						buttoncolor = 5921535;
+						eventtime = START_DEEP_TIME_TRIAL_BUTTON;
+					}
+				}
+				standardbox "Standard"{
+					hasframe = FALSE;
+					width = 700p;
+					height = 40p;
+					left = 0p;
+					top = 600p;
+					buttonposition = BOTTOMMIDDLE;
+					buttonsequence = HORIZONTAL;
+					button " Choose the LEFT option "{
+						clearinputafterok = FALSE;
+						norecordmadeorselected = FALSE;
+						terminatestage = FALSE;
+						donotterminatestage = TRUE;
+						specialbuttoncolor = FALSE;
+						buttoncolor = 0;
+						program{
+							table = subjects;
+							do{
+								DEEP_T2=1;
+							}
+						}
+					}
+				}
+				standardbox "Standard"{
+					hasframe = FALSE;
+					width = 700p;
+					height = 40p;
+					left = 0p;
+					top = 600p;
+					displaycondition = DEEP_T2==1;
+					buttonposition = BOTTOMMIDDLE;
+					buttonsequence = HORIZONTAL;
+					button " Choose the LEFT option "{
+						clearinputafterok = FALSE;
+						norecordmadeorselected = FALSE;
+						terminatestage = FALSE;
+						donotterminatestage = TRUE;
+						specialbuttoncolor = TRUE;
+						buttoncolor = 5921535;
+					}
+				}
+				standardbox "Standard"{
+					hasframe = FALSE;
+					width = 700p;
+					height = 40p;
+					right = 0p;
+					top = 600p;
+					buttonposition = BOTTOMMIDDLE;
+					buttonsequence = HORIZONTAL;
+					button " Choose the RIGHT option "{
+						clearinputafterok = FALSE;
+						norecordmadeorselected = FALSE;
+						terminatestage = FALSE;
+						donotterminatestage = TRUE;
+						specialbuttoncolor = FALSE;
+						buttoncolor = 0;
+						program{
+							table = subjects;
+							do{
+								DEEP_T2=2;
+							}
+						}
+					}
+				}
+				standardbox "Standard"{
+					hasframe = FALSE;
+					width = 700p;
+					height = 40p;
+					right = 0p;
+					top = 600p;
+					displaycondition = DEEP_T2==2;
+					buttonposition = BOTTOMMIDDLE;
+					buttonsequence = HORIZONTAL;
+					button " Choose the RIGHT option "{
+						clearinputafterok = FALSE;
+						norecordmadeorselected = FALSE;
+						terminatestage = FALSE;
+						donotterminatestage = TRUE;
+						specialbuttoncolor = TRUE;
+						buttoncolor = 5921535;
+					}
+				}
+			}
+		}
+		screen wait{
+			usesbg = TRUE;
+			withalertscreen = FALSE;
+			noalertscreen = FALSE;
+		}
+	}
+	stage "DEEP_MAIN_TIME"{
+		startwaitforall = FALSE;
+		startConditionStr = "";
+		singleentry = FALSE;
+		singleentrycontinuation = FALSE;
+		timeouttype = never;
+		timeout = -1;
+		program{
+			table = subjects;
+			do{
+				
+				n=1;
+				
+				Period =2;
+				
+				
+				DT_MAX_CHOICES = 12;
+				array dt_choices [DT_MAX_CHOICES];
+				array dt_path [DT_MAX_CHOICES];
+				
+				// we will need this data to compute a payout
+				array dt_index_A [DT_MAX_CHOICES];
+				array dt_index_B [DT_MAX_CHOICES];
+				array dt_shown_delay_A [DT_MAX_CHOICES];
+				array dt_shown_presentation_A [DT_MAX_CHOICES];
+				array dt_shown_amount_A [DT_MAX_CHOICES];
+				array dt_shown_delay_B [DT_MAX_CHOICES];
+				array dt_shown_presentation_B [DT_MAX_CHOICES];
+				array dt_shown_amount_B [DT_MAX_CHOICES];
+				
+				// show the first one initially
+				dt_index_A[1] = 1;
+				dt_index_B[1] = 1; 
+				dt_shown_delay_A[1] = dt_outcomes_A_delay[1];
+				dt_shown_amount_A[1] = dt_outcomes_A_amount[1];
+				dt_shown_delay_B[1] = dt_outcomes_B_delay[1];
+				dt_shown_amount_B[1] = dt_outcomes_B_amount[1];
+				
+				
+				
+				
+				char3 = "?";
+				char4 = "?";
+				code3 = 0;
+				code4 = 0;
+				path1 = 0;
+			}
+		}
+		screen action{
+			usesbg = FALSE;
+			withalertscreen = FALSE;
+			noalertscreen = FALSE;
+			containerbox "Background"{
+				hasframe = TRUE;
+				standardbox "DEBUG"{
+					hasframe = TRUE;
+					width = 25%;
+					height = 25%;
+					left = 0p;
+					bottom = 0p;
+					displaycondition = 1 == 0;
+					buttonposition = BOTTOMRIGHT;
+					buttonsequence = HORIZONTAL;
+					item{
+						label = "CHAR3";
+						variable = char3;
+						format = "";
+						input = FALSE;
+					}
+					item{
+						label = "CHAR4";
+						variable = char4;
+						format = "";
+						input = FALSE;
+					}
+					item{
+						label = "CODE3";
+						variable = code3;
+						format = "1";
+						input = FALSE;
+					}
+					item{
+						label = "CODE4";
+						variable = code4;
+						format = "1";
+						input = FALSE;
+					}
+					item{
+						label = "CODE4";
+						variable = code4;
+						format = "1";
+						input = FALSE;
+					}
+					item{
+						label = "PATH1";
+						variable = path1;
+						format = "1";
+						input = FALSE;
+					}
+				}
+				containerbox "TopBox"{
+					hasframe = FALSE;
+					height = 6%;
+					top = 0p;
+					standardbox "T_01"{
+						hasframe = FALSE;
+						height = 6%;
+						displaycondition = n==1;
+						buttonposition = BOTTOMRIGHT;
+						buttonsequence = HORIZONTAL;
+						item{
+							label = "<>{\\rtf \\fs30 \\qc \\b Choice 1/<DT_MAX_CHOICES|1>}";
+						}
+					}
+					standardbox "T_02"{
+						hasframe = FALSE;
+						displaycondition = n==2;
+						buttonposition = BOTTOMRIGHT;
+						buttonsequence = HORIZONTAL;
+						item{
+							label = "<>{\\rtf \\fs30 \\qc \\b Choice 2/<DT_MAX_CHOICES|1>}";
+						}
+					}
+					standardbox "T_03"{
+						hasframe = FALSE;
+						displaycondition = n==3;
+						buttonposition = BOTTOMRIGHT;
+						buttonsequence = HORIZONTAL;
+						item{
+							label = "<>{\\rtf \\fs30 \\qc \\b Choice 3/<DT_MAX_CHOICES|1>}";
+						}
+					}
+					standardbox "T_04"{
+						hasframe = FALSE;
+						displaycondition = n==4;
+						buttonposition = BOTTOMRIGHT;
+						buttonsequence = HORIZONTAL;
+						item{
+							label = "<>{\\rtf \\fs30 \\qc \\b Choice 4/<DT_MAX_CHOICES|1>}";
+						}
+					}
+					standardbox "T_05"{
+						hasframe = FALSE;
+						displaycondition = n==5;
+						buttonposition = BOTTOMRIGHT;
+						buttonsequence = HORIZONTAL;
+						item{
+							label = "<>{\\rtf \\fs30 \\qc \\b Choice 5/<DT_MAX_CHOICES|1>}";
+						}
+					}
+					standardbox "T_06"{
+						hasframe = FALSE;
+						displaycondition = n==6;
+						buttonposition = BOTTOMRIGHT;
+						buttonsequence = HORIZONTAL;
+						item{
+							label = "<>{\\rtf \\fs30 \\qc \\b Choice 6/<DT_MAX_CHOICES|1>}";
+						}
+					}
+					standardbox "T_07"{
+						hasframe = FALSE;
+						displaycondition = n==7;
+						buttonposition = BOTTOMRIGHT;
+						buttonsequence = HORIZONTAL;
+						item{
+							label = "<>{\\rtf \\fs30 \\qc \\b Choice 7/<DT_MAX_CHOICES|1>}";
+						}
+					}
+					standardbox "T_08"{
+						hasframe = FALSE;
+						displaycondition = n==8;
+						buttonposition = BOTTOMRIGHT;
+						buttonsequence = HORIZONTAL;
+						item{
+							label = "<>{\\rtf \\fs30 \\qc \\b Choice 8/<DT_MAX_CHOICES|1>}";
+						}
+					}
+					standardbox "T_09"{
+						hasframe = FALSE;
+						displaycondition = n==9;
+						buttonposition = BOTTOMRIGHT;
+						buttonsequence = HORIZONTAL;
+						item{
+							label = "<>{\\rtf \\fs30 \\qc \\b Choice 9/<DT_MAX_CHOICES|1>}";
+						}
+					}
+					standardbox "T_10"{
+						hasframe = FALSE;
+						displaycondition = n==10;
+						buttonposition = BOTTOMRIGHT;
+						buttonsequence = HORIZONTAL;
+						item{
+							label = "<>{\\rtf \\fs30 \\qc \\b Choice 10/<DT_MAX_CHOICES|1>}";
+						}
+					}
+					standardbox "T_11"{
+						hasframe = FALSE;
+						displaycondition = n==11;
+						buttonposition = BOTTOMRIGHT;
+						buttonsequence = HORIZONTAL;
+						item{
+							label = "<>{\\rtf \\fs30 \\qc \\b Choice 11/<DT_MAX_CHOICES|1>}";
+						}
+					}
+					standardbox "T_12"{
+						hasframe = FALSE;
+						displaycondition = n==12;
+						buttonposition = BOTTOMRIGHT;
+						buttonsequence = HORIZONTAL;
+						item{
+							label = "<>{\\rtf \\fs30 \\qc \\b Choice 12/<DT_MAX_CHOICES|1>}";
+						}
+					}
+				}
+				containerbox "MiddleBox"{
+					hasframe = TRUE;
+					containerbox "Left_A"{
+						hasframe = TRUE;
+						width = 50%;
+						height = 500p;
+						left = 0p;
+						top = 50p;
+						standardbox "A_01"{
+							hasframe = TRUE;
+							displaycondition = dt_index_A[n] == 1;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_A_amount[1] | 1>} {\\b <dt_presentation_A_delay1 | 3>}}";
+							}
+						}
+						standardbox "A_02"{
+							hasframe = TRUE;
+							displaycondition = dt_index_A[n] == 2;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_A_amount[2] | 1>} {\\b <dt_presentation_A_delay2 | 3>}}";
+							}
+						}
+						standardbox "A_03"{
+							hasframe = TRUE;
+							displaycondition = dt_index_A[n] == 3;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_A_amount[3] | 1>} {\\b <dt_presentation_A_delay3 | 3>}}";
+							}
+						}
+						standardbox "A_04"{
+							hasframe = TRUE;
+							displaycondition = dt_index_A[n] == 4;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_A_amount[4] | 1>} {\\b <dt_presentation_A_delay4 | 3>}}";
+							}
+						}
+						standardbox "A_05"{
+							hasframe = TRUE;
+							displaycondition = dt_index_A[n] == 5;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_A_amount[5] | 1>} {\\b <dt_presentation_A_delay5 | 3>}}";
+							}
+						}
+						standardbox "A_06"{
+							hasframe = TRUE;
+							displaycondition = dt_index_A[n] ==6;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_A_amount[6] | 1>} {\\b <dt_presentation_A_delay6 | 3>}}";
+							}
+						}
+						standardbox "A_07"{
+							hasframe = TRUE;
+							displaycondition = dt_index_A[n] == 7;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_A_amount[7] | 1>} {\\b <dt_presentation_A_delay7 | 3>}}";
+							}
+						}
+						standardbox "A_08"{
+							hasframe = TRUE;
+							displaycondition = dt_index_A[n] == 8;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_A_amount[8] | 1>} {\\b <dt_presentation_A_delay8 | 3>}}";
+							}
+						}
+						standardbox "A_09"{
+							hasframe = TRUE;
+							displaycondition = dt_index_A[n] == 9;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_A_amount[9] | 1>} {\\b <dt_presentation_A_delay9 | 3>}}";
+							}
+						}
+						standardbox "A_10"{
+							hasframe = TRUE;
+							displaycondition = dt_index_A[n] == 10;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_A_amount[10] | 1>} {\\b <dt_presentation_A_delay10 | 3>}}";
+							}
+						}
+						standardbox "A_11"{
+							hasframe = TRUE;
+							displaycondition = dt_index_A[n] == 11;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_A_amount[11] | 1>} {\\b <dt_presentation_A_delay11 | 3>}}";
+							}
+						}
+						standardbox "A_12"{
+							hasframe = TRUE;
+							displaycondition = dt_index_A[n] == 12;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_A_amount[12] | 1>} {\\b <dt_presentation_A_delay12 | 3>}}";
+							}
+						}
+						standardbox "A_13"{
+							hasframe = TRUE;
+							displaycondition = dt_index_A[n] == 13;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_A_amount[13] | 1>} {\\b <dt_presentation_A_delay13 | 3>}}";
+							}
+						}
+						standardbox "A_14"{
+							hasframe = TRUE;
+							displaycondition = dt_index_A[n] == 14;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_A_amount[14] | 1>} {\\b <dt_presentation_A_delay14 | 3>}}";
+							}
+						}
+						standardbox "A_15"{
+							hasframe = TRUE;
+							displaycondition = dt_index_A[n] == 15;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_A_amount[15] | 1>} {\\b <dt_presentation_A_delay15 | 3>}}";
+							}
+						}
+						standardbox "A_16"{
+							hasframe = TRUE;
+							displaycondition = dt_index_A[n] == 16;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_A_amount[16] | 1>} {\\b <dt_presentation_A_delay16 | 3>}}";
+							}
+						}
+						standardbox "A_17"{
+							hasframe = TRUE;
+							displaycondition = dt_index_A[n] == 17;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_A_amount[17] | 1>} {\\b <dt_presentation_A_delay17 | 3>}}";
+							}
+						}
+						standardbox "A_18"{
+							hasframe = TRUE;
+							displaycondition = dt_index_A[n] == 18;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_A_amount[18] | 1>} {\\b <dt_presentation_A_delay18 | 3>}}";
+							}
+						}
+						standardbox "A_19"{
+							hasframe = TRUE;
+							displaycondition = dt_index_A[n] == 19;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_A_amount[19] | 1>} {\\b <dt_presentation_A_delay19 | 3>}}";
+							}
+						}
+						standardbox "A_20"{
+							hasframe = TRUE;
+							displaycondition = dt_index_A[n] ==20;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_A_amount[20] | 1>} {\\b <dt_presentation_A_delay20 | 3>}}";
+							}
+						}
+						standardbox "A_21"{
+							hasframe = TRUE;
+							displaycondition = dt_index_A[n] ==21;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_A_amount[21] | 1>} {\\b <dt_presentation_A_delay21 | 3>}}";
+							}
+						}
+						standardbox "A_22"{
+							hasframe = TRUE;
+							displaycondition = dt_index_A[n] ==22;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_A_amount[22] | 1>} {\\b <dt_presentation_A_delay22 | 3>}}";
+							}
+						}
+						standardbox "A_23"{
+							hasframe = TRUE;
+							displaycondition = dt_index_A[n] ==23;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_A_amount[23] | 1>} {\\b <dt_presentation_A_delay23 | 3>}}";
+							}
+						}
+						standardbox "A_24"{
+							hasframe = TRUE;
+							displaycondition = dt_index_A[n] ==24;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_A_amount[24] | 1>} {\\b <dt_presentation_A_delay24 | 3>}}";
+							}
+						}
+						standardbox "A_25"{
+							hasframe = TRUE;
+							displaycondition = dt_index_A[n] ==25;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_A_amount[25] | 1>} {\\b <dt_presentation_A_delay25 | 3>}}";
+							}
+						}
+						standardbox "A_26"{
+							hasframe = TRUE;
+							displaycondition = dt_index_A[n] ==26;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_A_amount[26] | 1>} {\\b <dt_presentation_A_delay26 | 3>}}";
+							}
+						}
+						standardbox "A_27"{
+							hasframe = TRUE;
+							displaycondition = dt_index_A[n] ==27;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_A_amount[27] | 1>} {\\b <dt_presentation_A_delay27 | 3>}}";
+							}
+						}
+						standardbox "A_28"{
+							hasframe = TRUE;
+							displaycondition = dt_index_A[n] ==28;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_A_amount[28] | 1>} {\\b <dt_presentation_A_delay28 | 3>}}";
+							}
+						}
+						standardbox "A_29"{
+							hasframe = TRUE;
+							displaycondition = dt_index_A[n] ==29;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_A_amount[29] | 1>} {\\b <dt_presentation_A_delay29 | 3>}}";
+							}
+						}
+						standardbox "A_30"{
+							hasframe = TRUE;
+							displaycondition = dt_index_A[n] ==30;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_A_amount[30] | 1>} {\\b <dt_presentation_A_delay30 | 3>}}";
+							}
+						}
+						standardbox "A_31"{
+							hasframe = TRUE;
+							displaycondition = dt_index_A[n] ==31;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_A_amount[31] | 1>} in {\\b <dt_presentation_A_delay31 | 1> days }}";
+							}
+						}
+						standardbox "A_32"{
+							hasframe = TRUE;
+							displaycondition = dt_index_A[n] ==32;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_A_amount[32] | 1>} in {\\b <dt_presentation_A_delay32 | 1> days}}";
+							}
+						}
+						standardbox "A_33"{
+							hasframe = TRUE;
+							displaycondition = dt_index_A[n] ==33;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_A_amount[33] | 1>} in {\\b <dt_presentation_A_delay33 | 1> days}}";
+							}
+						}
+						standardbox "A_34"{
+							hasframe = TRUE;
+							displaycondition = dt_index_A[n] ==34;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_A_amount[34] | 1>} in {\\b <dt_presentation_A_delay34 | 1> days}}";
+							}
+						}
+						standardbox "A_35"{
+							hasframe = TRUE;
+							displaycondition = dt_index_A[n] ==35;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_A_amount[35] | 1>} in {\\b <dt_presentation_A_delay35 | 1> days}}";
+							}
+						}
+						standardbox "A_36"{
+							hasframe = TRUE;
+							displaycondition = dt_index_A[n] ==36;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_A_amount[36] | 1>} in {\\b <dt_presentation_A_delay36 | 1> days}}";
+							}
+						}
+						standardbox "A_37"{
+							hasframe = TRUE;
+							displaycondition = dt_index_A[n] ==37;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_A_amount[37] | 1>} in {\\b <dt_presentation_A_delay37 | 1> days}}";
+							}
+						}
+						standardbox "A_38"{
+							hasframe = TRUE;
+							displaycondition = dt_index_A[n] ==38;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_A_amount[38] | 1>} in {\\b <dt_presentation_A_delay38 | 1> days}}";
+							}
+						}
+						standardbox "A_39"{
+							hasframe = TRUE;
+							displaycondition = dt_index_A[n] ==39;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_A_amount[39] | 1>} in {\\b <dt_presentation_A_delay39 | 1> days}}";
+							}
+						}
+						standardbox "A_40"{
+							hasframe = TRUE;
+							displaycondition = dt_index_A[n] ==40;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_A_amount[40] | 1>} in {\\b <dt_presentation_A_delay40 | 1> days}}";
+							}
+						}
+						standardbox "A_41"{
+							hasframe = TRUE;
+							displaycondition = dt_index_A[n] ==41;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_A_amount[41] | 1>} in {\\b <dt_presentation_A_delay41 | 1> days}}";
+							}
+						}
+						standardbox "A_42"{
+							hasframe = TRUE;
+							displaycondition = dt_index_A[n] ==42;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_A_amount[42] | 1>} in {\\b <dt_presentation_A_delay42 | 1> days}}";
+							}
+						}
+						standardbox "A_43"{
+							hasframe = TRUE;
+							displaycondition = dt_index_A[n] ==43;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_A_amount[43] | 1>} in {\\b <dt_presentation_A_delay43 | 1> days}}";
+							}
+						}
+						standardbox "A_44"{
+							hasframe = TRUE;
+							displaycondition = dt_index_A[n] ==44;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_A_amount[44] | 1>} in {\\b <dt_presentation_A_delay44 | 1> days}}";
+							}
+						}
+						standardbox "A_45"{
+							hasframe = TRUE;
+							displaycondition = dt_index_A[n] ==45;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_A_amount[45] | 1>} in {\\b <dt_presentation_A_delay45 | 1> days}}";
+							}
+						}
+						standardbox "A_46"{
+							hasframe = TRUE;
+							displaycondition = dt_index_A[n] ==46;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_A_amount[46] | 1>} in {\\b <dt_presentation_A_delay46 | 1> days}}";
+							}
+						}
+						standardbox "A_47"{
+							hasframe = TRUE;
+							displaycondition = dt_index_A[n] ==47;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_A_amount[47] | 1>} in {\\b <dt_presentation_A_delay47 | 1> days}}";
+							}
+						}
+						standardbox "A_48"{
+							hasframe = TRUE;
+							displaycondition = dt_index_A[n] ==48;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_A_amount[48] | 1>} in {\\b <dt_presentation_A_delay48 | 1> days}}";
+							}
+						}
+						standardbox "A_49"{
+							hasframe = TRUE;
+							displaycondition = dt_index_A[n] ==49;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_A_amount[49] | 1>} in {\\b <dt_presentation_A_delay49 | 1> days}}";
+							}
+						}
+						standardbox "A_50"{
+							hasframe = TRUE;
+							displaycondition = dt_index_A[n] ==50;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_A_amount[50] | 1>} in {\\b <dt_presentation_A_delay50 | 1> days}}";
+							}
+						}
+						standardbox "A_51"{
+							hasframe = TRUE;
+							displaycondition = dt_index_A[n] ==51;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_A_amount[51] | 1>} in {\\b <dt_presentation_A_delay51 | 1> days}}";
+							}
+						}
+						standardbox "A_52"{
+							hasframe = TRUE;
+							displaycondition = dt_index_A[n] ==52;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_A_amount[52] | 1>} in {\\b <dt_presentation_A_delay52 | 1> days}}";
+							}
+						}
+						standardbox "A_53"{
+							hasframe = TRUE;
+							displaycondition = dt_index_A[n] ==53;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_A_amount[53] | 1>} in {\\b <dt_presentation_A_delay53 | 1> days}}";
+							}
+						}
+						standardbox "A_54"{
+							hasframe = TRUE;
+							displaycondition = dt_index_A[n] ==54;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_A_amount[54] | 1>} in {\\b <dt_presentation_A_delay54 | 1> days}}";
+							}
+						}
+						standardbox "A_55"{
+							hasframe = TRUE;
+							displaycondition = dt_index_A[n] ==55;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_A_amount[55] | 1>} in {\\b <dt_presentation_A_delay55 | 1> days}}";
+							}
+						}
+						standardbox "A_56"{
+							hasframe = TRUE;
+							displaycondition = dt_index_A[n] ==56;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_A_amount[56] | 1>} in {\\b <dt_presentation_A_delay56 | 1> days}}";
+							}
+						}
+						standardbox "A_57"{
+							hasframe = TRUE;
+							displaycondition = dt_index_A[n] ==57;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_A_amount[57] | 1>} in {\\b <dt_presentation_A_delay57 | 1> days}}";
+							}
+						}
+						standardbox "A_58"{
+							hasframe = TRUE;
+							displaycondition = dt_index_A[n] ==58;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_A_amount[58] | 1>} in {\\b <dt_presentation_A_delay58 | 1> days}}";
+							}
+						}
+						standardbox "A_59"{
+							hasframe = TRUE;
+							displaycondition = dt_index_A[n] ==59;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_A_amount[59] | 1>} in {\\b <dt_presentation_A_delay59 | 1> days}}";
+							}
+						}
+						standardbox "A_60"{
+							hasframe = TRUE;
+							displaycondition = dt_index_A[n] ==60;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_A_amount[60] | 1>} in {\\b <dt_presentation_A_delay60 | 1> days}}";
+							}
+						}
+					}
+					containerbox "Right_B"{
+						hasframe = TRUE;
+						width = 50%;
+						height = 500p;
+						right = 0p;
+						top = 50p;
+						standardbox "B_01"{
+							hasframe = TRUE;
+							displaycondition = dt_index_B[n] == 1;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_B_amount[1] | 1>} in {\\b <dt_presentation_B_delay[1]| 1> days}}";
+							}
+						}
+						standardbox "B_02"{
+							hasframe = TRUE;
+							displaycondition = dt_index_B[n] == 2;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_B_amount[2] | 1>} in {\\b <dt_presentation_B_delay[2]| 1> days}}";
+							}
+						}
+						standardbox "B_03"{
+							hasframe = TRUE;
+							displaycondition = dt_index_B[n] == 3;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_B_amount[3] | 1>} in {\\b <dt_presentation_B_delay[3]| 1> days}}";
+							}
+						}
+						standardbox "B_04"{
+							hasframe = TRUE;
+							displaycondition = dt_index_B[n] == 4;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_B_amount[4] | 1>} in {\\b <dt_presentation_B_delay[4]| 1> days}}";
+							}
+						}
+						standardbox "B_05"{
+							hasframe = TRUE;
+							displaycondition = dt_index_B[n] == 5;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_B_amount[5] | 1>} in {\\b <dt_presentation_B_delay[5]| 1> days}}";
+							}
+						}
+						standardbox "B_06"{
+							hasframe = TRUE;
+							displaycondition = dt_index_B[n] == 6;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_B_amount[6] | 1>} in {\\b <dt_presentation_B_delay[6]| 1> days}}";
+							}
+						}
+						standardbox "B_07"{
+							hasframe = TRUE;
+							displaycondition = dt_index_B[n] == 7;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_B_amount[7] | 1>} in {\\b <dt_presentation_B_delay[7]| 1> days}}";
+							}
+						}
+						standardbox "B_08"{
+							hasframe = TRUE;
+							displaycondition = dt_index_B[n] == 8;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_B_amount[8] | 1>} in {\\b <dt_presentation_B_delay[8]| 1> days}}";
+							}
+						}
+						standardbox "B_09"{
+							hasframe = TRUE;
+							displaycondition = dt_index_B[n] == 9;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_B_amount[9] | 1>} in {\\b <dt_presentation_B_delay[9]| 1> days}}";
+							}
+						}
+						standardbox "B_10"{
+							hasframe = TRUE;
+							displaycondition = dt_index_B[n] == 10;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_B_amount[10] | 1>} in {\\b <dt_presentation_B_delay[10]| 1> days}}";
+							}
+						}
+						standardbox "B_11"{
+							hasframe = TRUE;
+							displaycondition = dt_index_B[n] == 11;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_B_amount[11] | 1>} in {\\b <dt_presentation_B_delay[11]| 1> days}}";
+							}
+						}
+						standardbox "B_12"{
+							hasframe = TRUE;
+							displaycondition = dt_index_B[n] == 12;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_B_amount[12] | 1>} in {\\b <dt_presentation_B_delay[12]| 1> days}}";
+							}
+						}
+						standardbox "B_13"{
+							hasframe = TRUE;
+							displaycondition = dt_index_B[n] == 13;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_B_amount[13] | 1>} in {\\b <dt_presentation_B_delay[13]| 1> days}}";
+							}
+						}
+						standardbox "B_14"{
+							hasframe = TRUE;
+							displaycondition = dt_index_B[n] == 14;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_B_amount[14] | 1>} in {\\b <dt_presentation_B_delay[14]| 1> days}}";
+							}
+						}
+						standardbox "B_15"{
+							hasframe = TRUE;
+							displaycondition = dt_index_B[n] == 15;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_B_amount[15] | 1>} in {\\b <dt_presentation_B_delay[15]| 1> days}}";
+							}
+						}
+						standardbox "B_16"{
+							hasframe = TRUE;
+							displaycondition = dt_index_B[n] == 16;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_B_amount[16] | 1>} in {\\b <dt_presentation_B_delay[16]| 1> days}}";
+							}
+						}
+						standardbox "B_17"{
+							hasframe = TRUE;
+							displaycondition = dt_index_B[n] == 17;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_B_amount[17] | 1>} in {\\b <dt_presentation_B_delay[17]| 1> days}}";
+							}
+						}
+						standardbox "B_18"{
+							hasframe = TRUE;
+							displaycondition = dt_index_B[n] == 18;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_B_amount[18] | 1>} in {\\b <dt_presentation_B_delay[18]| 1> days}}";
+							}
+						}
+						standardbox "B_19"{
+							hasframe = TRUE;
+							displaycondition = dt_index_B[n] == 19;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_B_amount[19] | 1>} in {\\b <dt_presentation_B_delay[19]| 1> days}}";
+							}
+						}
+						standardbox "B_20"{
+							hasframe = TRUE;
+							displaycondition = dt_index_B[n] == 20;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_B_amount[20] | 1>} in {\\b <dt_presentation_B_delay[20]| 1> days}}";
+							}
+						}
+						standardbox "B_21"{
+							hasframe = TRUE;
+							displaycondition = dt_index_B[n] == 21;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_B_amount[21] | 1>} in {\\b <dt_presentation_B_delay[21]| 1> days}}";
+							}
+						}
+						standardbox "B_22"{
+							hasframe = TRUE;
+							displaycondition = dt_index_B[n] == 22;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_B_amount[22] | 1>} in {\\b <dt_presentation_B_delay[22]| 1> days}}";
+							}
+						}
+						standardbox "B_23"{
+							hasframe = TRUE;
+							displaycondition = dt_index_B[n] == 23;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_B_amount[23] | 1>} in {\\b <dt_presentation_B_delay[23]| 1> days}}";
+							}
+						}
+						standardbox "B_24"{
+							hasframe = TRUE;
+							displaycondition = dt_index_B[n] == 24;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_B_amount[24] | 1>} in {\\b <dt_presentation_B_delay[24]| 1> days}}";
+							}
+						}
+						standardbox "B_25"{
+							hasframe = TRUE;
+							displaycondition = dt_index_B[n] == 25;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_B_amount[25] | 1>} in {\\b <dt_presentation_B_delay[25]| 1> days}}";
+							}
+						}
+						standardbox "B_26"{
+							hasframe = TRUE;
+							displaycondition = dt_index_B[n] == 26;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_B_amount[26] | 1>} in {\\b <dt_presentation_B_delay[26]| 1> days}}";
+							}
+						}
+						standardbox "B_27"{
+							hasframe = TRUE;
+							displaycondition = dt_index_B[n] == 27;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_B_amount[27] | 1>} in {\\b <dt_presentation_B_delay[27]| 1> days}}";
+							}
+						}
+						standardbox "B_28"{
+							hasframe = TRUE;
+							displaycondition = dt_index_B[n] == 28;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_B_amount[28] | 1>} in {\\b <dt_presentation_B_delay[28]| 1> days}}";
+							}
+						}
+						standardbox "B_29"{
+							hasframe = TRUE;
+							displaycondition = dt_index_B[n] == 29;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_B_amount[29] | 1>} in {\\b <dt_presentation_B_delay[29]| 1> days}}";
+							}
+						}
+						standardbox "B_30"{
+							hasframe = TRUE;
+							displaycondition = dt_index_B[n] == 30;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_B_amount[30] | 1>} in {\\b <dt_presentation_B_delay[30]| 1> days}}";
+							}
+						}
+						standardbox "B_31"{
+							hasframe = TRUE;
+							displaycondition = dt_index_B[n] == 31;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_B_amount[31] | 1>} in {\\b <dt_presentation_B_delay[31]| 1> days}}";
+							}
+						}
+						standardbox "B_32"{
+							hasframe = TRUE;
+							displaycondition = dt_index_B[n] == 32;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_B_amount[32] | 1>} in {\\b <dt_presentation_B_delay[32]| 1> days}}";
+							}
+						}
+						standardbox "B_33"{
+							hasframe = TRUE;
+							displaycondition = dt_index_B[n] == 33;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_B_amount[33] | 1>} in {\\b <dt_presentation_B_delay[33]| 1> days}}";
+							}
+						}
+						standardbox "B_34"{
+							hasframe = TRUE;
+							displaycondition = dt_index_B[n] == 34;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_B_amount[34] | 1>} in {\\b <dt_presentation_B_delay[34]| 1> days}}";
+							}
+						}
+						standardbox "B_35"{
+							hasframe = TRUE;
+							displaycondition = dt_index_B[n] == 35;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_B_amount[35] | 1>} in {\\b <dt_presentation_B_delay[35]| 1> days}}";
+							}
+						}
+						standardbox "B_36"{
+							hasframe = TRUE;
+							displaycondition = dt_index_B[n] == 36;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_B_amount[36] | 1>} in {\\b <dt_presentation_B_delay[36]| 1> days}}";
+							}
+						}
+						standardbox "B_37"{
+							hasframe = TRUE;
+							displaycondition = dt_index_B[n] == 37;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_B_amount[37] | 1>} in {\\b <dt_presentation_B_delay[37]| 1> days}}";
+							}
+						}
+						standardbox "B_38"{
+							hasframe = TRUE;
+							displaycondition = dt_index_B[n] == 38;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_B_amount[38] | 1>} in {\\b <dt_presentation_B_delay[38]| 1> days}}";
+							}
+						}
+						standardbox "B_39"{
+							hasframe = TRUE;
+							displaycondition = dt_index_B[n] == 39;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_B_amount[39] | 1>} in {\\b <dt_presentation_B_delay[39]| 1> days}}";
+							}
+						}
+						standardbox "B_40"{
+							hasframe = TRUE;
+							displaycondition = dt_index_B[n] == 40;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_B_amount[40] | 1>} in {\\b <dt_presentation_B_delay[40]| 1> days}}";
+							}
+						}
+						standardbox "B_41"{
+							hasframe = TRUE;
+							displaycondition = dt_index_B[n] == 41;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_B_amount[41] | 1>} in {\\b <dt_presentation_B_delay[41]| 1> days}}";
+							}
+						}
+						standardbox "B_42"{
+							hasframe = TRUE;
+							displaycondition = dt_index_B[n] == 42;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_B_amount[42] | 1>} in {\\b <dt_presentation_B_delay[42]| 1> days}}";
+							}
+						}
+						standardbox "B_43"{
+							hasframe = TRUE;
+							displaycondition = dt_index_B[n] == 43;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_B_amount[43] | 1>} in {\\b <dt_presentation_B_delay[43]| 1> days}}";
+							}
+						}
+						standardbox "B_44"{
+							hasframe = TRUE;
+							displaycondition = dt_index_B[n] == 44;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_B_amount[44] | 1>} in {\\b <dt_presentation_B_delay[44]| 1> days }}";
+							}
+						}
+						standardbox "B_45"{
+							hasframe = TRUE;
+							displaycondition = dt_index_B[n] == 45;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_B_amount[45] | 1>} in {\\b <dt_presentation_B_delay[45]| 1> days }}";
+							}
+						}
+						standardbox "B_46"{
+							hasframe = TRUE;
+							displaycondition = dt_index_B[n] == 46;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_B_amount[46] | 1>} in {\\b <dt_presentation_B_delay[46]| 1> days }}";
+							}
+						}
+						standardbox "B_47"{
+							hasframe = TRUE;
+							displaycondition = dt_index_B[n] == 47;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_B_amount[47] | 1>} in {\\b <dt_presentation_B_delay[47]| 1> days }}";
+							}
+						}
+						standardbox "B_48"{
+							hasframe = TRUE;
+							displaycondition = dt_index_B[n] == 48;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_B_amount[48] | 1>} in {\\b <dt_presentation_B_delay[48]| 1> days }}";
+							}
+						}
+						standardbox "B_49"{
+							hasframe = TRUE;
+							displaycondition = dt_index_B[n] == 49;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_B_amount[49] | 1>} in {\\b <dt_presentation_B_delay[49]| 1> days}}";
+							}
+						}
+						standardbox "B_50"{
+							hasframe = TRUE;
+							displaycondition = dt_index_B[n] == 50;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_B_amount[50] | 1>} in {\\b <dt_presentation_B_delay[50]| 1> days }}";
+							}
+						}
+						standardbox "B_51"{
+							hasframe = TRUE;
+							displaycondition = dt_index_B[n] == 51;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_B_amount[51] | 1>} in {\\b <dt_presentation_B_delay[51]| 1> days }}";
+							}
+						}
+						standardbox "B_52"{
+							hasframe = TRUE;
+							displaycondition = dt_index_B[n] == 52;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_B_amount[52] | 1>} in {\\b <dt_presentation_B_delay[52]| 1> days}}";
+							}
+						}
+						standardbox "B_53"{
+							hasframe = TRUE;
+							displaycondition = dt_index_B[n] == 53;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_B_amount[53] | 1>} in {\\b <dt_presentation_B_delay[53]| 1> days }}";
+							}
+						}
+						standardbox "B_54"{
+							hasframe = TRUE;
+							displaycondition = dt_index_B[n] == 54;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_B_amount[54] | 1>} in {\\b <dt_presentation_B_delay[54]| 1> days}}";
+							}
+						}
+						standardbox "B_55"{
+							hasframe = TRUE;
+							displaycondition = dt_index_B[n] == 55;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_B_amount[55] | 1>} in {\\b <dt_presentation_B_delay[55]| 1> days}}";
+							}
+						}
+						standardbox "B_56"{
+							hasframe = TRUE;
+							displaycondition = dt_index_B[n] == 56;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_B_amount[56] | 1>} in {\\b <dt_presentation_B_delay[56]| 1> days}}";
+							}
+						}
+						standardbox "B_57"{
+							hasframe = TRUE;
+							displaycondition = dt_index_B[n] == 57;
+							buttonposition = BOTTOMRIGHT;
+							buttonsequence = HORIZONTAL;
+							item{
+								label = "<>{\\rtf \\fs30 \\qc Receive {\\b $<dt_outcomes_B_amount[57] | 1>} in {\\b <dt_presentation_B_delay[57]| 1> days}}";
+							}
+						}
+					}
+				}
+				containerbox "ButtonBox"{
+					hasframe = FALSE;
+					standardbox "Standard"{
+						hasframe = FALSE;
+						height = 80p;
+						bottom = 190p;
+						displaycondition = n != DT_MAX_CHOICES;
+						buttonposition = BOTTOMMIDDLE;
+						buttonsequence = HORIZONTAL;
+						onofftrigger "ON/OFF trigger"{
+							what = ON;
+							eventtime = START_DEEP_TIME_MAIN;
+						}
+						button " Confirm choice "{
+							clearinputafterok = FALSE;
+							norecordmadeorselected = FALSE;
+							terminatestage = FALSE;
+							donotterminatestage = TRUE;
+							specialbuttoncolor = TRUE;
+							buttoncolor = 5921535;
+							eventtime = START_DEEP_TIME_MAIN_BUTTON;
+							checker{
+								condition = dt_choices[n]!=0;
+								message = "Please make a choice";
+								yesButtonStr = "";
+								noButtonStr = "OK";
+							}
+							program{
+								table = subjects;
+								do{
+									// compute path -- adapted javascript algorithm
+									path1 = 0;
+									
+									for (i, n) 
+									{    
+									    path1 = path1 + (dt_choices[i] - 1); // original algorthim is 0 and 1. we are 1 and 2, so adjust
+									    path1 = path1 * 2;
+									} 
+									
+									path1 = path1 + 1;  // arrays in ztree start from 1, so need to add 1
+									dt_path[n] = path1;
+									
+									// increase n
+									n=n+1;
+									
+									if (n == 2) { char3 = mid(dt_coded_indexers_2, path1, 1); char4 = mid(dt_coded_indexers_2, path1 + 1, 1); } 
+									elsif (n == 3) { char3 = mid(dt_coded_indexers_3, path1, 1); char4 = mid(dt_coded_indexers_3, path1 + 1, 1); }
+									elsif (n == 4) { char3 = mid(dt_coded_indexers_4, path1, 1); char4 = mid(dt_coded_indexers_4, path1 + 1, 1); }
+									elsif (n == 5) { char3 = mid(dt_coded_indexers_5, path1, 1); char4 = mid(dt_coded_indexers_5, path1 + 1, 1); }
+									elsif (n == 6) { char3 = mid(dt_coded_indexers_6, path1, 1); char4 = mid(dt_coded_indexers_6, path1 + 1, 1); }
+									elsif (n == 7) { char3 = mid(dt_coded_indexers_7, path1, 1); char4 = mid(dt_coded_indexers_7, path1 + 1, 1); }
+									elsif (n == 8) { char3 = mid(dt_coded_indexers_8, path1, 1); char4 = mid(dt_coded_indexers_8, path1 + 1, 1); }
+									elsif (n == 9) { char3 = mid(dt_coded_indexers_9, path1, 1); char4 = mid(dt_coded_indexers_9, path1 + 1, 1); }
+									elsif (n == 10) { char3 = mid(dt_coded_indexers_10, path1, 1); char4 = mid(dt_coded_indexers_10, path1 + 1, 1); }
+									elsif (n == 11) { char3 = mid(dt_coded_indexers_11, path1, 1); char4 = mid(dt_coded_indexers_11, path1 + 1, 1); }
+									elsif (n == 12) { char3 = mid(dt_coded_indexers_12, path1, 1); char4 = mid(dt_coded_indexers_12, path1 + 1, 1); }
+									
+									// convert to code
+									code3 = code(char3);
+									code4 = code(char4);
+									
+									// transform characters
+									if (code3 >= 97) { code3 = code3 - 97 + 26; }
+									elsif (code3 <= 58) { code3 = code3 - 48 + 52; }
+									else { code3 = code3 - 65; }
+									
+									if (code4 >= 97) { code4 = code4 - 97 + 26; }
+									elsif (code4 <= 58) { code4 = code4 - 48 + 52; }
+									else { code4 = code4 - 65; }
+									
+									// add one because ztree index start at 1
+									code3 = code3 + 1;
+									code4 = code4 + 1;
+									
+									// store in indexes
+									dt_index_A[n] = code3;
+									dt_index_B[n] = code4; 
+									
+									// collect payout data
+									dt_shown_delay_A[n] = dt_outcomes_A_delay[code3];
+									dt_shown_amount_A[n] = dt_outcomes_A_amount[code3];
+									dt_shown_delay_B[n] = dt_outcomes_A_delay[code4];
+									dt_shown_amount_B[n] = dt_outcomes_A_amount[code4];
+									
+								}
+							}
+						}
+					}
+					standardbox "Standard"{
+						hasframe = FALSE;
+						height = 80p;
+						bottom = 190p;
+						displaycondition = n == DT_MAX_CHOICES;
+						buttonposition = BOTTOMMIDDLE;
+						buttonsequence = HORIZONTAL;
+						onofftrigger "ON/OFF trigger"{
+							what = ON;
+							eventtime = END_DEEP_TIME_MAIN;
+						}
+						button " FINISH "{
+							clearinputafterok = FALSE;
+							norecordmadeorselected = FALSE;
+							terminatestage = TRUE;
+							donotterminatestage = FALSE;
+							specialbuttoncolor = TRUE;
+							buttoncolor = 5921535;
+							eventtime = END_DEEP_TIME_MAIN_BUTTON;
+							checker{
+								condition = dt_choices[n]!=0;
+								message = "Please make a choice";
+								yesButtonStr = "";
+								noButtonStr = "OK";
+							}
+						}
+					}
+					standardbox "Standard"{
+						hasframe = FALSE;
+						width = 700p;
+						height = 40p;
+						left = 0p;
+						top = 600p;
+						displaycondition = dt_choices[n]!=1;
+						buttonposition = BOTTOMMIDDLE;
+						buttonsequence = HORIZONTAL;
+						button " Choose the LEFT option "{
+							clearinputafterok = FALSE;
+							norecordmadeorselected = FALSE;
+							terminatestage = FALSE;
+							donotterminatestage = TRUE;
+							specialbuttoncolor = FALSE;
+							buttoncolor = 0;
+							program{
+								table = subjects;
+								do{
+									dt_choices[n]=1;
+								}
+							}
+						}
+					}
+					standardbox "Standard"{
+						hasframe = FALSE;
+						width = 700p;
+						height = 40p;
+						left = 0p;
+						top = 600p;
+						displaycondition = dt_choices[n]==1;
+						buttonposition = BOTTOMMIDDLE;
+						buttonsequence = HORIZONTAL;
+						button " Choose the LEFT option "{
+							clearinputafterok = FALSE;
+							norecordmadeorselected = FALSE;
+							terminatestage = FALSE;
+							donotterminatestage = TRUE;
+							specialbuttoncolor = TRUE;
+							buttoncolor = 5921535;
+							program{
+								table = subjects;
+								do{
+									dt_choices[n]=1;
+								}
+							}
+						}
+					}
+					standardbox "Standard"{
+						hasframe = FALSE;
+						width = 700p;
+						height = 40p;
+						right = 0p;
+						top = 600p;
+						displaycondition = dt_choices[n]!=2;
+						buttonposition = BOTTOMMIDDLE;
+						buttonsequence = HORIZONTAL;
+						button " Choose the RIGHT option "{
+							clearinputafterok = FALSE;
+							norecordmadeorselected = FALSE;
+							terminatestage = FALSE;
+							donotterminatestage = TRUE;
+							specialbuttoncolor = FALSE;
+							buttoncolor = 0;
+							program{
+								table = subjects;
+								do{
+									dt_choices[n]=2;
+								}
+							}
+						}
+					}
+					standardbox "Standard"{
+						hasframe = FALSE;
+						width = 700p;
+						height = 40p;
+						right = 0p;
+						top = 600p;
+						displaycondition = dt_choices [n]==2;
+						buttonposition = BOTTOMMIDDLE;
+						buttonsequence = HORIZONTAL;
+						button " Choose the RIGHT option "{
+							clearinputafterok = FALSE;
+							norecordmadeorselected = FALSE;
+							terminatestage = FALSE;
+							donotterminatestage = TRUE;
+							specialbuttoncolor = TRUE;
+							buttoncolor = 5921535;
+							program{
+								table = subjects;
+								do{
+									dt_choices[n]=2;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		screen wait{
+			usesbg = TRUE;
+			withalertscreen = FALSE;
+			noalertscreen = FALSE;
+		}
+	}
+	stage "SCALE_TIME"{
+		startwaitforall = FALSE;
+		startConditionStr = "";
+		singleentry = FALSE;
+		singleentrycontinuation = FALSE;
+		timeouttype = never;
+		timeout = -1;
+		program{
+			table = subjects;
+			do{
+				
+				
+				dt_rand_1 = roundup(random()*DT_MAX_CHOICES, 1);
+				
+				
+				//  Period
+				if(Period==2){
+				
+				// dt rand 1 gets us the index -- we need to get the users choice from that
+				if (dt_choices[dt_rand_1] == 1) // LEFT aka A
+				{
+				payoffT = dt_shown_amount_A[dt_rand_1]; // first payout result
+				    }
+				    }
+				
+				if (dt_choices[dt_rand_1] == 2) // RIGHT aka B
+				{
+				payoffT = dt_shown_amount_B[dt_rand_1]; // first payout result
+				
+				 }
+				
+				
+				
+				
+			}
+		}
+		screen action{
+			usesbg = FALSE;
+			withalertscreen = FALSE;
+			noalertscreen = FALSE;
+			headerbox "Header"{
+				hasframe = FALSE;
+				height = 10%;
+				top = 0p;
+				cuttop = TRUE;
+				showPeriods = FALSE;
+				showNumPeriods = FALSE;
+				periodtext = "";
+				periodoftext = "";
+				practiceperiodprefix = "";
+				showtime = FALSE;
+				timestr = "";
+				pleasedecidetext = "";
+			}
+			standardbox "Instructions"{
+				hasframe = FALSE;
+				left = 1%;
+				top = 2%;
+				buttonposition = BOTTOMRIGHT;
+				buttonsequence = HORIZONTAL;
+				item{
+					label = "{\\rtf \\fs40\\b SCALE: TASK 2 }";
+				}
+				item{
+				}
+				item{
+				}
+				item{
+					label = "{\\rtf \\fs35 You have now completed TASK 2. }";
+				}
+				item{
+				}
+				item{
+					label = "{\\rtf \\fs35 \\b 1. \\b0 On a scale of 1 to 7, where 1 indicates least confident (not confident) and 7 indicates most confident (fully confident), please rate how confident you feel about the choices that you made in TASK 2. }";
+				}
+				item{
+				}
+				item{
+					label = "{\\rtf \\fs30 Your confidence level regarding TASK 2: }";
+					variable = SCALE2a;
+					format = "!radioline: 1 = \"1\"; 7 = \"7\"; 7;";
+					input = TRUE;
+					showdefault = FALSE;
+					emptyallowed = TRUE;
+					min = 1;
+					max = 7;
+				}
+				item{
+				}
+				item{
+				}
+				item{
+				}
+				item{
+					label = "{\\rtf \\fs35 \\b 2. \\b0 On a scale of 1 to 7, where 1 indicates small effort and 7 indicates large effort, please rate how much effort you exercised in TASK 2. }";
+				}
+				item{
+				}
+				item{
+					label = "{\\rtf \\fs30 Your effort level regarding TASK 2: }";
+					variable = SCALE2b;
+					format = "!radioline: 1 = \"1\"; 7 = \"7\"; 7;";
+					input = TRUE;
+					showdefault = FALSE;
+					emptyallowed = TRUE;
+					min = 1;
+					max = 7;
+				}
+				item{
+				}
+				item{
+				}
+				item{
+				}
+				item{
+					label = "{\\rtf \\fs35 \\b 3. \\b0 On a scale of 1 to 7, where 1 indicates simplicity and 7 indicates complexity, please rate how simple/complex TASK 2 was. }";
+				}
+				item{
+				}
+				item{
+					label = "{\\rtf \\fs30 Simplicity/complexity of TASK 2: }";
+					variable = SCALE2c;
+					format = "!radioline: 1 = \"1\"; 7 = \"7\"; 7;";
+					input = TRUE;
+					showdefault = FALSE;
+					emptyallowed = TRUE;
+					min = 1;
+					max = 7;
+				}
+				item{
+				}
+			}
+			standardbox "Standard"{
+				hasframe = FALSE;
+				height = 30%;
+				top = 70%;
+				buttonposition = BOTTOMRIGHT;
+				buttonsequence = HORIZONTAL;
+				onofftrigger "ON/OFF trigger"{
+					what = ON;
+					eventtime = END_DEEP_TIME_SCALE;
+				}
+				button "  OK"{
+					clearinputafterok = FALSE;
+					norecordmadeorselected = FALSE;
+					terminatestage = TRUE;
+					donotterminatestage = FALSE;
+					specialbuttoncolor = TRUE;
+					buttoncolor = 5921535;
+					eventtime = END_DEEP_TIME_SCALE_BUTTON;
+					checker{
+						condition = SCALE2a >=1;
+						message = "Please make your choice on scale 1!";
+						yesButtonStr = "";
+						noButtonStr = "OK";
+					}
+					checker{
+						condition = SCALE2b >=1;
+						message = "Please make your choice on scale 2!";
+						yesButtonStr = "";
+						noButtonStr = "OK";
+					}
+					checker{
+						condition = SCALE2c >=1;
+						message = "Please make your choice on scale 3!";
+						yesButtonStr = "";
+						noButtonStr = "OK";
+					}
+				}
+			}
+		}
+		screen wait{
+			usesbg = TRUE;
+			withalertscreen = FALSE;
+			noalertscreen = FALSE;
+		}
+	}
+	roles{
+		role "S 1"{
+		}
+	}
+	period "1"{
+		prompt = "";
+		subject 1{
+			name = "";
+			group = 1;
+		}
+	}
+}
