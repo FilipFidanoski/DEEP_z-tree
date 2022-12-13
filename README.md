@@ -6,7 +6,9 @@ Here we present a ready-made and user-friendly z-tree application for the elicit
 
 We include codes and scripts for data processing from this method that increase the velocity of the estimation of the individual and aggregate risk- and time-preference parameters.
 
-In the materials, we have included z-tree files for the DEEP [Risk] and DEEP [Time]. Note that you should accept the z-Tree License Agreement if you want to use these files (https://www.ztree.uzh.ch/en.html).
+In the materials, we have included z-tree files for the DEEP [Risk] and DEEP [Time]. Note that you should accept the z-Tree License Agreement if you want to use these files (https://www.ztree.uzh.ch/en.html). Concretely, the software application is programmed in z-Tree version 4.1.11, but it works in the upper versions too. Nevertheless, it is not possible to run a treatment in older versions of z-Tree (<4.1.0). 
+
+Important note: It is licensed under the GNU GPL v3.
 
 Further, we have included the adjusted VBA script in order to prepare the data, as well as the maximum likelhood programs [Stata] for the baseline estimation. 
 
