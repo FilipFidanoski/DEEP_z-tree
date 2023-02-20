@@ -2,7 +2,7 @@
 
 
 Among the myriad preference elicitation methods used in experimental economics and finance, adaptive elicitation methods are a recent innovation. 
-Here we present a ready-made and user-friendly z-tree application for the elicitation of risk- and time-preference parameters from the most prominent adaptive elicitation method, Dynamic Experiments for Estimating Preferences (Toubia et al., 2013). 
+Here we present a ready-made and user-friendly z-Tree application for the elicitation of risk- and time-preference parameters from the most prominent adaptive elicitation method, Dynamic Experiments for Estimating Preferences (Toubia et al., 2013). 
 
 We include codes and scripts for data processing from this method that increase the velocity of the estimation of the individual and aggregate risk- and time-preference parameters.
 
